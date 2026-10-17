@@ -9,9 +9,9 @@ development year (aged turbines, different climate year, possible changes of the
   The export repeats each timestamp about 41 times with mostly empty rows; the reader keeps, per timestamp and channel,
   the first non-empty value and re-indexes to the full 10-min grid of the year. Nothing else is changed.
 - Penmanshiel 2022 (Penmanshiel_SCADA_2022_WT01-10_4462.zip, Penmanshiel_SCADA_2022_WT11-15_4463.zip; newer dataset
-  version, to be downloaded by Aryan), turbines as present (WT03 absent in 2019). 2022 is the latest year with all
+  version), turbines as present (WT03 absent in 2019). 2022 is the latest year with all
   turbines for the whole year (2023 lacks January for WT01-10).
-- Hill of Towie 2025 (2025.zip, to be downloaded by Aryan), 21 turbines; latest complete year (2026 is partial).
+- Hill of Towie 2025 (2025.zip), 21 turbines; latest complete year (2026 is partial).
 A completeness scan is the only look at the data before the runs; if a key channel is missing in a farm-year, that
 farm-year is dropped and the reason reported.
 

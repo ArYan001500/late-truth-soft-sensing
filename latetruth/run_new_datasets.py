@@ -1,6 +1,6 @@
 """Claim C2 of PUBLISHED_BASELINES_v001 (Amendment 8): run ours + all baselines on Penmanshiel 2019 and Hill of Towie 2019, strictly one job
 at a time (laptop RAM limit), with every hyper-parameter frozen at its Kelmarsh-2017 choice. Receipt-causal regime only (lag 3).
-Resumable: a step is skipped when its output file exists. Run with Python python.  usage: python run_new_datasets.py
+Resumable: a step is skipped when its output file exists.  usage: python run_new_datasets.py
 """
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
 import sys

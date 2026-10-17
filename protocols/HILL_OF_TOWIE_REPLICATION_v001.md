@@ -1,7 +1,7 @@
 # Replication on a third farm and second manufacturer (Hill of Towie, 21x Siemens SWT-2.3-VS-82) — protocol v001
 
 Registered 2026-10-13, before any Hill of Towie model result. Only a missingness scan was run (all key columns 100% present, all 21 turbines, all 12 months of 2019).
-Data: Zenodo 10.5281/zenodo.22662930 (RES, CC-BY-4.0), file 2019.zip (downloaded by Aryan to DATA_DIR/HillOfTowie_04). Read directly from the zip; nothing extracted or deleted.
+Data: Zenodo 10.5281/zenodo.22662930 (RES, CC-BY-4.0), file 2019.zip. Read directly from the zip; nothing extracted or deleted.
 Each turbine (StationId 2304510..2304530 = T01..T21) is re-indexed to a full 10-min grid 2019-01-01 00:00 .. 2019-12-31 23:50 (missing rows = NaN; duplicate timestamps: first kept).
 
 Pipeline identical to Kelmarsh/Penmanshiel, no re-tuning: fleet HGB (PARAMS of LOCAL_LATE_TRUTH_LONG_v001) with turbine id, monthly retraining on released rows only (rows < start-3), January = first training window, Feb–Dec evaluation, synchronous, lag 0, gear-oil truth released 3 steps late, local correction k=20, shrink k/(k+20), memory 8640, delay 3.

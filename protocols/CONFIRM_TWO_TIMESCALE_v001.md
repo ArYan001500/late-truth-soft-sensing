@@ -6,7 +6,7 @@ Motivation: ours+rec (Amendment 18) was designed after the Amendment 17 results;
 ## Data (never used by any model in this project; checked by grep of latetruth/, results/, protocols/)
 - Kelmarsh 2020 (Kelmarsh_SCADA_2020_3086.zip, on disk), turbines 1-6.
 - Penmanshiel 2020 (Penmanshiel_SCADA_2020_WT01-10_3109.zip + WT11-15_3118.zip, version 0.0.2, on disk).
-- Hill of Towie 2022 (2022.zip, to be downloaded by Aryan from doi:10.5281/zenodo.22662930), 21 turbines; middle year between 2019 and 2025.
+- Hill of Towie 2022 (2022.zip, doi:10.5281/zenodo.22662930), 21 turbines; middle year between 2019 and 2025.
 Kelmarsh 2021 is excluded in advance (AeroUp works from 2021-09). A completeness scan is the only look before the runs; a farm-year
 with a key channel missing is dropped and the reason reported.
 

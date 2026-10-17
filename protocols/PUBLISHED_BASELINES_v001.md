@@ -76,7 +76,7 @@ From now on deep baselines run on the RTX 4060 GPU (torch 2.14.1+cu132). Kelmars
 - Strictly one job at a time (latetruth/run_new_datasets.py). Same common-row scoring (latetruth/baselines_table.py extended to the new datasets).
 
 ## Amendment 9 (2026-10-14, before any Penmanshiel / Hill of Towie baseline result)
-Compute only: CPU baselines now run turbine-parallel (6 worker processes, tools/run_new_datasets_v2.py) and the deep baselines in a separate GPU lane (latetruth/deep_lane.py). Kim's offline subsample uses a per-turbine seed (default_rng(turbine)) instead of one sequential generator. Methods and hyper-parameters unchanged.
+Compute only: CPU baselines now run turbine-parallel (6 worker processes) and the deep baselines in a separate GPU lane (latetruth/deep_lane.py). Kim's offline subsample uses a per-turbine seed (default_rng(turbine)) instead of one sequential generator. Methods and hyper-parameters unchanged.
 
 ## Amendment 10 (2026-10-14) — B11 on a farm without a channel
 Bai's yaw-error feature needs wind direction, which Hill of Towie does not record; the first HoT run produced no prediction (rows with any NaN feature were dropped). B11 now keeps only feature channels >= 95 % present in the training window. On Kelmarsh and Penmanshiel every channel is >= 99 % present, so their B11 results are unchanged.
@@ -126,7 +126,7 @@ Hill of Towie 2019, ShutdownDuration.csv (operator file, no cause given). For ea
 with filter_index.py). Hit = the week of the largest filter-index drop, or the week before it, is among the 5 weeks with the longest
 shutdown of that turbine in 2019. Chance of a hit ~ 1 - C(50,5)/C(52,5) ~ 0.18. Positive (report in the Discussion) if hits >= 10 of 21 and
 one-sided binomial p < 0.01; otherwise the result is not used in the paper (Aryan's decision) but kept here.
-Amendment 13 addendum outcome (2026-10-16): hits 7/21 (chance 0.185), one-sided binomial p = 0.077 -> not positive; not used in the paper. tools/filter_vs_shutdown.py, 06_Experiments/filter_index_2026-10-15_v001/vs_shutdown.json.
+Amendment 13 addendum outcome (2026-10-16): hits 7/21 (chance 0.185), one-sided binomial p = 0.077 -> not positive; not used in the paper.
 
 ## Amendment 16 (2026-10-16, after an external code review, before any re-run result) — two defects found
 (a) latetruth/baselines_common.py ours_sync (used by the S3 delay curves for ours and Wang, and by claim C3): the row mask tested the

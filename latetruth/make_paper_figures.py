@@ -29,7 +29,7 @@ def load(p): return json.loads(p.read_text(encoding='utf-8', errors='replace'))
 
 
 def panel(fig, ax, color, label=None, pad=(0.055, 0.075, 0.012, 0.03)):
-    """Rounded pastel card behind an axes (Aryan's figure style) and an (a)/(b) label in its corner."""
+    """Rounded pastel card behind an axes and an (a)/(b) label in its corner."""
     fig.canvas.draw(); bb = ax.get_tightbbox(fig.canvas.get_renderer()).transformed(fig.transFigure.inverted())
     l, b, r, t = pad
     card = FancyBboxPatch((bb.x0 - l * 0.25, bb.y0 - b * 0.15), bb.width + l * 0.25 + r, bb.height + b * 0.15 + t,

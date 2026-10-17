@@ -1,7 +1,7 @@
 # Replication on a second wind farm (Penmanshiel, 14x Senvion MM82) — protocol v001
 
 Registered 2026-10-14 before reading any Penmanshiel model result. Purpose: replication of the Kelmarsh claims on a second wind farm, including the freshness finding.
-Data: Zenodo 10.5281/zenodo.5946808 (Version 0.0.2, downloaded by Aryan), year 2017 only, turbines 01,02,04..15 (WT03 absent). Read directly from zips; nothing extracted or deleted.
+Data: Zenodo 10.5281/zenodo.5946808 (Version 0.0.2), year 2017 only, turbines 01,02,04..15 (WT03 absent). Read directly from zips; nothing extracted or deleted.
 Everything identical to the Kelmarsh pipeline, no re-tuning: fleet HGB (PARAMS of LOCAL_LATE_TRUTH_LONG_v001) with turbine id, monthly retraining on released rows only, January (rows < 4032) as first training window, Feb–Dec evaluation, synchronous, lag 0, gear-oil truth released 3 steps late, local correction k=20 memory 8640.
 Claims re-tested (pre-declared success rules, transferred from Kelmarsh):
 R1 bearing channels (h30_x vs h30): h30_x+local beats h30+local by >= 3%.
