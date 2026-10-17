@@ -1,0 +1,1158 @@
+{
+  "kelmarsh2018": [
+    {
+      "baseline": "B10f Wang 2022 (frozen NN)",
+      "mae_diff": 0.005849525909944059,
+      "ci95": [
+        0.003922809120770782,
+        0.008022515504914368
+      ],
+      "wins_turbine_month": 54,
+      "n_pairs": 66,
+      "p": 1.1026105632343779e-08,
+      "p_holm": 1.1026105632343779e-08,
+      "ours_better": true
+    },
+    {
+      "baseline": "our fleet model (no late truth)",
+      "mae_diff": 0.006815017509415183,
+      "ci95": [
+        0.004895971339056668,
+        0.009018287856472353
+      ],
+      "wins_turbine_month": 61,
+      "n_pairs": 66,
+      "p": 2.3072442223542312e-11,
+      "p_holm": 4.6144884447084623e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B7 Yan 2023 [v2]",
+      "mae_diff": 0.12453126094199884,
+      "ci95": [
+        0.08666108344282886,
+        0.17409169521195383
+      ],
+      "wins_turbine_month": 64,
+      "n_pairs": 66,
+      "p": 1.8833400988018882e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B6 Kim 2013 [lag 3]",
+      "mae_diff": 0.13093874632631236,
+      "ci95": [
+        0.12539814563308485,
+        0.13739874022082776
+      ],
+      "wins_turbine_month": 65,
+      "n_pairs": 66,
+      "p": 1.7181336728902512e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B1 Bangalore 2015 [lag 3]",
+      "mae_diff": 0.13123380918063793,
+      "ci95": [
+        0.11919138143303895,
+        0.14327623692823696
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B7 Yan 2023 [v1]",
+      "mae_diff": 0.15871996090591978,
+      "ci95": [
+        0.11984920522145141,
+        0.21175392044081504
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B4 Fu 2019 [v2]",
+      "mae_diff": 0.18220402628517962,
+      "ci95": [
+        0.14914392647214508,
+        0.22426943054643622
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B3 Liu 2020 [lag 3]",
+      "mae_diff": 0.20640862588933645,
+      "ci95": [
+        0.1781337626792631,
+        0.23538060921628448
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B4 Fu 2019 [v1]",
+      "mae_diff": 0.2194096923235626,
+      "ci95": [
+        0.1820690910941438,
+        0.27224042225402295
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B11 Bai 2024",
+      "mae_diff": 0.29807091970937094,
+      "ci95": [
+        0.27166384331865445,
+        0.33844826805434947
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_diff": 0.44715071030513254,
+      "ci95": [
+        0.39407364322218885,
+        0.49273216029186073
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B5 Yang 2021 [lag 3]",
+      "mae_diff": 0.6609473181577454,
+      "ci95": [
+        0.5739187839166527,
+        0.7166505309797423
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B8 Dai 2025 [v2]",
+      "mae_diff": 0.7906574809019082,
+      "ci95": [
+        0.7298989886179083,
+        0.857410277107591
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B8 Dai 2025 [v1]",
+      "mae_diff": 0.8561075636152475,
+      "ci95": [
+        0.7973696628141274,
+        0.9176699685931492
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B0 last released value [lag 3]",
+      "mae_diff": 0.944792204277783,
+      "ci95": [
+        0.9194449671778294,
+        0.9673760426630508
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_diff": 1.0062599672127897,
+      "ci95": [
+        0.9424196865753023,
+        1.0833326288808527
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B9 Grataloup 2025 [v2]",
+      "mae_diff": 1.7878244729852932,
+      "ci95": [
+        1.6024489830692592,
+        1.9896375613630966
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B9 Grataloup 2025 [v1]",
+      "mae_diff": 2.038670453816888,
+      "ci95": [
+        1.8741168176671572,
+        2.225190577302325
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.95370724172901e-11,
+      "ours_better": true
+    }
+  ],
+  "penmanshiel2019": [
+    {
+      "baseline": "our fleet model (no late truth)",
+      "mae_diff": 0.004992093181491908,
+      "ci95": [
+        0.0035292403432927422,
+        0.006929496823250315
+      ],
+      "wins_turbine_month": 151,
+      "n_pairs": 154,
+      "p": 4.1201622103816464e-26,
+      "p_holm": 1.6480648841526586e-25,
+      "ours_better": true
+    },
+    {
+      "baseline": "B10f Wang 2022 (frozen NN)",
+      "mae_diff": 0.005251748285842933,
+      "ci95": [
+        0.004048026741611113,
+        0.0069054201702304484
+      ],
+      "wins_turbine_month": 142,
+      "n_pairs": 154,
+      "p": 2.2962649447747413e-25,
+      "p_holm": 4.592529889549483e-25,
+      "ours_better": true
+    },
+    {
+      "baseline": "B7 Yan 2023 [v2]",
+      "mae_diff": 0.06692107248889662,
+      "ci95": [
+        0.05186346170015165,
+        0.08253909790692998
+      ],
+      "wins_turbine_month": 127,
+      "n_pairs": 154,
+      "p": 4.971852970051322e-21,
+      "p_holm": 4.971852970051322e-21,
+      "ours_better": true
+    },
+    {
+      "baseline": "B4 Fu 2019 [v2]",
+      "mae_diff": 0.0991644650375024,
+      "ci95": [
+        0.08677672880183913,
+        0.11421502966541007
+      ],
+      "wins_turbine_month": 146,
+      "n_pairs": 154,
+      "p": 5.289158939820987e-26,
+      "p_holm": 1.6480648841526586e-25,
+      "ours_better": true
+    },
+    {
+      "baseline": "B6 Kim 2013 [lag 3]",
+      "mae_diff": 0.10606131091455498,
+      "ci95": [
+        0.0929236117572763,
+        0.11978823360333078
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B1 Bangalore 2015 [lag 3]",
+      "mae_diff": 0.13832315594310732,
+      "ci95": [
+        0.1137378274711179,
+        0.16565619847318097
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B3 Liu 2020 [lag 3]",
+      "mae_diff": 0.14987570476843945,
+      "ci95": [
+        0.10551309960289622,
+        0.1976817618625223
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B11 Bai 2024",
+      "mae_diff": 0.20592130668984523,
+      "ci95": [
+        0.16694217745945356,
+        0.24832098995514137
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_diff": 0.32960364586471835,
+      "ci95": [
+        0.27829019213948564,
+        0.39082697083156487
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_diff": 0.6739813670731181,
+      "ci95": [
+        0.5840924099174146,
+        0.7722499159178274
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B8 Dai 2025 [v2]",
+      "mae_diff": 0.9586284267015779,
+      "ci95": [
+        0.8169798766857663,
+        1.1083704470069113
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B0 last released value [lag 3]",
+      "mae_diff": 1.0040525091814065,
+      "ci95": [
+        0.9644223673091862,
+        1.0429234140630752
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B5 Yang 2021 [lag 3]",
+      "mae_diff": 1.089591272040089,
+      "ci95": [
+        0.8562219896280523,
+        1.3610597125013302
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B9 Grataloup 2025 [v2]",
+      "mae_diff": 1.6768622200387142,
+      "ci95": [
+        1.449675092258575,
+        1.9630132519135794
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    }
+  ],
+  "hot2019": [
+    {
+      "baseline": "our fleet model (no late truth)",
+      "mae_diff": 0.022014568698274284,
+      "ci95": [
+        0.01168785510170804,
+        0.03841089451094524
+      ],
+      "wins_turbine_month": 221,
+      "n_pairs": 231,
+      "p": 4.0659725497306684e-36,
+      "p_holm": 1.2197917649192004e-35,
+      "ours_better": true
+    },
+    {
+      "baseline": "B10f Wang 2022 (frozen NN)",
+      "mae_diff": 0.0226952752832133,
+      "ci95": [
+        0.012186978855825257,
+        0.0386910235505316
+      ],
+      "wins_turbine_month": 221,
+      "n_pairs": 231,
+      "p": 2.598594569822329e-36,
+      "p_holm": 1.0394378279289317e-35,
+      "ours_better": true
+    },
+    {
+      "baseline": "B6 Kim 2013 [lag 3]",
+      "mae_diff": 0.022918122233559213,
+      "ci95": [
+        0.009791603552493328,
+        0.03163547873111311
+      ],
+      "wins_turbine_month": 207,
+      "n_pairs": 231,
+      "p": 5.609082468445563e-31,
+      "p_holm": 1.1218164936891126e-30,
+      "ours_better": true
+    },
+    {
+      "baseline": "B7 Yan 2023 [v2]",
+      "mae_diff": 0.0438650025214474,
+      "ci95": [
+        0.03136187561459068,
+        0.05908776663538904
+      ],
+      "wins_turbine_month": 186,
+      "n_pairs": 231,
+      "p": 1.5506655684093302e-26,
+      "p_holm": 1.5506655684093302e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B11 Bai 2024",
+      "mae_diff": 0.08435375470411813,
+      "ci95": [
+        0.06649866761959179,
+        0.11030419435256915
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B4 Fu 2019 [v2]",
+      "mae_diff": 0.09402649904016472,
+      "ci95": [
+        0.07130739654675404,
+        0.13069548286864263
+      ],
+      "wins_turbine_month": 229,
+      "n_pairs": 231,
+      "p": 1.3445544682594897e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B1 Bangalore 2015 [lag 3]",
+      "mae_diff": 0.1746188675004716,
+      "ci95": [
+        0.16385783281046132,
+        0.18560400089654122
+      ],
+      "wins_turbine_month": 229,
+      "n_pairs": 231,
+      "p": 2.5548049760649115e-38,
+      "p_holm": 1.2774024880324556e-37,
+      "ours_better": true
+    },
+    {
+      "baseline": "B3 Liu 2020 [lag 3]",
+      "mae_diff": 0.19307323536354823,
+      "ci95": [
+        0.12018992868621906,
+        0.2981840330770053
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_diff": 0.3157386668019967,
+      "ci95": [
+        0.2707123287001565,
+        0.37423711286412553
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B8 Dai 2025 [v2]",
+      "mae_diff": 0.33537535657136097,
+      "ci95": [
+        0.2727733448155396,
+        0.4068661347922324
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_diff": 0.3773356781588677,
+      "ci95": [
+        0.3107684415286976,
+        0.47165046458913207
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B5 Yang 2021 [lag 3]",
+      "mae_diff": 1.5330137129550097,
+      "ci95": [
+        1.465120294871489,
+        1.5992007715209506
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B9 Grataloup 2025 [v2]",
+      "mae_diff": 1.624936238914197,
+      "ci95": [
+        1.5273116297630824,
+        1.7320433699860875
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B0 last released value [lag 3]",
+      "mae_diff": 1.655729805715335,
+      "ci95": [
+        1.6226381046900085,
+        1.6870793996176625
+      ],
+      "wins_turbine_month": 230,
+      "n_pairs": 231,
+      "p": 1.2273659656172394e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    }
+  ],
+  "kelmarsh2024": [
+    {
+      "baseline": "B6 Kim 2013 [lag 3]",
+      "mae_diff": 0.05906074413552581,
+      "ci95": [
+        -0.06922308400921784,
+        0.12918739731885548
+      ],
+      "wins_turbine_month": 62,
+      "n_pairs": 66,
+      "p": 1.2793698929006953e-10,
+      "p_holm": 5.117479571602781e-10,
+      "ours_better": false
+    },
+    {
+      "baseline": "B10f Wang 2022 (frozen NN)",
+      "mae_diff": 0.06316320079145926,
+      "ci95": [
+        0.00477802556141485,
+        0.1746110013573336
+      ],
+      "wins_turbine_month": 55,
+      "n_pairs": 66,
+      "p": 1.329743740811509e-08,
+      "p_holm": 1.329743740811509e-08,
+      "ours_better": true
+    },
+    {
+      "baseline": "our fleet model (no late truth)",
+      "mae_diff": 0.06427632635158909,
+      "ci95": [
+        0.0060939759942193255,
+        0.17573879528166494
+      ],
+      "wins_turbine_month": 61,
+      "n_pairs": 66,
+      "p": 2.82244150003317e-10,
+      "p_holm": 8.467324500099511e-10,
+      "ours_better": true
+    },
+    {
+      "baseline": "B1 Bangalore 2015 [lag 3]",
+      "mae_diff": 0.10681521764740853,
+      "ci95": [
+        0.08591382374121626,
+        0.12598980718142097
+      ],
+      "wins_turbine_month": 65,
+      "n_pairs": 66,
+      "p": 2.995365626506036e-11,
+      "p_holm": 1.7972193759036216e-10,
+      "ours_better": true
+    },
+    {
+      "baseline": "B4 Fu 2019 [v2]",
+      "mae_diff": 0.2884338674324759,
+      "ci95": [
+        0.13016299534176687,
+        0.4935849782776344
+      ],
+      "wins_turbine_month": 63,
+      "n_pairs": 66,
+      "p": 3.7303430086071145e-12,
+      "p_holm": 2.61124010602498e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B7 Yan 2023 [v2]",
+      "mae_diff": 0.3082436375292277,
+      "ci95": [
+        0.10336156606442401,
+        0.6281076322317211
+      ],
+      "wins_turbine_month": 58,
+      "n_pairs": 66,
+      "p": 3.1938169412715254e-10,
+      "p_holm": 8.467324500099511e-10,
+      "ours_better": true
+    },
+    {
+      "baseline": "B3 Liu 2020 [lag 3]",
+      "mae_diff": 0.35958307572852566,
+      "ci95": [
+        0.2173659919484006,
+        0.5624191646366021
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.297327854678119e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B11 Bai 2024",
+      "mae_diff": 0.4784865026420202,
+      "ci95": [
+        0.3021303686778124,
+        0.6860661076133365
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.297327854678119e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_diff": 0.558499361067246,
+      "ci95": [
+        0.4046478260387808,
+        0.736893287655377
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.297327854678119e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B8 Dai 2025 [v2]",
+      "mae_diff": 0.8258156703495995,
+      "ci95": [
+        0.6158569613974157,
+        1.0559086929903925
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.297327854678119e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B0 last released value [lag 3]",
+      "mae_diff": 0.8759547384953802,
+      "ci95": [
+        0.7828543683541056,
+        0.9576533496496201
+      ],
+      "wins_turbine_month": 65,
+      "n_pairs": 66,
+      "p": 3.128108183908179e-11,
+      "p_holm": 1.7972193759036216e-10,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_diff": 1.0359662017943538,
+      "ci95": [
+        0.8791497741601604,
+        1.23702217513853
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.297327854678119e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B5 Yang 2021 [lag 3]",
+      "mae_diff": 1.3098182143402584,
+      "ci95": [
+        0.7483555097418276,
+        1.9255986569145296
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.297327854678119e-11,
+      "ours_better": true
+    },
+    {
+      "baseline": "B9 Grataloup 2025 [v2]",
+      "mae_diff": 3.307126842552631,
+      "ci95": [
+        1.7495075491599694,
+        4.97591077156143
+      ],
+      "wins_turbine_month": 66,
+      "n_pairs": 66,
+      "p": 1.640948467627228e-12,
+      "p_holm": 2.297327854678119e-11,
+      "ours_better": true
+    }
+  ],
+  "penmanshiel2022": [
+    {
+      "baseline": "our fleet model (no late truth)",
+      "mae_diff": 0.009014435378506963,
+      "ci95": [
+        0.0068216013952331605,
+        0.01160456321193239
+      ],
+      "wins_turbine_month": 146,
+      "n_pairs": 154,
+      "p": 1.7111892540607735e-24,
+      "p_holm": 3.422378508121547e-24,
+      "ours_better": true
+    },
+    {
+      "baseline": "B10f Wang 2022 (frozen NN)",
+      "mae_diff": 0.00918410893418023,
+      "ci95": [
+        0.007061450260117775,
+        0.01159410620709251
+      ],
+      "wins_turbine_month": 144,
+      "n_pairs": 154,
+      "p": 2.6714513284768398e-24,
+      "p_holm": 3.422378508121547e-24,
+      "ours_better": true
+    },
+    {
+      "baseline": "B6 Kim 2013 [lag 3]",
+      "mae_diff": 0.10489981001596774,
+      "ci95": [
+        0.08728190792704099,
+        0.1238259902833147
+      ],
+      "wins_turbine_month": 150,
+      "n_pairs": 154,
+      "p": 7.813057723371471e-25,
+      "p_holm": 2.3439173170114416e-24,
+      "ours_better": true
+    },
+    {
+      "baseline": "B4 Fu 2019 [v2]",
+      "mae_diff": 0.1618479751456647,
+      "ci95": [
+        0.13772427173769597,
+        0.18827872281759106
+      ],
+      "wins_turbine_month": 143,
+      "n_pairs": 154,
+      "p": 1.2267801843310825e-25,
+      "p_holm": 4.90712073732433e-25,
+      "ours_better": true
+    },
+    {
+      "baseline": "B1 Bangalore 2015 [lag 3]",
+      "mae_diff": 0.20118134883502872,
+      "ci95": [
+        0.14900561289192318,
+        0.2580801203582825
+      ],
+      "wins_turbine_month": 153,
+      "n_pairs": 154,
+      "p": 1.7620581263592668e-26,
+      "p_holm": 1.05723487581556e-25,
+      "ours_better": true
+    },
+    {
+      "baseline": "B7 Yan 2023 [v2]",
+      "mae_diff": 0.2436004891134412,
+      "ci95": [
+        0.19935479516409024,
+        0.30390381356723556
+      ],
+      "wins_turbine_month": 146,
+      "n_pairs": 154,
+      "p": 4.364830677440127e-26,
+      "p_holm": 2.1824153387200635e-25,
+      "ours_better": true
+    },
+    {
+      "baseline": "B3 Liu 2020 [lag 3]",
+      "mae_diff": 0.2702297720816321,
+      "ci95": [
+        0.18582212415143534,
+        0.36783972369794626
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B11 Bai 2024",
+      "mae_diff": 0.3177227642793681,
+      "ci95": [
+        0.256135669612819,
+        0.3808182908004506
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_diff": 0.3626954582463401,
+      "ci95": [
+        0.30396295980694255,
+        0.4244105679036044
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B8 Dai 2025 [v2]",
+      "mae_diff": 0.6973573567825966,
+      "ci95": [
+        0.6280099956268601,
+        0.7684063201128898
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_diff": 0.7007940033347374,
+      "ci95": [
+        0.6141794110928207,
+        0.7986166291592754
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B0 last released value [lag 3]",
+      "mae_diff": 1.0061786551721659,
+      "ci95": [
+        0.9639709995016176,
+        1.042304037130041
+      ],
+      "wins_turbine_month": 153,
+      "n_pairs": 154,
+      "p": 5.165446175688611e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B5 Yang 2021 [lag 3]",
+      "mae_diff": 1.6232219060495214,
+      "ci95": [
+        1.2781541146018893,
+        2.0007887257312404
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    },
+    {
+      "baseline": "B9 Grataloup 2025 [v2]",
+      "mae_diff": 2.8415369299855007,
+      "ci95": [
+        2.2641978992475567,
+        3.731788640792292
+      ],
+      "wins_turbine_month": 154,
+      "n_pairs": 154,
+      "p": 5.0652871126008004e-27,
+      "p_holm": 7.091401957641121e-26,
+      "ours_better": true
+    }
+  ],
+  "hot2025": [
+    {
+      "baseline": "our fleet model (no late truth)",
+      "mae_diff": 0.013929354605460575,
+      "ci95": [
+        0.011545839981577408,
+        0.016376034239013248
+      ],
+      "wins_turbine_month": 230,
+      "n_pairs": 231,
+      "p": 3.7507879877986304e-39,
+      "p_holm": 1.8039344072238783e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B10f Wang 2022 (frozen NN)",
+      "mae_diff": 0.015351896436112622,
+      "ci95": [
+        0.01309248691984975,
+        0.017726339046647905
+      ],
+      "wins_turbine_month": 230,
+      "n_pairs": 231,
+      "p": 2.2915827821385066e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B6 Kim 2013 [lag 3]",
+      "mae_diff": 0.02182416905492429,
+      "ci95": [
+        0.017722918134549764,
+        0.02562615230141811
+      ],
+      "wins_turbine_month": 193,
+      "n_pairs": 231,
+      "p": 9.697910514789561e-22,
+      "p_holm": 1.9395821029579122e-21,
+      "ours_better": true
+    },
+    {
+      "baseline": "B7 Yan 2023 [v2]",
+      "mae_diff": 0.03890520484624335,
+      "ci95": [
+        0.02752734289716604,
+        0.056472779659926545
+      ],
+      "wins_turbine_month": 166,
+      "n_pairs": 231,
+      "p": 3.2098019803060296e-18,
+      "p_holm": 3.2098019803060296e-18,
+      "ours_better": true
+    },
+    {
+      "baseline": "B4 Fu 2019 [v2]",
+      "mae_diff": 0.06879402502246079,
+      "ci95": [
+        0.05982522301538795,
+        0.08062791220437947
+      ],
+      "wins_turbine_month": 226,
+      "n_pairs": 231,
+      "p": 1.1498896416832575e-37,
+      "p_holm": 3.4496689250497726e-37,
+      "ours_better": true
+    },
+    {
+      "baseline": "B11 Bai 2024",
+      "mae_diff": 0.08276426242064455,
+      "ci95": [
+        0.06729184713313968,
+        0.10799287158420576
+      ],
+      "wins_turbine_month": 230,
+      "n_pairs": 231,
+      "p": 3.6078688144477566e-39,
+      "p_holm": 1.8039344072238783e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B3 Liu 2020 [lag 3]",
+      "mae_diff": 0.14804560103145226,
+      "ci95": [
+        0.1315132515787746,
+        0.1742122159069769
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B1 Bangalore 2015 [lag 3]",
+      "mae_diff": 0.15085055373488143,
+      "ci95": [
+        0.13781922535212676,
+        0.16604987580034813
+      ],
+      "wins_turbine_month": 230,
+      "n_pairs": 231,
+      "p": 1.3445544682594897e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_diff": 0.28921776021667983,
+      "ci95": [
+        0.2633339665830861,
+        0.3249671682900404
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_diff": 0.322406434977462,
+      "ci95": [
+        0.2958565588028946,
+        0.3590216855454768
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B8 Dai 2025 [v2]",
+      "mae_diff": 0.5540074344315771,
+      "ci95": [
+        0.481301579630533,
+        0.6176100133132706
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B5 Yang 2021 [lag 3]",
+      "mae_diff": 1.4082007943844763,
+      "ci95": [
+        1.3232241768541044,
+        1.5123127040394522
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B0 last released value [lag 3]",
+      "mae_diff": 1.7413196287532202,
+      "ci95": [
+        1.7154355695598789,
+        1.7648901590843498
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    },
+    {
+      "baseline": "B9 Grataloup 2025 [v2]",
+      "mae_diff": 1.9100271688313846,
+      "ci95": [
+        1.8309535457213013,
+        1.9925429527144292
+      ],
+      "wins_turbine_month": 231,
+      "n_pairs": 231,
+      "p": 1.1957896652273437e-39,
+      "p_holm": 1.6741055313182812e-38,
+      "ours_better": true
+    }
+  ]
+}

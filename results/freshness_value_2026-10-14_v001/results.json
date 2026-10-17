@@ -1,0 +1,61 @@
+{
+  "results": {
+    "all_fresh": {
+      "all": 0.16284020465087287,
+      "transient": 0.22209336750468087
+    },
+    "Power (kW)": {
+      "all": 0.16258058418662866,
+      "transient": 0.2218003335308171
+    },
+    "Wind speed (m/s)": {
+      "all": 0.16292906303056567,
+      "transient": 0.22161524152182754
+    },
+    "Rotor speed (RPM)": {
+      "all": 0.16187456444676418,
+      "transient": 0.22194510457657537
+    },
+    "Generator RPM (RPM)": {
+      "all": 0.16160368199808295,
+      "transient": 0.22076894252764634
+    },
+    "Nacelle ambient temperature (\u00b0C)": {
+      "all": 0.16267218932393668,
+      "transient": 0.22142967371642808
+    },
+    "Nacelle temperature (\u00b0C)": {
+      "all": 0.16390694756789184,
+      "transient": 0.22289208171434116
+    },
+    "Grid current (A)": {
+      "all": 0.1626292055510787,
+      "transient": 0.22111415432649362
+    },
+    "Generator bearing rear temperature (\u00b0C)": {
+      "all": 0.16351546985704932,
+      "transient": 0.22300802559647592
+    },
+    "Gear oil inlet temperature (\u00b0C)": {
+      "all": 0.20199767793886458,
+      "transient": 0.27901130954858994
+    },
+    "Front bearing temperature (\u00b0C)": {
+      "all": 0.16401209013314497,
+      "transient": 0.2220388822904751
+    },
+    "Rear bearing temperature (\u00b0C)": {
+      "all": 0.2009966872981862,
+      "transient": 0.28544902638228214
+    },
+    "Rotor bearing temp (\u00b0C)": {
+      "all": 0.16368269264027155,
+      "transient": 0.22332803704199936
+    },
+    "Gearbox speed (RPM)": {
+      "all": 0.16196922362454,
+      "transient": 0.22184417775690235
+    }
+  },
+  "code_sha256": "27db438847c4913bd39bdf1081c1546ae7daae1705b0312cdea624d5b1a422fc"
+}

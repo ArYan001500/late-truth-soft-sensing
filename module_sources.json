@@ -1,0 +1,277 @@
+[
+  {
+    "module": "latetruth/baseline_wang2022.py",
+    "source": "tools/baseline_wang2022.py",
+    "source_sha256": "267e9f19303f48911794e33cf3fd3baf5321cde19bd408654bbbf1396a5a03a4"
+  },
+  {
+    "module": "latetruth/baseline_wang2022_frozen.py",
+    "source": "tools/baseline_wang2022_frozen.py",
+    "source_sha256": "d555103b1ab052a3672b8746c19e6a9e9cf04eff559a67fc54a5e33b8477a5bc"
+  },
+  {
+    "module": "latetruth/baselines_bai.py",
+    "source": "tools/baselines_bai.py",
+    "source_sha256": "8167c61a7d10f2a2843e654ccb51fe007431a6ef52e5eba103cb9e6075b29e73"
+  },
+  {
+    "module": "latetruth/baselines_cao.py",
+    "source": "tools/baselines_cao.py",
+    "source_sha256": "d4751f67ab63e0760da975e7ecef3cb85e6ebc0b1552ffc285340be45f4d2425"
+  },
+  {
+    "module": "latetruth/baselines_classic.py",
+    "source": "tools/baselines_classic.py",
+    "source_sha256": "12fb047e20973aa643bb2c005a7fe0718ffa1b93686795e77a4d4938a413a09d"
+  },
+  {
+    "module": "latetruth/baselines_common.py",
+    "source": "tools/baselines_common.py",
+    "source_sha256": "63f93857d9298e16d4d5b055d53065c99459872e15dd65b6e4b4f4724bf02ffc"
+  },
+  {
+    "module": "latetruth/baselines_deep.py",
+    "source": "tools/baselines_deep.py",
+    "source_sha256": "d9a29466a53b4d1b48603cfa673b18b90a92a54ea293891dc653abb9c399b349"
+  },
+  {
+    "module": "latetruth/baselines_hot.py",
+    "source": "tools/baselines_hot.py",
+    "source_sha256": "e92818452d93755712d94f8e59ef7eaf1441ae7d115e32367236966cb78485e7"
+  },
+  {
+    "module": "latetruth/baselines_kim.py",
+    "source": "tools/baselines_kim.py",
+    "source_sha256": "91262922d37c9546662f3016c204e4d941d4f8b374c233b46c48a36e872f0bda"
+  },
+  {
+    "module": "latetruth/baselines_table.py",
+    "source": "tools/baselines_table.py",
+    "source_sha256": "fb4b8a307b1782c1c823fe688b04b703e9d51e8cbadcbb1f4c0b1b3ee11ee247"
+  },
+  {
+    "module": "latetruth/block_bootstrap.py",
+    "source": "tools/block_bootstrap.py",
+    "source_sha256": "1149e024e516a16dac20032bb88a0262cf27dbbc4f107b559747aa8399c784bc"
+  },
+  {
+    "module": "latetruth/cao_table.py",
+    "source": "tools/cao_table.py",
+    "source_sha256": "0e819fe9ee5e7e28835dbdb2bf826e72f6e28a4916c5cdc56f9a8427a46e2677"
+  },
+  {
+    "module": "latetruth/compare_per_turbine.py",
+    "source": "tools/compare_per_turbine.py",
+    "source_sha256": "3afa238ebbcfef51f7c30bc146e385e6d38072b323cda317965f553e88ea17dd"
+  },
+  {
+    "module": "latetruth/confirm_two_timescale.py",
+    "source": "tools/confirm_two_timescale.py",
+    "source_sha256": "ff5b58d0061c04734607cc7427db05bc38544369e6c63cfe878e31f8b99a0cd8"
+  },
+  {
+    "module": "latetruth/cpu_baseline_one.py",
+    "source": "tools/cpu_baseline_one.py",
+    "source_sha256": "da6553e467d3f401da5162d7b077473b25e65ff04e53459fff07f86fda07a953"
+  },
+  {
+    "module": "latetruth/dataset_stats.py",
+    "source": "tools/dataset_stats.py",
+    "source_sha256": "ef09f1241ec83ef326f8e99c1af4bdabf7b18a15777d528804e7cbf5ed7bffd1"
+  },
+  {
+    "module": "latetruth/deep_lane.py",
+    "source": "tools/deep_lane.py",
+    "source_sha256": "f820c9efec4dadf709c1e010268cc4fc7c1a5b687238188fded27c97e808e7db"
+  },
+  {
+    "module": "latetruth/delay_part1.py",
+    "source": "tools/delay_part1.py",
+    "source_sha256": "a63cc5002c82d37a04d704a7926446d306822bcbcdea011cee3198831bc86f89"
+  },
+  {
+    "module": "latetruth/delay_part2.py",
+    "source": "tools/delay_part2.py",
+    "source_sha256": "1b0d4d77dcd5c6dbeee004d0cd621549109a047a466e092023bfde251f55de58"
+  },
+  {
+    "module": "latetruth/delay_rec.py",
+    "source": "tools/delay_rec.py",
+    "source_sha256": "9832bfbd213b542b7217ffa323e4a50133b0294b2661c93db2fb9612d905e4af"
+  },
+  {
+    "module": "latetruth/design_ladder.py",
+    "source": "tools/design_ladder.py",
+    "source_sha256": "0ef2d22a198d50b8af4385ac351565105358a6bc1fe4efa74c1796d7d03d746c"
+  },
+  {
+    "module": "latetruth/discussion_recency_vs_similarity.py",
+    "source": "tools/discussion_recency_vs_similarity.py",
+    "source_sha256": "d0d5eef5043687d061464b8f90bafda272c22ef786e8feb95a3bdeef9e1ad478"
+  },
+  {
+    "module": "latetruth/discussion_recency_vs_similarity_wins.py",
+    "source": "tools/discussion_recency_vs_similarity_wins.py",
+    "source_sha256": "f9ea7fb7db3107ba4c4aa9a7ad445690d3fc00e0f9b8f0650f33fa8fac8c15a4"
+  },
+  {
+    "module": "latetruth/figure_data.py",
+    "source": "tools/figure_data.py",
+    "source_sha256": "e76d48e4dddb0a84fe99e3750627cd0fd91c6456b04e1f027e0d7e0d96334334"
+  },
+  {
+    "module": "latetruth/ladder_l6.py",
+    "source": "tools/ladder_l6.py",
+    "source_sha256": "2276322396b2a251d00157c8b542ea1464715d36bba7bc3e3a553d5ca803f756"
+  },
+  {
+    "module": "latetruth/later_years.py",
+    "source": "tools/later_years.py",
+    "source_sha256": "54a733d65f7f75f2e93c8a76fc503e4cb224b045e6ef6f6cdc9faea4731d51cd"
+  },
+  {
+    "module": "latetruth/local_grid.py",
+    "source": "tools/local_grid.py",
+    "source_sha256": "dfed64089a3af206b5ed40977623cb389c72ef2954bb7095672136b894436f2e"
+  },
+  {
+    "module": "latetruth/make_paper_figures.py",
+    "source": "tools/make_paper_figures.py",
+    "source_sha256": "b46c57bb74075aefb195f510f2ad5575da549a81b407cbe51eb47fb0a94131c9"
+  },
+  {
+    "module": "latetruth/make_paper_numbers.py",
+    "source": "tools/make_paper_numbers.py",
+    "source_sha256": "d20333cacc481a6849fdb7a70d70985a96d17d2b82edd2ad4f18180fb8d3896c"
+  },
+  {
+    "module": "latetruth/make_paper_schematics.py",
+    "source": "tools/make_paper_schematics.py",
+    "source_sha256": "cb07647bb22e1438c9b6112121b374bc3f6c50dd59b3072d2888c6cb51b60ce7"
+  },
+  {
+    "module": "latetruth/make_rec_files.py",
+    "source": "tools/make_rec_files.py",
+    "source_sha256": "eda9d216cbd35107e786a81c6197c6bd278da86451adc081c20efa6744a21589"
+  },
+  {
+    "module": "latetruth/per_turbine_matched.py",
+    "source": "tools/per_turbine_matched.py",
+    "source_sha256": "2ce84cc6742698f9fe065b0ec047889af1fd79dff5fd88ed17baab575edec3f1"
+  },
+  {
+    "module": "latetruth/rec_vs_baselines.py",
+    "source": "tools/rec_vs_baselines.py",
+    "source_sha256": "99c86eb344e01cde981a304b247056aee0b6bca6eec0a162bde0290687289dcf"
+  },
+  {
+    "module": "latetruth/recency_on_similarity.py",
+    "source": "tools/recency_on_similarity.py",
+    "source_sha256": "b2e609923fe2092ce85bf7d5fa444bf0ab21cfe0be8640da51ee004dc8795aa1"
+  },
+  {
+    "module": "latetruth/residual_references.py",
+    "source": "tools/residual_references.py",
+    "source_sha256": "3524ef7a06c303e17a8f51429c505bca00cc7d8b135e792fce8e14b0fb63e425"
+  },
+  {
+    "module": "latetruth/run_extra_heat_paths.py",
+    "source": "tools/run_extra_heat_paths.py",
+    "source_sha256": "aa4b3082e89249cc30eb284676f7c08a0306ca690aa667b9ce9cde9141062f6f"
+  },
+  {
+    "module": "latetruth/run_h29_h30_physics.py",
+    "source": "tools/run_h29_h30_physics.py",
+    "source_sha256": "738bec58852ff6e785fa2e3ee1e20d9b60ebcb02a7c5c4491258c80e10781f6a"
+  },
+  {
+    "module": "latetruth/run_hill_of_towie_h36.py",
+    "source": "tools/run_hill_of_towie_h36.py",
+    "source_sha256": "abb430747999a978db8c76db2784bd4aa1889d8548a0e2421cb8e4fc8e762208"
+  },
+  {
+    "module": "latetruth/run_hill_of_towie_replication.py",
+    "source": "tools/run_hill_of_towie_replication.py",
+    "source_sha256": "ff912ad34496e6f5a62882c963a25a6943d3a84949859bd118862c70643d0fdb"
+  },
+  {
+    "module": "latetruth/run_kelmarsh_2018_unseen.py",
+    "source": "tools/run_kelmarsh_2018_unseen.py",
+    "source_sha256": "6814d0b941cc7524b778d9a035ef957ccc0e5fb43d1325814717c1276ac7ce9c"
+  },
+  {
+    "module": "latetruth/run_local_late_truth_long.py",
+    "source": "tools/run_local_late_truth_long.py",
+    "source_sha256": "ef790b9e13f118f293fa8f881561dcba5bc00832e6d2b72a6b691f92a540a946"
+  },
+  {
+    "module": "latetruth/run_new_datasets.py",
+    "source": "tools/run_new_datasets.py",
+    "source_sha256": "9b98e461e0cbb8af4b9b7cec55504f9b8d13549e280dbdbf7d735a274d20916a"
+  },
+  {
+    "module": "latetruth/run_penmanshiel_replication.py",
+    "source": "tools/run_penmanshiel_replication.py",
+    "source_sha256": "4f260b05e9763f5a8999dfb2c4afc92cc57c68628ad3808ae63ecd70c436e1e2"
+  },
+  {
+    "module": "latetruth/run_send_schedule.py",
+    "source": "tools/run_send_schedule.py",
+    "source_sha256": "2ed3208540a6174f94bbbfa0f1bfbc4a4ac0bfb0a9e2429fcaf6c70c9c8c8e17"
+  },
+  {
+    "module": "latetruth/s5_timing.py",
+    "source": "tools/s5_timing.py",
+    "source_sha256": "9ca278e61ffba4ac64e62659216e1e9d766cf442988033beb8e35a2edc94ae44"
+  },
+  {
+    "module": "latetruth/significance.py",
+    "source": "tools/significance.py",
+    "source_sha256": "2a0a4d4473725c3a1dcbcb1005bad174bea3fafc694eb485bbbdea4862457997"
+  },
+  {
+    "module": "latetruth/standstill_diag.py",
+    "source": "tools/standstill_diag.py",
+    "source_sha256": "8e0137125d368dbc0b855bcf8cb27f29179a7a2f579f886591613e61f98ff4ab"
+  },
+  {
+    "module": "latetruth/standstill_gate.py",
+    "source": "tools/standstill_gate.py",
+    "source_sha256": "233debc1e10d9a86e2d81ad1b66a894f7203553efaf90c2e158bb71520e27c48"
+  },
+  {
+    "module": "latetruth/turbine_level.py",
+    "source": "tools/turbine_level.py",
+    "source_sha256": "00537d043a796019c12690884c35ae639644c64ca4c8ff01a88b197348f8e04b"
+  },
+  {
+    "module": "latetruth/verify_final_table.py",
+    "source": "tools/verify_final_table.py",
+    "source_sha256": "f04da3892e74ea20b7ab56a54ffe6e3fbad1d01d544e3d9175b4f6b21ae848cd"
+  },
+  {
+    "module": "latetruth/figure_data_oil.py",
+    "source": "tools/figure_data_oil.py",
+    "source_sha256": "9f81c9b8941befdb7e250b8a59dd0b4c3c6068cbce3b48fe615d764f97d04ce3"
+  },
+  {
+    "module": "latetruth/filter_index.py",
+    "source": "tools/filter_index.py",
+    "source_sha256": "6e1fb42afc8cdbb44181c50895adb18f78dfd1444c1a48f4bf2e0293515968dc"
+  },
+  {
+    "module": "latetruth/physics_oil_circuit_check.py",
+    "source": "tools/physics_oil_circuit_check.py",
+    "source_sha256": "cecc9279649e0259ac007595f8735865f891141a19115de6f8a789d0cb6ce9d8"
+  },
+  {
+    "module": "latetruth/run_freshness_value.py",
+    "source": "tools/run_freshness_value.py",
+    "source_sha256": "27db438847c4913bd39bdf1081c1546ae7daae1705b0312cdea624d5b1a422fc"
+  },
+  {
+    "module": "latetruth/run_later_years.py",
+    "source": "tools/run_later_years.py",
+    "source_sha256": "d550e3779ba00a6eeb48e0738200edc788fb3cb0cf528df509d7e90c9d059dfe"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "dataset": "kelmarsh2018",
+  "mask": "Own valid evaluation rows, per-turbine mean, EV0=4032",
+  "tolerance": 1e-06,
+  "mae": {
+    "P_fleet": 0.18006003027836917,
+    "P_ours": 0.17299620693740644,
+    "rec": 0.17120229548901925,
+    "ref_ewma": 0.17631575989461054,
+    "ref_mean20": 0.17492864616504664,
+    "B10f_wang2022_frozen": 0.17908130303718175
+  }
+}

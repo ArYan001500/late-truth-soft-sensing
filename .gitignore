@@ -1,0 +1,13 @@
+data/
+.work/
+results/raw/
+results/paper/
+__pycache__/
+*.pyc
+*.npz
+*.zip
+*.zip.partial
+*.pt
+*.pth
+*.egg-info/
+.venv/

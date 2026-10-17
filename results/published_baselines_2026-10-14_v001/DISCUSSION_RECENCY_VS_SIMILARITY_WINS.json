@@ -1,0 +1,27 @@
+{
+  "kelmarsh2017": {
+    "wins_similar_over_last20": 60,
+    "turbine_months": 66,
+    "sign_test_p": 2.72580319860688e-12,
+    "month_source": "file"
+  },
+  "kelmarsh2018": {
+    "wins_similar_over_last20": 50,
+    "turbine_months": 66,
+    "sign_test_p": 3.328235017032062e-05,
+    "month_source": "file"
+  },
+  "penmanshiel2019": {
+    "wins_similar_over_last20": 133,
+    "turbine_months": 154,
+    "sign_test_p": 4.215322229503844e-21,
+    "month_source": "file"
+  },
+  "hot2019": {
+    "wins_similar_over_last20": 181,
+    "turbine_months": 231,
+    "sign_test_p": 1.2904364501021368e-18,
+    "month_source": "file"
+  },
+  "code_sha256": "f9ea7fb7db3107ba4c4aa9a7ad445690d3fc00e0f9b8f0650f33fa8fac8c15a4"
+}

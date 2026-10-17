@@ -1,0 +1,563 @@
+{
+  "kelmarsh2017": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.15507736590726923,
+      "mae_per_turbine": 0.170928872342021,
+      "diff": 0.015851506434751778,
+      "pct": 9.273744229139725,
+      "ci95": [
+        0.013068861489600153,
+        0.01947971169305765
+      ],
+      "wins": 53,
+      "n_pairs": 66,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 6,
+      "p": 6.2487809347372255e-09,
+      "block7d_ci95": [
+        0.010117488172971556,
+        0.022352339835874382
+      ],
+      "block28d_ci95": [
+        0.0070098958878328805,
+        0.027584316595036077
+      ],
+      "p_holm": 6.2487809347372255e-09,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.16251100594174694,
+      "mae_per_turbine": 0.18262923753396845,
+      "diff": 0.020118231592221508,
+      "pct": 11.015887633260025,
+      "ci95": [
+        0.01292114321589291,
+        0.03132429306595372
+      ],
+      "wins": 56,
+      "n_pairs": 66,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 6,
+      "p": 3.004842831186164e-09,
+      "block7d_ci95": [
+        0.011113211315377451,
+        0.032101786205498084
+      ],
+      "block28d_ci95": [
+        0.008975771946922017,
+        0.03439147771879863
+      ],
+      "p_holm": 6.009685662372328e-09,
+      "pooled_better": true
+    }
+  ],
+  "kelmarsh2018": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.16980306833381453,
+      "mae_per_turbine": 0.19854646142234514,
+      "diff": 0.028743393088530605,
+      "pct": 14.4769102821672,
+      "ci95": [
+        0.0209474064599601,
+        0.0375772238059294
+      ],
+      "wins": 62,
+      "n_pairs": 66,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 6,
+      "p": 1.2478529814670405e-11,
+      "block7d_ci95": [
+        0.01591423914215651,
+        0.0450453923651616
+      ],
+      "block28d_ci95": [
+        0.01160424215651966,
+        0.053886331996034556
+      ],
+      "p_holm": 1.9131636354565874e-11,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.17831008289817088,
+      "mae_per_turbine": 0.2266300108176844,
+      "diff": 0.04831992791951353,
+      "pct": 21.32106323658306,
+      "ci95": [
+        0.02425045174156748,
+        0.08210409635416169
+      ],
+      "wins": 62,
+      "n_pairs": 66,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 6,
+      "p": 9.565818177282937e-12,
+      "block7d_ci95": [
+        0.019007594774428885,
+        0.09564645933673926
+      ],
+      "block28d_ci95": [
+        0.0136528679346476,
+        0.11124433315190096
+      ],
+      "p_holm": 1.9131636354565874e-11,
+      "pooled_better": true
+    }
+  ],
+  "penmanshiel2019": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.14743804221234136,
+      "mae_per_turbine": 0.14958151838581402,
+      "diff": 0.002143476173472658,
+      "pct": 1.4329819596723303,
+      "ci95": [
+        -0.002724353893901988,
+        0.007942997131600698
+      ],
+      "wins": 65,
+      "n_pairs": 154,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 14,
+      "p": 0.5378850015757883,
+      "block7d_ci95": [
+        -0.0034275395413988522,
+        0.009122898872462452
+      ],
+      "block28d_ci95": [
+        -0.006927298939989839,
+        0.01288331715190785
+      ],
+      "p_holm": 0.5378850015757883,
+      "pooled_better": false
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.1541476741549165,
+      "mae_per_turbine": 0.16362580680389335,
+      "diff": 0.009478132648976845,
+      "pct": 5.792565875831834,
+      "ci95": [
+        0.001986858232768759,
+        0.018322260626474574
+      ],
+      "wins": 79,
+      "n_pairs": 154,
+      "turbines_pooled_lower": 9,
+      "n_turbines": 14,
+      "p": 0.20251485810301884,
+      "block7d_ci95": [
+        0.0019342805578982162,
+        0.019498891291751634
+      ],
+      "block28d_ci95": [
+        -0.0018430863312759718,
+        0.02350357441710779
+      ],
+      "p_holm": 0.40502971620603767,
+      "pooled_better": false
+    }
+  ],
+  "hot2019": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.1865734748896269,
+      "mae_per_turbine": 0.20649840379240778,
+      "diff": 0.019924928902780886,
+      "pct": 9.648950566616177,
+      "ci95": [
+        0.016373541715433617,
+        0.0234524190620768
+      ],
+      "wins": 179,
+      "n_pairs": 231,
+      "turbines_pooled_lower": 21,
+      "n_turbines": 21,
+      "p": 2.1714754730370105e-20,
+      "block7d_ci95": [
+        0.0110250526544518,
+        0.031164976990154077
+      ],
+      "block28d_ci95": [
+        0.006410626229440384,
+        0.03876031216475264
+      ],
+      "p_holm": 4.342950946074021e-20,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.2171967533233061,
+      "mae_per_turbine": 0.24558580868386007,
+      "diff": 0.028389055360553972,
+      "pct": 11.55972957586442,
+      "ci95": [
+        0.02187212656635982,
+        0.03523753807315173
+      ],
+      "wins": 174,
+      "n_pairs": 231,
+      "turbines_pooled_lower": 21,
+      "n_turbines": 21,
+      "p": 2.4806449020138768e-17,
+      "block7d_ci95": [
+        0.014336871956779346,
+        0.045645145328278604
+      ],
+      "block28d_ci95": [
+        0.008071893606246047,
+        0.058235250537099985
+      ],
+      "p_holm": 2.4806449020138768e-17,
+      "pooled_better": true
+    }
+  ],
+  "kelmarsh2024": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.2202661179405875,
+      "mae_per_turbine": 0.269065689537797,
+      "diff": 0.04879957159720952,
+      "pct": 18.136675724444007,
+      "ci95": [
+        0.020567585341231348,
+        0.07766167400401053
+      ],
+      "wins": 41,
+      "n_pairs": 66,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 6,
+      "p": 0.005729994539702586,
+      "block7d_ci95": [
+        0.019729401558356018,
+        0.08254929131460073
+      ],
+      "block28d_ci95": [
+        0.01235625068913587,
+        0.09803951815595727
+      ],
+      "p_holm": 0.005729994539702586,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.31638382334448545,
+      "mae_per_turbine": 0.49856022452517634,
+      "diff": 0.1821764011806909,
+      "pct": 36.540500468964176,
+      "ci95": [
+        0.05032988140719458,
+        0.3360552781383894
+      ],
+      "wins": 45,
+      "n_pairs": 66,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 6,
+      "p": 0.0003873155974703531,
+      "block7d_ci95": [
+        0.07975424508505423,
+        0.3042702163464802
+      ],
+      "block28d_ci95": [
+        0.05638521880728728,
+        0.36002815709708963
+      ],
+      "p_holm": 0.0007746311949407062,
+      "pooled_better": true
+    }
+  ],
+  "penmanshiel2022": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.16683192314281725,
+      "mae_per_turbine": 0.19892169594558928,
+      "diff": 0.03208977280277203,
+      "pct": 16.131861660554858,
+      "ci95": [
+        0.019372509591339508,
+        0.04692209226429947
+      ],
+      "wins": 87,
+      "n_pairs": 154,
+      "turbines_pooled_lower": 13,
+      "n_turbines": 14,
+      "p": 0.0001145381504239938,
+      "block7d_ci95": [
+        0.0173453786251354,
+        0.04935619364781519
+      ],
+      "block28d_ci95": [
+        0.016687287074529284,
+        0.04867812547637117
+      ],
+      "p_holm": 0.0001145381504239938,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.1793282732471424,
+      "mae_per_turbine": 0.2697544995641666,
+      "diff": 0.09042622631702418,
+      "pct": 33.521674879611965,
+      "ci95": [
+        0.05693665805078311,
+        0.1278792356277209
+      ],
+      "wins": 95,
+      "n_pairs": 154,
+      "turbines_pooled_lower": 14,
+      "n_turbines": 14,
+      "p": 1.142812869535361e-07,
+      "block7d_ci95": [
+        0.049494792697838366,
+        0.14281900071950082
+      ],
+      "block28d_ci95": [
+        0.053465544794761045,
+        0.13109554010231309
+      ],
+      "p_holm": 2.285625739070722e-07,
+      "pooled_better": true
+    }
+  ],
+  "hot2025": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.18086251774112133,
+      "mae_per_turbine": 0.20075992203399431,
+      "diff": 0.019897404292872983,
+      "pct": 9.911044042696826,
+      "ci95": [
+        0.011188595171237183,
+        0.03380501365681282
+      ],
+      "wins": 167,
+      "n_pairs": 231,
+      "turbines_pooled_lower": 21,
+      "n_turbines": 21,
+      "p": 1.5307805406394342e-17,
+      "block7d_ci95": [
+        0.01337001489569474,
+        0.02711451304822845
+      ],
+      "block28d_ci95": [
+        0.01008210057523295,
+        0.030555499533695383
+      ],
+      "p_holm": 3.0615610812788684e-17,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.20038066727505494,
+      "mae_per_turbine": 0.237847740225409,
+      "diff": 0.03746707295035406,
+      "pct": 15.752545269022278,
+      "ci95": [
+        0.023503292097710654,
+        0.05804406734656287
+      ],
+      "wins": 164,
+      "n_pairs": 231,
+      "turbines_pooled_lower": 21,
+      "n_turbines": 21,
+      "p": 2.156682458084377e-16,
+      "block7d_ci95": [
+        0.02265528550418718,
+        0.056045713126105116
+      ],
+      "block28d_ci95": [
+        0.01798342378609557,
+        0.06098717188601912
+      ],
+      "p_holm": 2.156682458084377e-16,
+      "pooled_better": true
+    }
+  ],
+  "kelmarsh2020": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.18032575059863118,
+      "mae_per_turbine": 0.21063100374626856,
+      "diff": 0.03030525314763738,
+      "pct": 14.38784063534343,
+      "ci95": [
+        0.021527068918113484,
+        0.040149471245851526
+      ],
+      "wins": 62,
+      "n_pairs": 66,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 6,
+      "p": 9.129294395870427e-11,
+      "block7d_ci95": [
+        0.020195637125947425,
+        0.04248740302854609
+      ],
+      "block28d_ci95": [
+        0.017981559016990535,
+        0.04845805651254208
+      ],
+      "p_holm": 1.8258588791740854e-10,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.19876472983278315,
+      "mae_per_turbine": 0.2757650393385778,
+      "diff": 0.07700030950579467,
+      "pct": 27.92243342030587,
+      "ci95": [
+        0.04400838483213598,
+        0.11417561722314776
+      ],
+      "wins": 59,
+      "n_pairs": 66,
+      "turbines_pooled_lower": 6,
+      "n_turbines": 6,
+      "p": 9.950653855884238e-10,
+      "block7d_ci95": [
+        0.03154423601782215,
+        0.1391465631866745
+      ],
+      "block28d_ci95": [
+        0.026969349037887058,
+        0.16588823881032555
+      ],
+      "p_holm": 9.950653855884238e-10,
+      "pooled_better": true
+    }
+  ],
+  "penmanshiel2020": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.16057491161375523,
+      "mae_per_turbine": 0.18183318163971035,
+      "diff": 0.021258270025955123,
+      "pct": 11.691084011320275,
+      "ci95": [
+        0.011752632726417155,
+        0.034727483525353764
+      ],
+      "wins": 96,
+      "n_pairs": 154,
+      "turbines_pooled_lower": 13,
+      "n_turbines": 14,
+      "p": 1.3954859263498223e-05,
+      "block7d_ci95": [
+        0.00784143225084521,
+        0.036064013594659654
+      ],
+      "block28d_ci95": [
+        0.0032958915197420753,
+        0.04115297372798998
+      ],
+      "p_holm": 1.3954859263498223e-05,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.17676752739450904,
+      "mae_per_turbine": 0.22553589675321253,
+      "diff": 0.04876836935870349,
+      "pct": 21.623329173212348,
+      "ci95": [
+        0.02534028403116081,
+        0.08805959467262131
+      ],
+      "wins": 100,
+      "n_pairs": 154,
+      "turbines_pooled_lower": 14,
+      "n_turbines": 14,
+      "p": 2.504019675523733e-08,
+      "block7d_ci95": [
+        0.01888868865594609,
+        0.08882439538696181
+      ],
+      "block28d_ci95": [
+        0.015062812069946238,
+        0.09172126903539445
+      ],
+      "p_holm": 5.008039351047466e-08,
+      "pooled_better": true
+    }
+  ],
+  "hot2022": [
+    {
+      "pooled": "proposed (similarity + recency)",
+      "per_turbine": "per-turbine model + late-truth correction",
+      "mae_pooled": 0.18533299671267167,
+      "mae_per_turbine": 0.2292114796506515,
+      "diff": 0.04387848293797983,
+      "pct": 19.143230960707736,
+      "ci95": [
+        0.027567251472114862,
+        0.06796109261119143
+      ],
+      "wins": 206,
+      "n_pairs": 230,
+      "turbines_pooled_lower": 21,
+      "n_turbines": 21,
+      "p": 1.5359632446395322e-34,
+      "block7d_ci95": [
+        0.03338917048803876,
+        0.055568228495882464
+      ],
+      "block28d_ci95": [
+        0.026645338297162185,
+        0.06273337648333539
+      ],
+      "p_holm": 3.0719264892790644e-34,
+      "pooled_better": true
+    },
+    {
+      "pooled": "our fleet model (no late truth)",
+      "per_turbine": "per-turbine model, same inputs",
+      "mae_pooled": 0.19987357565242303,
+      "mae_per_turbine": 0.2805097703651556,
+      "diff": 0.08063619471273259,
+      "pct": 28.746305202761334,
+      "ci95": [
+        0.049862043240093114,
+        0.12395193056283355
+      ],
+      "wins": 201,
+      "n_pairs": 230,
+      "turbines_pooled_lower": 21,
+      "n_turbines": 21,
+      "p": 4.291292894398808e-32,
+      "block7d_ci95": [
+        0.05768940972369537,
+        0.10787406638951441
+      ],
+      "block28d_ci95": [
+        0.04652620931395628,
+        0.121306333913066
+      ],
+      "p_holm": 4.291292894398808e-32,
+      "pooled_better": true
+    }
+  ],
+  "code_sha256": "3afa238ebbcfef51f7c30bc146e385e6d38072b323cda317965f553e88ea17dd"
+}

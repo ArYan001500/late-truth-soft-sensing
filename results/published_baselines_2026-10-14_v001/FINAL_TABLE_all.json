@@ -1,0 +1,1402 @@
+{
+  "kelmarsh2017": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.15401258555064487,
+      "mae_common_rows": 0.1536654991186621,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.1553923941906561,
+      "mae_common_rows": 0.15507736590726923,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.15724549060099155,
+      "mae_common_rows": 0.156928315217455,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.15804911814920672,
+      "mae_common_rows": 0.1577220361742926,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.15887361977044867,
+      "mae_common_rows": 0.15855777564884338,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.16201598139924536,
+      "mae_common_rows": 0.16168643342745034,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.16284020465087287,
+      "mae_common_rows": 0.16251100594174694,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.17181797653849373,
+      "mae_common_rows": 0.170928872342021,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.18417986341814838,
+      "mae_common_rows": 0.18262923753396845,
+      "coverage": 1.0
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 1]",
+      "mae_own_rows": 0.21938979654632743,
+      "mae_common_rows": 0.21661276841815816,
+      "coverage": 0.9997923517727202
+    },
+    {
+      "method": "B3 Liu 2020 [lag 1]",
+      "mae_own_rows": 0.2265371320510379,
+      "mae_common_rows": 0.2252860454591088,
+      "coverage": 0.9997923517727202
+    },
+    {
+      "method": "B6 Kim 2013 [lag 1]",
+      "mae_own_rows": 0.23850554527340384,
+      "mae_common_rows": 0.2384077447695303,
+      "coverage": 0.9992371852319074
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.2623130390303131,
+      "mae_common_rows": 0.2586903856258849,
+      "coverage": 1.0
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.2776545965662091,
+      "mae_common_rows": 0.2754845896323556,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.29025843921554995,
+      "mae_common_rows": 0.2879843692655443,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.29947363144867606,
+      "mae_common_rows": 0.2991739997274992,
+      "coverage": 0.999444833459187
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.31093737538493527,
+      "mae_common_rows": 0.30958710380836574,
+      "coverage": 1.0
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.4015270193069998,
+      "mae_common_rows": 0.40133171573512966,
+      "coverage": 0.9992371852319074
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 1]",
+      "mae_own_rows": 0.4916860633074716,
+      "mae_common_rows": 0.49157937706338145,
+      "coverage": 0.9992525816249169
+    },
+    {
+      "method": "B10 Wang 2022 (online, as published)",
+      "mae_own_rows": 0.533601443085477,
+      "mae_common_rows": 0.5344620403837558,
+      "coverage": 1.0
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.6007718817808093,
+      "mae_common_rows": 0.6000622123787703,
+      "coverage": 0.9994221427270586
+    },
+    {
+      "method": "B0 last released value [lag 1]",
+      "mae_own_rows": 0.7272099168223849,
+      "mae_common_rows": 0.727326546785716,
+      "coverage": 0.9997923517727202
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 0.8055687575108776,
+      "mae_common_rows": 0.8052582140330843,
+      "coverage": 0.9994482834719521
+    },
+    {
+      "method": "B5 Yang 2021 [lag 1]",
+      "mae_own_rows": 0.8055687575108776,
+      "mae_common_rows": 0.8052582140330843,
+      "coverage": 0.9994482834719521
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 0.8666126348855135,
+      "mae_common_rows": 0.8629181481314552,
+      "coverage": 1.0
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 1.0876022322890073,
+      "mae_common_rows": 1.0859070448280792,
+      "coverage": 0.9994221427270586
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 1]",
+      "mae_own_rows": 1.0876022322890073,
+      "mae_common_rows": 1.0859070448280792,
+      "coverage": 0.9994221427270586
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.1458585326769182,
+      "mae_common_rows": 1.145372256006039,
+      "coverage": 1.0
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 1.7899234928838625,
+      "mae_common_rows": 1.7731313642567255,
+      "coverage": 1.0
+    }
+  ],
+  "kelmarsh2018": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.16940669889275584,
+      "mae_common_rows": 0.16878466943353107,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.17120229548901925,
+      "mae_common_rows": 0.16980306833381453,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.17299620693740644,
+      "mae_common_rows": 0.1714950653887557,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.17492864616504664,
+      "mae_common_rows": 0.17342208960078112,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.17631575989461054,
+      "mae_common_rows": 0.17479794372861482,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.17908130303718175,
+      "mae_common_rows": 0.17734459129869976,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.18006003027836917,
+      "mae_common_rows": 0.17831008289817088,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.20043848624491137,
+      "mae_common_rows": 0.19854646142234514,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.22970092937945089,
+      "mae_common_rows": 0.2266300108176844,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 1]",
+      "mae_own_rows": 0.2385561516725304,
+      "mae_common_rows": 0.2382985346085422,
+      "coverage": 0.9985161635629191
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 1]",
+      "mae_own_rows": 0.2394257088284525,
+      "mae_common_rows": 0.23882219900915005,
+      "coverage": 0.9998321100143545
+    },
+    {
+      "method": "B3 Liu 2020 [lag 1]",
+      "mae_own_rows": 0.2763224520952232,
+      "mae_common_rows": 0.27311804898632547,
+      "coverage": 0.9998321100143545
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.2987564195873154,
+      "mae_common_rows": 0.29602632633075454,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.30286564340600136,
+      "mae_common_rows": 0.30243381171506806,
+      "coverage": 0.9986804829871293
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.3040475670629998,
+      "mae_common_rows": 0.3027288745693936,
+      "coverage": 1.0
+    },
+    {
+      "method": "B7 Yan 2023 [v1]",
+      "mae_own_rows": 0.33285722837204956,
+      "mae_common_rows": 0.3302150262946755,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.3567156115434782,
+      "mae_common_rows": 0.3536990916739353,
+      "coverage": 1.0
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.38119235175690624,
+      "mae_common_rows": 0.37790369127809215,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v1]",
+      "mae_own_rows": 0.3940697884870492,
+      "mae_common_rows": 0.3909047577123183,
+      "coverage": 1.0
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.4701466043636438,
+      "mae_common_rows": 0.46956598509812664,
+      "coverage": 0.9985161635629191
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 1]",
+      "mae_own_rows": 0.4986164253988034,
+      "mae_common_rows": 0.4969773057320767,
+      "coverage": 0.9992105147123024
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.6194098922702284,
+      "mae_common_rows": 0.6186457756938882,
+      "coverage": 0.9993355088010247
+    },
+    {
+      "method": "B0 last released value [lag 1]",
+      "mae_own_rows": 0.6922058619306436,
+      "mae_common_rows": 0.692414861904123,
+      "coverage": 0.9998321100143545
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 0.8472418879507241,
+      "mae_common_rows": 0.8324423835465011,
+      "coverage": 1.0
+    },
+    {
+      "method": "B5 Yang 2021 [lag 1]",
+      "mae_own_rows": 0.8472418879507241,
+      "mae_common_rows": 0.8324423835465011,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10 Wang 2022 (online, as published)",
+      "mae_own_rows": 0.9610015021095939,
+      "mae_common_rows": 0.9586576298145998,
+      "coverage": 1.0
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 0.967378780094427,
+      "mae_common_rows": 0.9621525462906639,
+      "coverage": 1.0
+    },
+    {
+      "method": "B8 Dai 2025 [v1]",
+      "mae_own_rows": 1.0318380358947346,
+      "mae_common_rows": 1.0276026290040032,
+      "coverage": 1.0
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.1166178698989684,
+      "mae_common_rows": 1.1162872696665387,
+      "coverage": 1.0
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 1.1826634462497276,
+      "mae_common_rows": 1.1777550326015453,
+      "coverage": 0.9993355088010247
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 1]",
+      "mae_own_rows": 1.1826634462497276,
+      "mae_common_rows": 1.1777550326015453,
+      "coverage": 0.9993355088010247
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 1.9992977084577834,
+      "mae_common_rows": 1.959319538374049,
+      "coverage": 1.0
+    },
+    {
+      "method": "B9 Grataloup 2025 [v1]",
+      "mae_own_rows": 2.249462923718736,
+      "mae_common_rows": 2.2101655192056433,
+      "coverage": 1.0
+    }
+  ],
+  "penmanshiel2019": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.14615722963188027,
+      "mae_common_rows": 0.14602855967034842,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.14756602341762587,
+      "mae_common_rows": 0.14743804221234136,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.14928618656927178,
+      "mae_common_rows": 0.1491555809734246,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.1497621682815034,
+      "mae_common_rows": 0.14958151838581402,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.15066456110165133,
+      "mae_common_rows": 0.150544204445986,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.1507981158561762,
+      "mae_common_rows": 0.15067736696812367,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.154272564952092,
+      "mae_common_rows": 0.1541476741549165,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.15453751618230924,
+      "mae_common_rows": 0.15440732925926753,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.16377996441802473,
+      "mae_common_rows": 0.16362580680389335,
+      "coverage": 1.0
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.21633746626922828,
+      "mae_common_rows": 0.21607665346232122,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.24855516697033564,
+      "mae_common_rows": 0.248320046010927,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.25531129975516925,
+      "mae_common_rows": 0.2552168918879796,
+      "coverage": 0.9999970208303218
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.2875571649672347,
+      "mae_common_rows": 0.2874787369165319,
+      "coverage": 0.9999970208303218
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.2991841188274736,
+      "mae_common_rows": 0.29903128574186405,
+      "coverage": 0.9999985102598404
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.35522114966222185,
+      "mae_common_rows": 0.35507688766326984,
+      "coverage": 0.9999419359733759
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.47876980049301254,
+      "mae_common_rows": 0.478759226838143,
+      "coverage": 0.9996332660521342
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 0.823149453892186,
+      "mae_common_rows": 0.8231369480465427,
+      "coverage": 0.9996332660521342
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 1.1083321364989636,
+      "mae_common_rows": 1.1077840076750025,
+      "coverage": 1.0
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.1533828187828008,
+      "mae_common_rows": 1.1532080901548312,
+      "coverage": 1.0
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 1.2393877501720294,
+      "mae_common_rows": 1.2387468530135137,
+      "coverage": 1.0
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 1.827814735264676,
+      "mae_common_rows": 1.8260178010121388,
+      "coverage": 1.0
+    }
+  ],
+  "hot2019": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.1801846984636917,
+      "mae_common_rows": 0.18015427357987365,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.18660333329877338,
+      "mae_common_rows": 0.1865734748896269,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.19074853820993043,
+      "mae_common_rows": 0.19071839821748715,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.1952130261798865,
+      "mae_common_rows": 0.1951821846250318,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.19575815273841637,
+      "mae_common_rows": 0.19572808367649963,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.206525651859148,
+      "mae_common_rows": 0.20649840379240778,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.21722546978635882,
+      "mae_common_rows": 0.2171967533233061,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.2179055747665303,
+      "mae_common_rows": 0.2178774599082451,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.2181224759789578,
+      "mae_common_rows": 0.21810030685859103,
+      "coverage": 1.0
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.23907322448100227,
+      "mae_common_rows": 0.2390471871464792,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.24561178360050626,
+      "mae_common_rows": 0.24558580868386007,
+      "coverage": 1.0
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.2795405159593511,
+      "mae_common_rows": 0.27953593932914994,
+      "coverage": 0.9999556909757504
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.2892234887885035,
+      "mae_common_rows": 0.28920868366519653,
+      "coverage": 1.0
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.3698277807561642,
+      "mae_common_rows": 0.3698010521255034,
+      "coverage": 1.0
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.388267889203834,
+      "mae_common_rows": 0.38825541998858004,
+      "coverage": 1.0
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.5109264499905836,
+      "mae_common_rows": 0.5109208514270285,
+      "coverage": 0.9999527460843923
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 0.5305944994257784,
+      "mae_common_rows": 0.5305575411963928,
+      "coverage": 1.0
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 0.5725224939376057,
+      "mae_common_rows": 0.5725178627838995,
+      "coverage": 0.9999527460843923
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 1.7283294939583942,
+      "mae_common_rows": 1.7281958975800416,
+      "coverage": 1.0
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 1.8202656622562123,
+      "mae_common_rows": 1.820118423539229,
+      "coverage": 1.0
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.8509542440775897,
+      "mae_common_rows": 1.8509119903403668,
+      "coverage": 1.0
+    }
+  ],
+  "kelmarsh2024": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.19364132432631,
+      "mae_common_rows": 0.1881131411478183,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.22536883680915465,
+      "mae_common_rows": 0.2202661179405875,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.23233558271729823,
+      "mae_common_rows": 0.2259296666436731,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.25758515672204235,
+      "mae_common_rows": 0.251458372673035,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.256915738015778,
+      "mae_common_rows": 0.25210749699289636,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.2735025280427974,
+      "mae_common_rows": 0.269065689537797,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.31134919330232835,
+      "mae_common_rows": 0.3111682411284222,
+      "coverage": 0.987138541366741
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.321090113657192,
+      "mae_common_rows": 0.3152706977843556,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.32219084518936414,
+      "mae_common_rows": 0.31638382334448545,
+      "coverage": 1.0
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.3591385600253667,
+      "mae_common_rows": 0.3589227146403049,
+      "coverage": 0.987138541366741
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.5031434772325357,
+      "mae_common_rows": 0.49856022452517634,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.5925534488436043,
+      "mae_common_rows": 0.5405413644253723,
+      "coverage": 1.0
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.5833416677345886,
+      "mae_common_rows": 0.560351134522124,
+      "coverage": 1.0
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.6121101976236754,
+      "mae_common_rows": 0.611690572721422,
+      "coverage": 0.987138541366741
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.7311124343164956,
+      "mae_common_rows": 0.7305939996349166,
+      "coverage": 0.9870764004897526
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.8106066206553314,
+      "mae_common_rows": 0.8106068580601423,
+      "coverage": 0.9867762570233927
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 1.130957798543035,
+      "mae_common_rows": 1.0779231673424958,
+      "coverage": 1.0
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.1280380388425002,
+      "mae_common_rows": 1.1280622354882766,
+      "coverage": 1.0
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 1.28805941946638,
+      "mae_common_rows": 1.2880736987872503,
+      "coverage": 0.9867762570233927
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 1.5635716116500287,
+      "mae_common_rows": 1.5619257113331548,
+      "coverage": 0.987138541366741
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 3.536036684856903,
+      "mae_common_rows": 3.5592343395455273,
+      "coverage": 1.0
+    }
+  ],
+  "penmanshiel2022": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.16860380727615018,
+      "mae_common_rows": 0.15990191345761476,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.17653380534386515,
+      "mae_common_rows": 0.16683192314281725,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.18122296423168222,
+      "mae_common_rows": 0.17031383786863544,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.18285853249818676,
+      "mae_common_rows": 0.1716894842757882,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.182674230215421,
+      "mae_common_rows": 0.1720210169647145,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.19308973216808023,
+      "mae_common_rows": 0.1793282732471424,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.19322370134189612,
+      "mae_common_rows": 0.17949794680281567,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.21806814473594763,
+      "mae_common_rows": 0.19892169594558928,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.3061514163452565,
+      "mae_common_rows": 0.2697544995641666,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.27539865317201834,
+      "mae_common_rows": 0.2752136478846032,
+      "coverage": 0.9831216655361061
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.4360194638272607,
+      "mae_common_rows": 0.33216181301430014,
+      "coverage": 1.0
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.3745021923087467,
+      "mae_common_rows": 0.37149518670366416,
+      "coverage": 0.9846888607405085
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.5113505285131981,
+      "mae_common_rows": 0.41391432698207664,
+      "coverage": 1.0
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.4481699349313031,
+      "mae_common_rows": 0.44054360995026753,
+      "coverage": 0.9870530126765055
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.48827521827421033,
+      "mae_common_rows": 0.48803660214800354,
+      "coverage": 0.9829357399757789
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.5360788533745743,
+      "mae_common_rows": 0.5330092961149755,
+      "coverage": 0.9841034800053375
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 0.9478165742226299,
+      "mae_common_rows": 0.867671194651232,
+      "coverage": 1.0
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 0.8723076368405234,
+      "mae_common_rows": 0.8711078412033728,
+      "coverage": 0.9841034800053375
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.1746764944494597,
+      "mae_common_rows": 1.1764924930408014,
+      "coverage": 1.0
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 1.8256907710707053,
+      "mae_common_rows": 1.793535743918157,
+      "coverage": 0.9886519444416102
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 3.017655333635175,
+      "mae_common_rows": 3.011850767854136,
+      "coverage": 1.0
+    }
+  ],
+  "hot2025": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.17793657585185038,
+      "mae_common_rows": 0.17785153777987656,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.18094729968864615,
+      "mae_common_rows": 0.18086251774112133,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.18538159957722072,
+      "mae_common_rows": 0.18529625667496755,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.18653595172201673,
+      "mae_common_rows": 0.18645131266959436,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.18797793534786492,
+      "mae_common_rows": 0.18789256413994773,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.2004658907111879,
+      "mae_common_rows": 0.20038066727505494,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.20085584429636302,
+      "mae_common_rows": 0.20075992203399431,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.20188838626729658,
+      "mae_common_rows": 0.20180320910570698,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.20830852957146534,
+      "mae_common_rows": 0.20827548172451865,
+      "coverage": 0.9999968880293344
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.2254051431934648,
+      "mae_common_rows": 0.2253565175158377,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.23794964451606834,
+      "mae_common_rows": 0.237847740225409,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.25528776124393504,
+      "mae_common_rows": 0.25524533769205515,
+      "coverage": 1.0
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.26922058272291344,
+      "mae_common_rows": 0.2692155750902389,
+      "coverage": 0.9998746747298894
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.3345333528154824,
+      "mae_common_rows": 0.3344969137010466,
+      "coverage": 0.9999968880293344
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.3373335212576511,
+      "mae_common_rows": 0.3373018664044758,
+      "coverage": 0.9999968880293344
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.47567701352170955,
+      "mae_common_rows": 0.4756690728862742,
+      "coverage": 0.99988316968101
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 0.5088660439642846,
+      "mae_common_rows": 0.5088577476470564,
+      "coverage": 0.99988316968101
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 0.7405307474830666,
+      "mae_common_rows": 0.7404587471011714,
+      "coverage": 1.0
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 1.5947572757353636,
+      "mae_common_rows": 1.5946521070540707,
+      "coverage": 0.9999968880293344
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.9277768412064549,
+      "mae_common_rows": 1.9277709414228146,
+      "coverage": 1.0
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 2.0964751798857955,
+      "mae_common_rows": 2.096478481500979,
+      "coverage": 1.0
+    }
+  ],
+  "kelmarsh2020": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.16929866229753285,
+      "mae_common_rows": 0.16907634716404185,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.1805362775391589,
+      "mae_common_rows": 0.18032575059863118,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.18470705513850438,
+      "mae_common_rows": 0.18449448254517184,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.1863870314548687,
+      "mae_common_rows": 0.18617869114070285,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.18675285823675492,
+      "mae_common_rows": 0.18655488207375523,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.19798313606111498,
+      "mae_common_rows": 0.19776241006327835,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.19898691755259615,
+      "mae_common_rows": 0.19876472983278315,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.21089040462808473,
+      "mae_common_rows": 0.21063100374626856,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.2759911362455411,
+      "mae_common_rows": 0.2757650393385778,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.297192779086585,
+      "mae_common_rows": 0.2969399510196493,
+      "coverage": 0.999996515145179
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.3001555428297404,
+      "mae_common_rows": 0.2998541225932793,
+      "coverage": 0.999996515145179
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.33034221791886104,
+      "mae_common_rows": 0.3299236894020448,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.397926748768755,
+      "mae_common_rows": 0.39735417223343417,
+      "coverage": 1.0
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.4140419451844854,
+      "mae_common_rows": 0.4138870258921343,
+      "coverage": 0.999996515145179
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.5003248409513441,
+      "mae_common_rows": 0.5000990555537188,
+      "coverage": 0.9997667052949349
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.6268902255416587,
+      "mae_common_rows": 0.6268782379724548,
+      "coverage": 0.999132977805063
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 0.7882629850889847,
+      "mae_common_rows": 0.7874791799496553,
+      "coverage": 1.0
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 0.9738281882641484,
+      "mae_common_rows": 0.9732964663070929,
+      "coverage": 0.999996515145179
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.0876046589408657,
+      "mae_common_rows": 1.0868723108997935,
+      "coverage": 1.0
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 1.1100738661930156,
+      "mae_common_rows": 1.1100129390063531,
+      "coverage": 0.999132977805063
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 2.392617251822006,
+      "mae_common_rows": 2.3901190475160816,
+      "coverage": 1.0
+    }
+  ],
+  "penmanshiel2020": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.1543315172879542,
+      "mae_common_rows": 0.1540656721076259,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.16083474254368907,
+      "mae_common_rows": 0.16057491161375523,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.1638497821047116,
+      "mae_common_rows": 0.1635813768167443,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.1664564079598123,
+      "mae_common_rows": 0.16620118866838013,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.1665211820486983,
+      "mae_common_rows": 0.1662606604503301,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.1769461809818606,
+      "mae_common_rows": 0.17667910347899193,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.177022918761259,
+      "mae_common_rows": 0.17676752739450904,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.18253173589263083,
+      "mae_common_rows": 0.18183318163971035,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.22620408136071204,
+      "mae_common_rows": 0.22553589675321253,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.2601442390023652,
+      "mae_common_rows": 0.2598393117958389,
+      "coverage": 0.9999858669365832
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.2665283578744692,
+      "mae_common_rows": 0.2657991731565568,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.29437476781879585,
+      "mae_common_rows": 0.29377267715712974,
+      "coverage": 1.0
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.33196878880822256,
+      "mae_common_rows": 0.3316997520926172,
+      "coverage": 0.9999858669365832
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.3999890938733401,
+      "mae_common_rows": 0.39938880079138755,
+      "coverage": 0.9999952897712834
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.41176125812857123,
+      "mae_common_rows": 0.4108693105351696,
+      "coverage": 0.9998053187020842
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.4650302614693998,
+      "mae_common_rows": 0.46501430327598875,
+      "coverage": 0.9991944110947787
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 0.7997373515094515,
+      "mae_common_rows": 0.7996867901309883,
+      "coverage": 0.9991944110947787
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 0.8016431352549722,
+      "mae_common_rows": 0.8006836482227795,
+      "coverage": 1.0
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.174960403620275,
+      "mae_common_rows": 1.1747249211513355,
+      "coverage": 1.0
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 1.3001577777295632,
+      "mae_common_rows": 1.2969231209131045,
+      "coverage": 0.9999984376269427
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 2.593544279933735,
+      "mae_common_rows": 2.5883590048326908,
+      "coverage": 1.0
+    }
+  ],
+  "hot2022": [
+    {
+      "method": "proposed + standstill gate",
+      "mae_own_rows": 0.18104332345847038,
+      "mae_common_rows": 0.18097797045274477,
+      "coverage": 1.0
+    },
+    {
+      "method": "proposed (similarity + recency)",
+      "mae_own_rows": 0.18541302678424887,
+      "mae_common_rows": 0.18533299671267167,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: EWMA of residuals",
+      "mae_own_rows": 0.18911845527270507,
+      "mae_common_rows": 0.18904068873292953,
+      "coverage": 1.0
+    },
+    {
+      "method": "ours (fleet + local late-truth correction)",
+      "mae_own_rows": 0.1896212132496712,
+      "mae_common_rows": 0.1895383960262294,
+      "coverage": 1.0
+    },
+    {
+      "method": "reference: mean of 20 newest residuals",
+      "mae_own_rows": 0.19021753970537944,
+      "mae_common_rows": 0.19013758456579996,
+      "coverage": 1.0
+    },
+    {
+      "method": "our fleet model (no late truth)",
+      "mae_own_rows": 0.19995799554689275,
+      "mae_common_rows": 0.19987357565242303,
+      "coverage": 1.0
+    },
+    {
+      "method": "B10f Wang 2022 (frozen NN)",
+      "mae_own_rows": 0.20157331493864697,
+      "mae_common_rows": 0.20148943833119257,
+      "coverage": 1.0
+    },
+    {
+      "method": "B6 Kim 2013 [lag 3]",
+      "mae_own_rows": 0.2074744505738066,
+      "mae_common_rows": 0.20740353456722627,
+      "coverage": 0.999997666133378
+    },
+    {
+      "method": "per-turbine model + late-truth correction",
+      "mae_own_rows": 0.2292945808931281,
+      "mae_common_rows": 0.2292114796506515,
+      "coverage": 1.0
+    },
+    {
+      "method": "per-turbine model, same inputs",
+      "mae_own_rows": 0.2805967999508172,
+      "mae_common_rows": 0.2805097703651556,
+      "coverage": 1.0
+    },
+    {
+      "method": "B11 Bai 2024",
+      "mae_own_rows": 0.3073912496518722,
+      "mae_common_rows": 0.30738132761986015,
+      "coverage": 0.9999247473222711
+    },
+    {
+      "method": "B7 Yan 2023 [v2]",
+      "mae_own_rows": 0.3082667849366779,
+      "mae_common_rows": 0.30818258713641516,
+      "coverage": 1.0
+    },
+    {
+      "method": "B4 Fu 2019 [v2]",
+      "mae_own_rows": 0.3352973883473299,
+      "mae_common_rows": 0.33523417241797315,
+      "coverage": 1.0
+    },
+    {
+      "method": "B3 Liu 2020 [lag 3]",
+      "mae_own_rows": 0.3545934122051088,
+      "mae_common_rows": 0.35453119611814093,
+      "coverage": 0.999998833066689
+    },
+    {
+      "method": "B1 Bangalore 2015 [lag 3]",
+      "mae_own_rows": 0.3745181795121483,
+      "mae_common_rows": 0.3744345683525717,
+      "coverage": 0.999998833066689
+    },
+    {
+      "method": "B2 Schlechtingen 2011 AR [lag 3]",
+      "mae_own_rows": 0.4935065446169708,
+      "mae_common_rows": 0.4934924515200979,
+      "coverage": 0.9999373225190434
+    },
+    {
+      "method": "B2f Schlechtingen 2011 FSRC [lag 3]",
+      "mae_own_rows": 0.5420123976114949,
+      "mae_common_rows": 0.5419966627895112,
+      "coverage": 0.9999373225190434
+    },
+    {
+      "method": "B8 Dai 2025 [v2]",
+      "mae_own_rows": 1.0356233231531797,
+      "mae_common_rows": 1.0355260793178473,
+      "coverage": 1.0
+    },
+    {
+      "method": "B5 Yang 2021 [lag 3]",
+      "mae_own_rows": 1.6685730490558726,
+      "mae_common_rows": 1.6684243087516697,
+      "coverage": 0.999998833066689
+    },
+    {
+      "method": "B0 last released value [lag 3]",
+      "mae_own_rows": 1.8060474991881843,
+      "mae_common_rows": 1.8060430230248468,
+      "coverage": 1.0
+    },
+    {
+      "method": "B9 Grataloup 2025 [v2]",
+      "mae_own_rows": 2.9336160649275604,
+      "mae_common_rows": 2.9333662951816017,
+      "coverage": 1.0
+    }
+  ]
+}

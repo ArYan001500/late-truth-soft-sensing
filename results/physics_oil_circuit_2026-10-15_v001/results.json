@@ -1,0 +1,39 @@
+{
+  "data": "Hill of Towie 2019, January (initial training window), pump stage HS/LS rows, 20<T<55 C, dP>0.02 bar",
+  "n_rows": 91677,
+  "n_turbines": 21,
+  "oil": "ISO VG 320, nu40=320 cSt, nu100=24 cSt (assumed)",
+  "pooled": {
+    "a_flow": 1.1011095728316391,
+    "b_viscosity": 0.9714325927429268,
+    "r2": 0.2700218182386648
+  },
+  "per_turbine_resistance": {
+    "a_flow": 1.085092384378946,
+    "b_viscosity": 0.9293551646235318,
+    "r2": 0.891067896636466
+  },
+  "hs_stage_bins": {
+    "30-35": {
+      "median_dP_bar": 0.2316298484802246,
+      "walther_nu_cSt": 521.9357275351642,
+      "n": 2246
+    },
+    "35-40": {
+      "median_dP_bar": 0.1697702407836914,
+      "walther_nu_cSt": 374.5592450486352,
+      "n": 27548
+    },
+    "40-45": {
+      "median_dP_bar": 0.1384868621826172,
+      "walther_nu_cSt": 274.84732138289405,
+      "n": 47223
+    },
+    "45-50": {
+      "median_dP_bar": 0.09930109977722212,
+      "walther_nu_cSt": 205.83621160594933,
+      "n": 9882
+    }
+  },
+  "code_sha256": "cecc9279649e0259ac007595f8735865f891141a19115de6f8a789d0cb6ce9d8"
+}

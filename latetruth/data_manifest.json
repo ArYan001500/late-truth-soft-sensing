@@ -1,0 +1,132 @@
+[
+  {
+    "dataset": "kelmarsh2017",
+    "record": 16807551,
+    "key": "Kelmarsh_SCADA_2017_3083.zip",
+    "path": "Kelmarsh/Kelmarsh_SCADA_2017_3083.zip",
+    "size": 174604722,
+    "md5": "c78263ee52ee0e48e2cb4bbaa1ba211a",
+    "api_md5": "c78263ee52ee0e48e2cb4bbaa1ba211a",
+    "match": true
+  },
+  {
+    "dataset": "kelmarsh2018",
+    "record": 16807551,
+    "key": "Kelmarsh_SCADA_2018_3084.zip",
+    "path": "Kelmarsh/Kelmarsh_SCADA_2018_3084.zip",
+    "size": 262157463,
+    "md5": "972e5280172216a5fe76dcab19c741b0",
+    "api_md5": "972e5280172216a5fe76dcab19c741b0",
+    "match": true
+  },
+  {
+    "dataset": "kelmarsh2020",
+    "record": 16807551,
+    "key": "Kelmarsh_SCADA_2020_3086.zip",
+    "path": "Kelmarsh/Kelmarsh_SCADA_2020_3086.zip",
+    "size": 473677799,
+    "md5": "e189e02da98f32e74acc72e8559ef0db",
+    "api_md5": "e189e02da98f32e74acc72e8559ef0db",
+    "match": true
+  },
+  {
+    "dataset": "kelmarsh2024",
+    "record": 16807551,
+    "key": "Kelmarsh_SCADA_2024_5962.zip",
+    "path": "Kelmarsh/Kelmarsh_SCADA_2024_5962.zip",
+    "size": 704598245,
+    "md5": "e9e3318f5b393d8596ff1801f8da0414",
+    "api_md5": "e9e3318f5b393d8596ff1801f8da0414",
+    "match": true
+  },
+  {
+    "dataset": "penmanshiel2019",
+    "record": 16807304,
+    "key": "Penmanshiel_SCADA_2019_WT01-10_3112.zip",
+    "path": "Penmanshiel/Version 0.0.2/Penmanshiel_SCADA_2019_WT01-10_3112.zip",
+    "size": 473518587,
+    "md5": "78389603cb4ae20a6a9b878f5a84bc7b",
+    "api_md5": "78389603cb4ae20a6a9b878f5a84bc7b",
+    "match": true
+  },
+  {
+    "dataset": "penmanshiel2019",
+    "record": 16807304,
+    "key": "Penmanshiel_SCADA_2019_WT11-15_3117.zip",
+    "path": "Penmanshiel/Version 0.0.2/Penmanshiel_SCADA_2019_WT11-15_3117.zip",
+    "size": 265354191,
+    "md5": "92747a976716c5f35d9ee6462958fd7a",
+    "api_md5": "92747a976716c5f35d9ee6462958fd7a",
+    "match": true
+  },
+  {
+    "dataset": "penmanshiel2020",
+    "record": 16807304,
+    "key": "Penmanshiel_SCADA_2020_WT01-10_3109.zip",
+    "path": "Penmanshiel/Version 0.0.2/Penmanshiel_SCADA_2020_WT01-10_3109.zip",
+    "size": 694483651,
+    "md5": "46f679f2e4ab3d69c04b31c8dc625106",
+    "api_md5": "46f679f2e4ab3d69c04b31c8dc625106",
+    "match": true
+  },
+  {
+    "dataset": "penmanshiel2020",
+    "record": 16807304,
+    "key": "Penmanshiel_SCADA_2020_WT11-15_3118.zip",
+    "path": "Penmanshiel/Version 0.0.2/Penmanshiel_SCADA_2020_WT11-15_3118.zip",
+    "size": 389300869,
+    "md5": "c73323f21451c08247dbdb5d1a1434a9",
+    "api_md5": "c73323f21451c08247dbdb5d1a1434a9",
+    "match": true
+  },
+  {
+    "dataset": "penmanshiel2022",
+    "record": 16807304,
+    "key": "Penmanshiel_SCADA_2022_WT01-10_4462.zip",
+    "path": "Penmanshiel/version 3/Penmanshiel_SCADA_2022_WT01-10_4462.zip",
+    "size": 710776645,
+    "md5": "91351469cdeb3ca95be1a0414dcfec8f",
+    "api_md5": "91351469cdeb3ca95be1a0414dcfec8f",
+    "match": true
+  },
+  {
+    "dataset": "penmanshiel2022",
+    "record": 16807304,
+    "key": "Penmanshiel_SCADA_2022_WT11-15_4463.zip",
+    "path": "Penmanshiel/version 3/Penmanshiel_SCADA_2022_WT11-15_4463.zip",
+    "size": 396724464,
+    "md5": "5f4743133a9cf65ad33de139b43f96b4",
+    "api_md5": "5f4743133a9cf65ad33de139b43f96b4",
+    "match": true
+  },
+  {
+    "dataset": "hot2019",
+    "record": 22662930,
+    "key": "2019.zip",
+    "path": "HillOfTowie_04/2019.zip",
+    "size": 1430010222,
+    "md5": "ca240b179200f5db25a273a1291eb597",
+    "api_md5": "ca240b179200f5db25a273a1291eb597",
+    "match": true
+  },
+  {
+    "dataset": "hot2022",
+    "record": 22662930,
+    "key": "2022.zip",
+    "path": "HillOfTowie_04/2022.zip",
+    "size": 1412250190,
+    "md5": "3861de12eb3ba588f48259c918ade242",
+    "api_md5": "3861de12eb3ba588f48259c918ade242",
+    "match": true
+  },
+  {
+    "dataset": "hot2025",
+    "record": 22662930,
+    "key": "2025.zip",
+    "path": "HillOfTowie_04/2025.zip",
+    "size": 1596220683,
+    "md5": "d3cd7edb535a45ffca1c7028b397f035",
+    "api_md5": "d3cd7edb535a45ffca1c7028b397f035",
+    "match": true
+  }
+]

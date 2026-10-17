@@ -1,0 +1,25 @@
+{
+  "results": {
+    "always_bearing": {
+      "all": 0.20199767793886458,
+      "transient": 0.27901130954858994,
+      "bearing_fresh_share": 1.0
+    },
+    "always_inlet": {
+      "all": 0.24095335481817637,
+      "transient": 0.3506358657162733,
+      "bearing_fresh_share": 0.0
+    },
+    "alternate": {
+      "all": 0.2988474386005805,
+      "transient": 0.45909499224042766,
+      "bearing_fresh_share": 0.5
+    },
+    "event": {
+      "all": 0.26139928104356536,
+      "transient": 0.3934359866789874,
+      "bearing_fresh_share": 0.6823208594351028
+    }
+  },
+  "code_sha256": "2ed3208540a6174f94bbbfa0f1bfbc4a4ac0bfb0a9e2429fcaf6c70c9c8c8e17"
+}

@@ -1,0 +1,434 @@
+{
+ "kelmarsh2018": {
+  "our fleet model (no late truth)": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B10f Wang 2022 (frozen NN)": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B0 last released value [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B1 Bangalore 2015 [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B2 Schlechtingen 2011 AR [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B2f Schlechtingen 2011 FSRC [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B3 Liu 2020 [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B5 Yang 2021 [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B6 Kim 2013 [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B11 Bai 2024": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B4 Fu 2019 [v2]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B7 Yan 2023 [v2]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B8 Dai 2025 [v2]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B9 Grataloup 2025 [v2]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  }
+ },
+ "penmanshiel2019": {
+  "our fleet model (no late truth)": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B10f Wang 2022 (frozen NN)": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B0 last released value [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B1 Bangalore 2015 [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B2 Schlechtingen 2011 AR [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B2f Schlechtingen 2011 FSRC [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B3 Liu 2020 [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B5 Yang 2021 [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B6 Kim 2013 [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B11 Bai 2024": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B4 Fu 2019 [v2]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B7 Yan 2023 [v2]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B8 Dai 2025 [v2]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B9 Grataloup 2025 [v2]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  }
+ },
+ "hot2019": {
+  "our fleet model (no late truth)": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B10f Wang 2022 (frozen NN)": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B0 last released value [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B1 Bangalore 2015 [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B2 Schlechtingen 2011 AR [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B2f Schlechtingen 2011 FSRC [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B3 Liu 2020 [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B5 Yang 2021 [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B6 Kim 2013 [lag 3]": {
+   "wins": 19,
+   "n": 21,
+   "p_sign": 0.00022125244140625
+  },
+  "B11 Bai 2024": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B4 Fu 2019 [v2]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B7 Yan 2023 [v2]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B8 Dai 2025 [v2]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B9 Grataloup 2025 [v2]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  }
+ },
+ "kelmarsh2024": {
+  "our fleet model (no late truth)": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B10f Wang 2022 (frozen NN)": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B0 last released value [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B1 Bangalore 2015 [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B2 Schlechtingen 2011 AR [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B2f Schlechtingen 2011 FSRC [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B3 Liu 2020 [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B5 Yang 2021 [lag 3]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B6 Kim 2013 [lag 3]": {
+   "wins": 5,
+   "n": 6,
+   "p_sign": 0.21875
+  },
+  "B11 Bai 2024": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B4 Fu 2019 [v2]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B7 Yan 2023 [v2]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B8 Dai 2025 [v2]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  },
+  "B9 Grataloup 2025 [v2]": {
+   "wins": 6,
+   "n": 6,
+   "p_sign": 0.03125
+  }
+ },
+ "penmanshiel2022": {
+  "our fleet model (no late truth)": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B10f Wang 2022 (frozen NN)": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B0 last released value [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B1 Bangalore 2015 [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B2 Schlechtingen 2011 AR [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B2f Schlechtingen 2011 FSRC [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B3 Liu 2020 [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B5 Yang 2021 [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B6 Kim 2013 [lag 3]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B11 Bai 2024": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B4 Fu 2019 [v2]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B7 Yan 2023 [v2]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B8 Dai 2025 [v2]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  },
+  "B9 Grataloup 2025 [v2]": {
+   "wins": 14,
+   "n": 14,
+   "p_sign": 0.0001220703125
+  }
+ },
+ "hot2025": {
+  "our fleet model (no late truth)": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B10f Wang 2022 (frozen NN)": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B0 last released value [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B1 Bangalore 2015 [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B2 Schlechtingen 2011 AR [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B2f Schlechtingen 2011 FSRC [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B3 Liu 2020 [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B5 Yang 2021 [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B6 Kim 2013 [lag 3]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B11 Bai 2024": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B4 Fu 2019 [v2]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B7 Yan 2023 [v2]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B8 Dai 2025 [v2]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  },
+  "B9 Grataloup 2025 [v2]": {
+   "wins": 21,
+   "n": 21,
+   "p_sign": 9.5367431640625e-07
+  }
+ }
+}

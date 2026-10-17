@@ -1,0 +1,78 @@
+{
+  "B0": {
+    "seconds": 0.14509334998729173,
+    "what": "refit on rows released before 1 June + predict June, turbine 1"
+  },
+  "B1": {
+    "seconds": 27.01223624999693,
+    "what": "refit on rows released before 1 June + predict June, turbine 1"
+  },
+  "B2": {
+    "seconds": 6.337523900001543,
+    "what": "refit on rows released before 1 June + predict June, turbine 1"
+  },
+  "B2f": {
+    "seconds": 6.417018049993203,
+    "what": "refit on rows released before 1 June + predict June, turbine 1"
+  },
+  "B3": {
+    "seconds": 0.8641615499946056,
+    "what": "refit on rows released before 1 June + predict June, turbine 1"
+  },
+  "B5": {
+    "seconds": 1.0919729500019457,
+    "what": "refit on rows released before 1 June + predict June, turbine 1"
+  },
+  "B6": {
+    "seconds": 27.262736100004986,
+    "what": "offline + online LW-PLS for June, turbine 1"
+  },
+  "B11": {
+    "seconds": 0.8258077499922365,
+    "what": "features + XGB refit + predict June, turbine 1"
+  },
+  "ours_fleet": {
+    "seconds": 4.824803750001593,
+    "what": "features for 6 turbines + pooled HGB refit on rows before 1 June + predict June (6 turbines)"
+  },
+  "ours_local": {
+    "seconds": 1.1374364999937825,
+    "what": "local late-truth correction (k 20, memory 8640) for the June rows of turbine 1"
+  },
+  "B10f": {
+    "seconds": 5.096298599994043,
+    "what": "frozen-NN EKF fusion over the full year, turbine 1 (no refit)"
+  },
+  "B4": {
+    "seconds": 12.175752199982526,
+    "what": "v2: full training on rows before 1 June (100 epochs, patience 10) + predict June, turbine 1, GPU"
+  },
+  "B7": {
+    "seconds": 37.666735799983144,
+    "what": "v2: full training on rows before 1 June (100 epochs, patience 10) + predict June, turbine 1, GPU"
+  },
+  "B8": {
+    "seconds": 81.67822580001666,
+    "what": "v2: full training on rows before 1 June (100 epochs, patience 10) + predict June, turbine 1, GPU"
+  },
+  "B9": {
+    "seconds": 1.8611471999902278,
+    "what": "v2: full training on rows before 1 June (100 epochs, patience 10) + predict June, turbine 1, GPU"
+  },
+  "B12_v2": {
+    "seconds": 1786.9324380002217,
+    "what": "v2: 20 x (5 epochs on rows before 1 June + predict June), i.e. extrapolated to the 100-epoch budget, turbine 1, GPU"
+  },
+  "B12_v2_full100": {
+    "seconds": 1616.6771252999897,
+    "what": "v2: full 100 epochs on rows before 1 June + predict June, turbine 1, GPU, measured"
+  },
+  "ours_local_year": {
+    "seconds": 12.719930199993541,
+    "what": "local late-truth correction over the full evaluation year (29 Jan - 31 Dec), turbine 1, same span as B10f"
+  },
+  "rec_year": {
+    "seconds": 0.05603039999550674,
+    "note": "recency term (EWMA) over the full evaluation year of turbine 1, median of 5, 2026-10-17"
+  }
+}
