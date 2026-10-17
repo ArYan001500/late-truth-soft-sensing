@@ -1,4 +1,4 @@
-# Comparison with published methods (Q1 plan step 3) — protocol v001
+# Comparison with published methods — protocol v001
 
 Registered 2026-10-13, before any baseline result. Papers supplied by Aryan in `Ref Papers/` (method sections read; notes below are from the papers, deviations listed explicitly).
 
@@ -49,7 +49,7 @@ B11 = Bai 2024 energy-flow physical features (gearbox power loss + heat-transfer
 ## Amendment 3 (2026-10-14) — B10 tuning grid widened
 First B10 tuning run (54-point grid) was stopped after a debug on Kelmarsh 2017 Feb–Mar (tuning data only, no 2018 result seen): with a random-walk state model the filter lags the fast measurement unless q >> r_fast, so the grid did not contain the method's best region. New grid: q {0.01,0.05,0.2,1,5} x r_fast {0.001,0.01,0.05,0.2} x r_slow {1e-4,1e-3,1e-2} x q_theta {1e-6,1e-5} (120 points), same validation split. This gives the competitor a fairer chance.
 
-## Amendment 4 (2026-10-14, before any deep-baseline result) — deep baselines implementation (tools/baselines_deep.py)
+## Amendment 4 (2026-10-14, before any deep-baseline result) — deep baselines implementation (latetruth/baselines_deep.py)
 - B4 Fu, B7 Yan, B8 Dai, B9 Grataloup are target-free as published -> one regime only (no lag-1/lag-3 split; C3 not applicable to them).
 - Channel maps paper -> Kelmarsh (closest available): see CH in the code. Missing paper channels (torque, blade-motor temp, cooling water, hydraulic oil, cabinet temp, second generator bearing) replaced by the nearest available temperature/speed channel.
 - Windows: Fu 10x10 (paper), Yan 6 (paper's stated window width), Dai 12 (paper's l not stated), Grataloup 144 (24 h, paper).
@@ -65,31 +65,31 @@ Diagnosis: B8 Dai v1 (MAE 1.03) shows no bias but errors falling month by month 
 From now on deep baselines run on the RTX 4060 GPU (torch 2.14.1+cu132). Kelmarsh 2018 v1/v2 results were produced on CPU; GPU runs may differ slightly in floating-point order. Device is recorded per run.
 
 ## Amendment 7 (2026-10-14, before any B6/B11 full result) — Kim (B6) and Bai (B11) implementations
-- B6 Kim 2013 (tools/baselines_kim.py): LW-PLS with adaptive weighted-Euclidean similarity (eqs. 3-16, 20-23). Database per query = released rows in [t-3-8640, t-3) of that turbine (JIT that also uses late truth, same memory as ours). Offline theta on 1000 random released rows per monthly window (full N-model offline part infeasible), I=5; online J=3. Inputs: channels >= 95 % present in the training window (pressures are missing before June 2017), autoscaled, + y(t-lag) for lag 3 / lag 1. Grid R {2,4,6} x phi {0.5,1,2,4} x gamma {0,0.5,1} on Kelmarsh 2017 March, every 6th row.
-- B11 Bai 2024 (tools/baselines_bai.py): their final energy-flow feature set mapped to Kelmarsh (gearbox bearing temps + 1-step rates, nacelle temp, rotor/gearbox/generator speeds, wind speed, pitch A, yaw error = wind direction - nacelle position, tip-speed ratio with R = 46 m); target-free; XGBoost (one of their four models), B3 grid. Gear geometry needed for their analytic loss terms is not available, so the loss terms enter through these measured drivers rather than computed watts.
+- B6 Kim 2013 (latetruth/baselines_kim.py): LW-PLS with adaptive weighted-Euclidean similarity (eqs. 3-16, 20-23). Database per query = released rows in [t-3-8640, t-3) of that turbine (JIT that also uses late truth, same memory as ours). Offline theta on 1000 random released rows per monthly window (full N-model offline part infeasible), I=5; online J=3. Inputs: channels >= 95 % present in the training window (pressures are missing before June 2017), autoscaled, + y(t-lag) for lag 3 / lag 1. Grid R {2,4,6} x phi {0.5,1,2,4} x gamma {0,0.5,1} on Kelmarsh 2017 March, every 6th row.
+- B11 Bai 2024 (latetruth/baselines_bai.py): their final energy-flow feature set mapped to Kelmarsh (gearbox bearing temps + 1-step rates, nacelle temp, rotor/gearbox/generator speeds, wind speed, pitch A, yaw error = wind direction - nacelle position, tip-speed ratio with R = 46 m); target-free; XGBoost (one of their four models), B3 grid. Gear geometry needed for their analytic loss terms is not available, so the loss terms enter through these measured drivers rather than computed watts.
 - B9 implementation check vs the authors' own code/data split: see REPORT_FA.md (our port within ±4 % of their exact recipe on identical samples).
 
 ## Amendment 8 (2026-10-14, before any Penmanshiel / Hill of Towie baseline result) — claim C2 runs
-- Datasets: Penmanshiel 2019 (14 Senvion MM82, same channel names as Kelmarsh) and Hill of Towie 2019 (21 Siemens SWT-2.3; 16-slot map in tools/baselines_hot.py; missing slots = NaN: gear-oil inlet temp, vane, inlet pressure, wind direction).
+- Datasets: Penmanshiel 2019 (14 Senvion MM82, same channel names as Kelmarsh) and Hill of Towie 2019 (21 Siemens SWT-2.3; 16-slot map in latetruth/baselines_hot.py; missing slots = NaN: gear-oil inlet temp, vane, inlet pressure, wind direction).
 - Ours: Penmanshiel h30_x + local (as Kelmarsh); Hill of Towie base_x + local (as HILL_OF_TOWIE_REPLICATION_v001) but with EV0 = 4032 like every comparison here.
 - Every baseline hyper-parameter frozen at its Kelmarsh-2017 choice (no re-tuning); receipt-causal regime only (lag 3); deep baselines budget v2 on GPU; Wang frozen-NN variant.
-- Strictly one job at a time (tools/run_new_datasets.py). Same common-row scoring (tools/baselines_table.py extended to the new datasets).
+- Strictly one job at a time (latetruth/run_new_datasets.py). Same common-row scoring (latetruth/baselines_table.py extended to the new datasets).
 
 ## Amendment 9 (2026-10-14, before any Penmanshiel / Hill of Towie baseline result)
-Compute only: CPU baselines now run turbine-parallel (6 worker processes, tools/run_new_datasets_v2.py) and the deep baselines in a separate GPU lane (tools/deep_lane.py). Kim's offline subsample uses a per-turbine seed (default_rng(turbine)) instead of one sequential generator. Methods and hyper-parameters unchanged.
+Compute only: CPU baselines now run turbine-parallel (6 worker processes, tools/run_new_datasets_v2.py) and the deep baselines in a separate GPU lane (latetruth/deep_lane.py). Kim's offline subsample uses a per-turbine seed (default_rng(turbine)) instead of one sequential generator. Methods and hyper-parameters unchanged.
 
 ## Amendment 10 (2026-10-14) — B11 on a farm without a channel
 Bai's yaw-error feature needs wind direction, which Hill of Towie does not record; the first HoT run produced no prediction (rows with any NaN feature were dropped). B11 now keeps only feature channels >= 95 % present in the training window. On Kelmarsh and Penmanshiel every channel is >= 99 % present, so their B11 results are unchanged.
 
 ## Amendment 11 (2026-10-15, registered before any of these results) — robustness package
 S1 Significance: for each dataset (Kelmarsh 2018, Penmanshiel 2019, Hill of Towie 2019), unit = turbine x month MAE on the common rows (Feb–Dec). Ours vs each baseline: two-sided Wilcoxon signed-rank test, Holm correction over the baselines within a dataset; plus a turbine-cluster bootstrap (2000 resamples of turbines) 95 % CI of the MAE difference. Rule: "ours better" is claimed for a baseline only if Holm p < 0.05 AND the CI excludes 0.
-S2 Independent verification: tools/verify_final_table.py recomputes every MAE in FINAL_TABLE_all.json directly from the saved prediction files with its own code (no shared scoring function); pass = |difference| < 1e-9 for all entries.
+S2 Independent verification: latetruth/verify_final_table.py recomputes every MAE in FINAL_TABLE_all.json directly from the saved prediction files with its own code (no shared scoring function); pass = |difference| < 1e-9 for all entries.
 S3 Delay sensitivity (Kelmarsh 2018): release delay d in {1, 3, 6, 12} steps (10, 30, 60, 120 min). Ours (fleet model trained with oil(t-d) features, released rows < start-d, local correction with delay d); Wang 2022 frozen (fast sensor = our fleet model for that d, slow measurement delay d); Kim 2013 (lag d, database ends at t-d); Bangalore 2015 (lag d); Yan 2023 shown as the delay-independent target-free reference. Hyper-parameters frozen. Reported as curves; no pass/fail rule.
 S4 Local-correction sensitivity (Kelmarsh 2018, saved fleet predictions): k in {5, 10, 20, 40, 80} x memory in {1440, 4320, 8640, 17280}; shrink k0 = 20 fixed. Reported as a grid; the pre-chosen setting (k 20, memory 8640) is not re-selected.
 S5 Compute cost: wall-clock fit + predict time per turbine for one monthly window (Kelmarsh 2018, window starting 1 June), same machine, each method alone.
 S6 Optional extra baseline Cao et al. 2026 (MSSP 260, 115021, RESCINet) if implementable from the paper; otherwise reported as UNREACHABLE.
 
-S6 implementation note (2026-10-15, before results): tools/baselines_cao.py — RESCINet lite from the paper text (121k parameters vs 402k reported; nowcast instead of 6-step forecast; target history visible to t-3; Kalman pre-filter, |r|>=0.4 screening, 3 levels, hidden 16, lr 1e-5, batch 32). Kelmarsh 2018 only.
+S6 implementation note (2026-10-15, before results): latetruth/baselines_cao.py — RESCINet lite from the paper text (121k parameters vs 402k reported; nowcast instead of 6-step forecast; target history visible to t-3; Kalman pre-filter, |r|>=0.4 screening, 3 levels, hidden 16, lr 1e-5, batch 32). Kelmarsh 2018 only.
 S6 update (2026-10-15, before any Cao result): Aryan asked for maximum fidelity to the paper. First-window training changed to exactly 100 epochs without early stopping (paper). Remaining unavoidable differences, to be stated in the paper: nowcast of y(t) instead of a 6-step forecast (our task), layer internals not fully specified in the paper and no public code (121k vs 402k parameters), monthly fine-tuning (shared protocol for all methods). Runs on all three farms.
 
 ## Amendment 12 (2026-10-15 09:30, after the v1 Cao result on Kelmarsh 2018 — disclosed)
@@ -98,8 +98,8 @@ Decision (Aryan, 2026-10-15): stop the v1 lanes after the first Penmanshiel batc
 Amendment 12 addendum (2026-10-15, before any v2 result, Aryan agreed): v2 is also run on the six Penmanshiel turbines of the finished v1 batch (1, 2, 4, 5, 6, 7), each lane running its Kelmarsh 2018 turbine first. Cao is then reported on Kelmarsh 2018 (6 turbines) and Penmanshiel 2019 (6 of 14 turbines), v1 and v2.
 
 ## Amendment 13 (2026-10-15, registered before running; exploratory diagnostic for the Discussion, no success rule)
-tools/discussion_recency_vs_similarity.py: on the saved fleet predictions of kelmarsh2017/2018, penmanshiel2019, hot2019, compare the proposed correction (20 most similar released states, shrink 1/2) with the same correction built from the 20 most recent released residuals, and with 1/2 times the newest released residual. Reported as exploratory in the Discussion, whatever the outcome.
-tools/filter_index.py: physics-based filter-condition index on Hill of Towie 2019, D_i(t) = ln dP_f - ln Q - ln nu(T) relative to each turbine's January median (laminar Darcy law with Walther viscosity, exponents fixed at one); weekly medians; report for each turbine the week of the largest weekly drop and its size, and the index trend between drops. Exploratory; no maintenance log is available.
+latetruth/discussion_recency_vs_similarity.py: on the saved fleet predictions of kelmarsh2017/2018, penmanshiel2019, hot2019, compare the proposed correction (20 most similar released states, shrink 1/2) with the same correction built from the 20 most recent released residuals, and with 1/2 times the newest released residual. Reported as exploratory in the Discussion, whatever the outcome.
+latetruth/filter_index.py: physics-based filter-condition index on Hill of Towie 2019, D_i(t) = ln dP_f - ln Q - ln nu(T) relative to each turbine's January median (laminar Darcy law with Walther viscosity, exponents fixed at one); weekly medians; report for each turbine the week of the largest weekly drop and its size, and the index trend between drops. Exploratory; no maintenance log is available.
 
 ## Amendment 14 (2026-10-16, registered before any gated result) — standstill gate (disclosed, motivated by a held-out result)
 Trigger (disclosed): on Kelmarsh 2024 the S1 rule did not show ours better than Kim 2013 (CI [-0.069, +0.129]); turbine 4 was stopped ~7.5 days in February (oil down to 9.5 C) and our error there was 4.28 vs Kim 0.25. A tabulation already seen on kelmarsh2017/2018/2024 and penmanshiel2019/2022 (rows after >= 24 h of rotor speed < 1 RPM; 0.14-2.3 % of rows) gave ours 0.68-2.81 vs Kim 0.13-0.47 on those rows, and ours better than Kim on all other rows. Author's hypothesis H41: a stopped turbine must be declared to the model so it cannot corrupt the estimate.
@@ -111,7 +111,7 @@ Amendment 14 outcome (2026-10-16): chosen on Kelmarsh 2017 = hold, h = 72 rows (
 Motivation (literature, not results): Schlechtingen & Santos (Offshore 2011, publ. 2012) state that SCADA data are often submitted with a delay, "e.g. 4 h" (to be checked against the PDF before citing). S3 is extended with d = 24 steps (4 h) on Kelmarsh 2018 for the same four methods, same code, same frozen hyper-parameters (delay_part1.py, delay_part2.py). Reported as one more point on the curve; no pass/fail rule.
 
 ## S5 implementation note (2026-10-16, before any timing result)
-tools/s5_timing.py, Kelmarsh 2018, window starting 1 June, turbine 1, machine otherwise idle, one method at a time, each method's own code
+latetruth/s5_timing.py, Kelmarsh 2018, window starting 1 June, turbine 1, machine otherwise idle, one method at a time, each method's own code
 with its window list replaced by the single June window (so each "fit" is a full refit on all rows released before 1 June, then predict June):
 classic B0-B5, Kim, Bai (CPU); Fu, Yan, Dai, Grataloup v2 and Cao v2 (GPU; first-window training budget = full training).
 Ours: fleet model fit on the six turbines pooled (its design) + June prediction, then the local correction for the June rows of turbine 1
@@ -129,7 +129,7 @@ one-sided binomial p < 0.01; otherwise the result is not used in the paper (Arya
 Amendment 13 addendum outcome (2026-10-16): hits 7/21 (chance 0.185), one-sided binomial p = 0.077 -> not positive; not used in the paper. tools/filter_vs_shutdown.py, 06_Experiments/filter_index_2026-10-15_v001/vs_shutdown.json.
 
 ## Amendment 16 (2026-10-16, after an external code review, before any re-run result) — two defects found
-(a) tools/baselines_common.py ours_sync (used by the S3 delay curves for ours and Wang, and by claim C3): the row mask tested the
+(a) latetruth/baselines_common.py ours_sync (used by the S3 delay curves for ours and Wang, and by claim C3): the row mask tested the
 finiteness of the target d steps in the FUTURE (Y[r+d]) instead of the released lagged target (Y[r-d]); it selected training and
 predicted rows on future missingness (not future values). Fixed to Y[r-d]. All ours/Wang delay runs (d = 1, 3, 6, 12, 24) and
 ours_sync_kelmarsh2018 are recomputed; old files kept in _superseded_2026-10-16/. Kim and Bangalore delay runs do not use this code.
@@ -141,7 +141,7 @@ state this. The main comparison (d = 3) does not use ours_sync and is unaffected
 Motivation: five external review reports (2026-10-17) ask that the simple recency correction of Amendment 13 appear in the main
 comparison on all six held-out farm-years, with an EWMA reference, and that the turbine bootstrap be complemented by a resampling
 that keeps the dependence between turbines. No success rule; every number is reported whatever its sign.
-(a) Residual references (tools/residual_references.py), same saved fleet predictions (ours_<ds>.npz P_fleet), same released-row rule
+(a) Residual references (latetruth/residual_references.py), same saved fleet predictions (ours_<ds>.npz P_fleet), same released-row rule
 (residual of row s usable at t only if s < t - d, d = 3), same 8640-row memory where applicable, residuals collected from EV0:
   mean20 : fleet + 20/40 * mean of the 20 newest released residuals (identical to last20 of Amendment 13; nothing tuned).
   ewma   : fleet + c * EWMA of the released residuals; half-life h in {6, 18, 36, 72, 144, 288, 576, 1152, 2304} rows and c in
@@ -150,7 +150,7 @@ that keeps the dependence between turbines. No success rule; every number is rep
   Scored on the common rows of Table 7 (rows where every compared method is finite). Same S1 machinery as significance.py:
   turbine-month Wilcoxon (Feb-Dec) + Holm within farm-year (over the Table-8 baselines plus the two references), turbine bootstrap
   2000. Reported as extra rows of Table 7 / Table 8 and in the Discussion. The proposed estimator is not changed.
-(b) Dependence-aware sensitivity (tools/block_bootstrap.py): for ours vs every Table-8 baseline and the two references, paired
+(b) Dependence-aware sensitivity (latetruth/block_bootstrap.py): for ours vs every Table-8 baseline and the two references, paired
   bootstrap of whole calendar blocks of the evaluation period, the same blocks for all turbines (keeps cross-turbine dependence and
   within-block autocorrelation); blocks of 7 days (primary) and 28 days (sensitivity); 2000 resamples; 95 % percentile CI of the
   fleet-mean MAE difference. Conditional on the fitted models (no refitting). Reported in a table / text; the original rule is not
@@ -174,7 +174,7 @@ H25 .1865/.1809/.1853/.1821/.1779. ours+rec lower than ours and than ref ewma on
 comparisons; with the gate, lower than gate on all six (CI above zero). RECENCY_ON_SIMILARITY.json.
 
 ## Amendment 19 (2026-10-17, after CONFIRM_TWO_TIMESCALE_v001 outcome, before any of these results) — ours+rec against the published baselines
-Author's hypotheses: «همه رو انجام بدیم». (a) Six farm-years of Table 7: ours+rec (rec_<ds>.npz, Am. 18) and ours+rec+gate vs every Table-8 baseline,
+(a) Six farm-years of Table 7: ours+rec (rec_<ds>.npz, Am. 18) and ours+rec+gate vs every Table-8 baseline,
 same S1 rule (turbine-month Wilcoxon + Holm within farm-year, turbine bootstrap 2000) and the 7/28-day block bootstrap; reported whatever
 the outcome. (b) The three confirmation years (Kelmarsh 2020, Penmanshiel 2020, Hill of Towie 2022): all CPU baselines (B0, B1, B2, B2f,
 B3, B5, B6, B11, B10f) and the GPU deep baselines (B4, B7, B8, B9, budget v2) with hyper-parameters frozen at their Kelmarsh 2017 choice,
@@ -189,7 +189,7 @@ on all three, S1 rule and 7-day blocks; also ours alone better than all 13. MAE 
 published baseline Wang (frozen) .1978/.1767/.2015. REC_VS_BASELINES_kelmarsh2020_penmanshiel2020.json, REC_VS_BASELINES_hot2022.json.
 
 ## Amendment 20 (2026-10-17, reporting after Amendments 17-19 and CONFIRM_TWO_TIMESCALE_v001) — paper revision
-Author's hypotheses: «همه کار رو دقیق انجام بده». The paper's proposed estimator is now ours+rec (similarity term + recency term, Am. 18); the
+The paper's proposed estimator is now ours+rec (similarity term + recency term, Am. 18); the
 similarity-only estimator is reported as the registered primary of stages 2-3. Derived computations for the text, no new choices:
 FINAL_TABLE_all.json over 10 farm-years with the extra rows (extras do not shape the common rows; old values unchanged);
 REC_VS_BASELINES_all9.json (S1 + 7/28-day blocks, 9 farm-years); DELAY_SENSITIVITY_rec.json (recency term on the saved delay
@@ -199,13 +199,13 @@ of the recency term, max |diff| 0); S5 recency timing 0.06 s per turbine-year. H
 code skip empty windows (no other effect).
 
 ## Amendment 21 (2026-10-17, before any result of it) — matched-input per-turbine control (review item F02)
-Author's hypotheses: «بروم». Question: how much of the advantage comes from pooling the fleet, with inputs and late-truth correction held fixed?
+Question: how much of the advantage comes from pooling the fleet, with inputs and late-truth correction held fixed?
 Control "per-turbine": the same HistGradientBoosting (PARAMS), the same features (h30_x Senvion / base_x Siemens), windows, released-row
 rule and evaluation, but one model per turbine fitted on that turbine's own released rows (no turbine index); then the identical
 similarity term (local(), k 20, k0 20, M 8640) and recency term (h 18, c 1/2). Farm-years: K17 (descriptive) + the nine held-out.
 Files ptfleet_<ds>.npz (model alone) and ptrec_<ds>.npz (with both terms). Reported: MAE on the Table-7 common rows; proposed vs
 per-turbine+correction and fleet alone vs per-turbine alone, S1 rule + 7/28-day blocks. No success rule; reported whatever the outcome.
-Nothing is tuned. tools/per_turbine_matched.py, tools/compare_per_turbine.py.
+Nothing is tuned. latetruth/per_turbine_matched.py, latetruth/compare_per_turbine.py.
 Amendment 21 outcome (2026-10-17): pooled vs per-turbine with identical inputs and late-truth terms, common-row MAE (proposed / per-turbine
 + terms): K18 .1698/.1985, P19 .1474/.1496, H19 .1866/.2065, K24 .2203/.2691, P22 .1668/.1989, H25 .1809/.2008, K20 .1803/.2106,
 P20 .1606/.1818, H22 .1853/.2292 (K17 .1551/.1709). Pooling better under the S1 rule and 7-day blocks on 8 of 9 held-out farm-years; not

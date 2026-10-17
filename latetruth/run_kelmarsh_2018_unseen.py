@@ -1,5 +1,6 @@
-"""Protocol 05_Protocols/KELMARSH_2018_UNSEEN_v001.md — frozen Kelmarsh pipeline on never-seen 2018."""
+"""Protocol protocols/KELMARSH_2018_UNSEEN_v001.md — frozen Kelmarsh pipeline on never-seen 2018."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import require_archive
 import sys
 import io, csv, zipfile, json, hashlib, sys
 import numpy as np, pandas as pd
@@ -14,7 +15,7 @@ PRES = ['Gear oil pump pressure (bar)', 'Gear oil inlet pressure (bar)']
 
 
 def read(t):
-    with zipfile.ZipFile(ZP) as z:
+    with zipfile.ZipFile(require_archive(ZP)) as z:
         name = next(n for n in z.namelist() if n.startswith(f'Turbine_Data_Kelmarsh_{t}_'))
         with io.TextIOWrapper(z.open(name), encoding='utf-8-sig') as f:
             for line in f:

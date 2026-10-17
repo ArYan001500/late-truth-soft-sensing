@@ -1,10 +1,11 @@
-"""Protocol 05_Protocols/HILL_OF_TOWIE_REPLICATION_v001.md — same pipeline as Kelmarsh/Penmanshiel on Siemens SWT-2.3."""
+"""Protocol protocols/HILL_OF_TOWIE_REPLICATION_v001.md — same pipeline as Kelmarsh/Penmanshiel on Siemens SWT-2.3."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import require_archive
 import sys
 import zipfile, json, hashlib, sys, os
 import numpy as np, pandas as pd
 from latetruth.run_local_late_truth_long import ROOT, PARAMS, local, HistGradientBoostingRegressor, threadpool_limits
-YEAR = int(os.environ.get('HOT_YEAR', '2019'))   # later held-out year: HOT_YEAR=2025 (05_Protocols/LATER_YEARS_v001.md)
+YEAR = int(os.environ.get('HOT_YEAR', '2019'))   # later held-out year: HOT_YEAR=2025 (protocols/LATER_YEARS_v001.md)
 ZP = DATA_DIR/f'HillOfTowie_04/{YEAR}.zip'
 OUT = OUT_DIR/('hill_of_towie_replication_2019_2026-10-13_v001' if YEAR == 2019 else f'later_years_hot{YEAR}_2026-10-15_v001')
 TARGET = 'wtc_GeOilTmp_mean'
@@ -19,7 +20,7 @@ EV0 = int(np.flatnonzero(month == 2)[0]); STATIONS = list(range(2304510, 2304531
 
 def read_all():
     parts = {s: [] for s in STATIONS}
-    with zipfile.ZipFile(ZP) as z:
+    with zipfile.ZipFile(require_archive(ZP)) as z:
         for m in range(1, 13):
             frames = []
             for tb, cols in TABLES.items():

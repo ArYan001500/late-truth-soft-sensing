@@ -1,6 +1,6 @@
 # Later held-out years (temporal transfer) — protocol v001
 
-Registered 2026-10-15, before any result on these years. Author's hypotheses: «هر کاری که خفن‌تر می‌کنه مقاله رو».
+Registered 2026-10-15, before any result on these years.
 Purpose: test the frozen pipeline and the comparison on the latest complete year of each farm, 5 to 7 years after the
 development year (aged turbines, different climate year, possible changes of the SCADA export).
 

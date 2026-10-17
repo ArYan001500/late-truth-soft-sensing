@@ -6,6 +6,27 @@ import urllib.request
 from pathlib import Path
 
 
+class MissingArchive(FileNotFoundError):
+    """A required data archive is absent from the data folder."""
+
+
+def find_archive(directory, pattern, recursive=False):
+    """First archive in directory matching pattern; stop with a clear message when there is none."""
+    directory = Path(directory)
+    found = next(directory.rglob(pattern) if recursive else directory.glob(pattern), None) if directory.is_dir() else None
+    if found is None:
+        raise MissingArchive(f'Archive {pattern} not found in {directory}. Run without --offline to download it.')
+    return found
+
+
+def require_archive(path):
+    """The given archive path, or a clear message when it does not exist."""
+    path = Path(path)
+    if not path.is_file():
+        raise MissingArchive(f'Archive {path.name} not found in {path.parent}. Run without --offline to download it.')
+    return path
+
+
 def manifest():
     return json.loads(Path(__file__).with_name('data_manifest.json').read_text())
 

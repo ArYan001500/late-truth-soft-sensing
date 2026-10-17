@@ -1,4 +1,4 @@
-"""B10 of 05_Protocols/PUBLISHED_BASELINES_v001.md — Wang, Alipouri, Huang 2022 (IEEE TIM 71, 2500509):
+"""B10 of protocols/PUBLISHED_BASELINES_v001.md — Wang, Alipouri, Huang 2022 (IEEE TIM 71, 2500509):
 DNEKF (fast rate) + SNEKF (delayed accurate measurements) synchronization with exclusive-information fusion (their eqs. 2–25, Lemma 1).
 Adaptation (documented): scalar quality state x = gear-oil temperature; state model f(x) = x (random walk, as in their industrial SRU case)
 + state-compensation NN; fast-rate sensor = fleet soft-sensor output P_fleet (h30_x HGB, the same base model our method corrects)

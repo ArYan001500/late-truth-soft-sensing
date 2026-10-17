@@ -1,9 +1,10 @@
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import require_archive
 import sys
 # Physics check on Hill of Towie January 2019 (training window only): does the filter pressure drop follow
 # dP = R * mu(T) * Q with Q set by the pump stage (70 / 142 l/min) and mu(T) from the Walther equation of an ISO VG 320 oil?
 import zipfile, sys, numpy as np, pandas as pd
-z = zipfile.ZipFile(sys.argv[1]); K = ['TimeStamp', 'StationId']
+z = zipfile.ZipFile(require_archive(sys.argv[1])); K = ['TimeStamp', 'StationId']
 t = pd.read_csv(z.open('tblSCTurTemp_2019_01.csv'), usecols=K + ['wtc_GeOilTmp_mean'])
 p = pd.read_csv(z.open('tblSCTurPress_2019_01.csv'), usecols=K + ['wtc_InlPrAft_mean', 'wtc_InlPrBef_mean', 'wtc_GearPres_mean'])
 o = pd.read_csv(z.open('tblSCTurDigiOut_2019_01.csv'), usecols=K + ['wtc_GearPuHS_timeon', 'wtc_GearPuLS_timeon'])

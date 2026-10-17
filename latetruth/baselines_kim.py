@@ -1,4 +1,4 @@
-"""B6 of 05_Protocols/PUBLISHED_BASELINES_v001.md — Kim, Okajima, Kano, Hasebe 2013 (Chemom. Intell. Lab. Syst. 124, 43-49):
+"""B6 of protocols/PUBLISHED_BASELINES_v001.md — Kim, Okajima, Kano, Hasebe 2013 (Chemom. Intell. Lab. Syst. 124, 43-49):
 just-in-time LW-PLS with the adaptive weighted-Euclidean similarity (their eqs. 3-16, 20-23).
 Database for a query at decision time t = released rows of the same turbine in [t-3-8640, t-3) (same memory as our local correction),
 so this is the JIT competitor that also learns from late truth. Inputs: the 16 raw channels, autoscaled on the training window, plus the

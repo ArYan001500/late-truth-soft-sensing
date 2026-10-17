@@ -1,9 +1,9 @@
 # Confirmatory test of the two-time-scale correction (ours+rec) on untouched years — protocol v001
 
-Registered 2026-10-17, before any look at the data of these years (only the file list was read). Author's hypotheses: «عالیه انجام بدیم».
+Registered 2026-10-17, before any look at the data of these years (only the file list was read).
 Motivation: ours+rec (Amendment 18) was designed after the Amendment 17 results; this test is its confirmation on years never used.
 
-## Data (never used by any model in this project; checked by grep of tools/, 06_Experiments/, 05_Protocols/)
+## Data (never used by any model in this project; checked by grep of latetruth/, results/, protocols/)
 - Kelmarsh 2020 (Kelmarsh_SCADA_2020_3086.zip, on disk), turbines 1-6.
 - Penmanshiel 2020 (Penmanshiel_SCADA_2020_WT01-10_3109.zip + WT11-15_3118.zip, version 0.0.2, on disk).
 - Hill of Towie 2022 (2022.zip, to be downloaded by Aryan from doi:10.5281/zenodo.22662930), 21 turbines; middle year between 2019 and 2025.
@@ -26,4 +26,4 @@ Note (2026-10-17, completeness scan): HoT 2022 turbine 2304515 is absent from al
 Common-row MAE fleet / ours / ewma / ours+rec / gate / ours+rec+gate:
 K20 .1990/.1847/.1868/.1805/.1698/.1693; P20 .1770/.1665/.1638/.1608/.1557/.1543; H22 .2000/.1896/.1891/.1854/.1838/.1810.
 ours+rec lower than ours and than ref ewma on all three; Holm p < 1e-5, turbine-bootstrap and 7/28-day block CIs above zero in all six
-comparisons. CONFIRM_TWO_TIMESCALE.json, tools/confirm_two_timescale.py. Readers patched only for a turbine absent in Feb 2022 (HoT).
+comparisons. CONFIRM_TWO_TIMESCALE.json, latetruth/confirm_two_timescale.py. Readers patched only for a turbine absent in Feb 2022 (HoT).

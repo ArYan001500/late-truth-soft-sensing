@@ -1,4 +1,4 @@
-"""B11 of 05_Protocols/PUBLISHED_BASELINES_v001.md — Bai, Han, Kang, Tao, Pang, Dai, Liu 2024 (Applied Energy 371, 123687):
+"""B11 of protocols/PUBLISHED_BASELINES_v001.md — Bai, Han, Kang, Tao, Pang, Dai, Liu 2024 (Applied Energy 371, 123687):
 energy-flow physical features for gear-oil temperature. Their final feature set (Sec. 3, end): gearbox component temperatures and their
 rates of change, nacelle temperature, gear and bearing rotational speeds, wind speed, pitch angle, yaw error, tip-speed ratio; no oil
 history. Kelmarsh mapping: front/rear/rotor-bearing temps (+1-step changes), nacelle temp, rotor speed, gearbox speed, generator rpm,

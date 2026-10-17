@@ -1,5 +1,5 @@
-"""Paper numbers. Writes Paper/generated/numbers.tex (one \\val{key} for every number quoted in the Results text) and the Results
-tables Paper/tables/tab_rules.tex, tab_comparison.tex and tab_significance.tex, all read directly from the saved result files,
+"""Paper numbers. Writes results/paper/generated/numbers.tex (one \\val{key} for every number quoted in the Results text) and the Results
+tables results/paper/tables/tab_rules.tex, tab_comparison.tex and tab_significance.tex, all read directly from the saved result files,
 so that no number in the paper is typed by hand. Standard library only.   usage: python make_paper_numbers.py"""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
 import sys
@@ -26,7 +26,7 @@ SHORT = {k: re.sub(r'~\\cite\{[^}]*\}', '', lab) for lab, k in PUB}; SHORT[FLEET
 
 
 def load(p):
-    SRC.append('06_Experiments/' + p.relative_to(E).as_posix()); return json.loads(p.read_text(encoding='utf-8', errors='replace'))
+    SRC.append('results/' + p.relative_to(E).as_posix()); return json.loads(p.read_text(encoding='utf-8', errors='replace'))
 
 
 def res(p):
@@ -182,7 +182,7 @@ SIE = {'wtc_ActPower': 'power', 'wtc_AcWindSp': 'wind speed', 'wtc_MainSRpm': 'r
        'wtc_GenBeGTm': 'generator bearing', 'wtc_HSGenTmp': 'HS bearing, generator side', 'wtc_HSRotTmp': 'HS bearing, rotor side',
        'wtc_IMSGenTm': 'IMS bearing, generator side', 'wtc_IMSRotTm': 'IMS bearing, rotor side', 'wtc_MainBTmp': 'main bearing'}
 FV = res(E/'freshness_value_2026-10-14_v001/results.json'); b0 = FV['all_fresh']['all']
-txt = (E/'freshness_value_2026-10-14_v001/both_stale_output.txt').read_text(encoding='utf-8-sig'); SRC.append('06_Experiments/freshness_value_2026-10-14_v001/both_stale_output.txt')
+txt = (E/'freshness_value_2026-10-14_v001/both_stale_output.txt').read_text(encoding='utf-8-sig'); SRC.append('results/freshness_value_2026-10-14_v001/both_stale_output.txt')
 j17 = float(re.search(r'stale: all ([0-9.]+)', txt).group(1))
 fresh['k17'] = (b0, {n: inc(b0, pick(FV, p)['all']) for p, n in SEN.items()}, inc(b0, j17))
 fresh['k18'] = (A18['h30_x']['all'], {n: inc(A18['h30_x']['all'], pick(S18, 'stale:' + p)['all']) for p, n in SEN.items()},
@@ -329,7 +329,7 @@ put('s5.cao.ratio', f"{sec('B12_v2_full100') / (sec('ours_fleet') + sec('ours_lo
 put('s5.rec.year', f"{sec('rec_year'):.2f}")
 
 # ---------------------------------------------------------------- revision of 2026-10-17: proposed = similarity + recency
-# PUBLISHED_BASELINES_v001 Amendments 17-19 and 05_Protocols/CONFIRM_TWO_TIMESCALE_v001.md
+# PUBLISHED_BASELINES_v001 Amendments 17-19 and protocols/CONFIRM_TWO_TIMESCALE_v001.md
 PROP, SIMK, RECK, RECG = 'proposed (similarity + recency)', OURS, 'ours+rec', 'ours+rec+gate'
 EWMAK, M20K = 'reference: EWMA of residuals', 'reference: mean of 20 newest residuals'
 DSC = [('k20', 'kelmarsh2020'), ('p20', 'penmanshiel2020'), ('h22', 'hot2022')]; DS9 = DS + DSL + DSC

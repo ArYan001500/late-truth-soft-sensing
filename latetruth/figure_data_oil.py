@@ -2,11 +2,12 @@
 window), with the same row filter as physics_oil_circuit_check.py. Per pump stage, 1-degC bins: median, quartiles and count, plus the
 Walther viscosity of ISO VG 320 at the bin centre.   usage: python figure_data_oil.py <path to HillOfTowie 2019.zip>"""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import require_archive
 import sys
 import zipfile, sys, json, hashlib
 from pathlib import Path
 import numpy as np, pandas as pd
-z = zipfile.ZipFile(sys.argv[1]); K = ['TimeStamp', 'StationId']
+z = zipfile.ZipFile(require_archive(sys.argv[1])); K = ['TimeStamp', 'StationId']
 t = pd.read_csv(z.open('tblSCTurTemp_2019_01.csv'), usecols=K + ['wtc_GeOilTmp_mean'])
 p = pd.read_csv(z.open('tblSCTurPress_2019_01.csv'), usecols=K + ['wtc_InlPrAft_mean', 'wtc_InlPrBef_mean'])
 o = pd.read_csv(z.open('tblSCTurDigiOut_2019_01.csv'), usecols=K + ['wtc_GearPuHS_timeon', 'wtc_GearPuLS_timeon'])

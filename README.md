@@ -32,7 +32,8 @@ python -m latetruth reproduce --tier full --jobs 8
 pytest -q
 ```
 
-Each tier ends with a PASS or FAIL summary. Finished steps are skipped when a run is restarted. `--data-dir` (or `DATA_DIR`)
+Each tier ends with a PASS or FAIL summary. Baselines with neural networks can differ across platforms in the sixth
+decimal; their check uses a tolerance of 1e-4 °C. Finished steps are skipped when a run is restarted. `--data-dir` (or `DATA_DIR`)
 sets the data folder, `OUT_DIR` the output folder.
 
 ## Data

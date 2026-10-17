@@ -1,4 +1,4 @@
-"""Protocol 05_Protocols/PUBLISHED_BASELINES_v001.md — B0, B1 Bangalore 2015, B2/B2f Schlechtingen 2011, B3 Liu 2020, B5 Yang 2021.
+"""Protocol protocols/PUBLISHED_BASELINES_v001.md — B0, B1 Bangalore 2015, B2/B2f Schlechtingen 2011, B3 Liu 2020, B5 Yang 2021.
 Pure numpy/sklearn/xgboost (CPU implementation). Reads inputs_<ds>.npz written by baselines_common.export_inputs.
 All models per turbine, retrained at the same monthly starts as ours on released rows only (rows < start - 3).
 Target history: receipt-causal lag 3 (main) or synchronous lag 1 (secondary, claim C3).

@@ -17,7 +17,9 @@ def main():
         from latetruth.reproduce import run
         run(args.tier, args.data_dir, args.jobs, args.offline)
     except Exception as exc:
-        print(f'FAIL: {args.tier}: {type(exc).__name__}: {exc}', file=sys.stderr, flush=True)
+        from latetruth.data import MissingArchive
+        detail = str(exc) if isinstance(exc, MissingArchive) else f'{type(exc).__name__}: {exc}'
+        print(f'FAIL: {args.tier}: {detail}', file=sys.stderr, flush=True)
         return 1
     return 0
 

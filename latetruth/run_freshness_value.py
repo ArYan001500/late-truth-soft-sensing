@@ -1,4 +1,4 @@
-"""Protocol 05_Protocols/FRESHNESS_VALUE_v001.md: leave-one-sensor-stale (3 steps) value of freshness."""
+"""Protocol protocols/FRESHNESS_VALUE_v001.md: leave-one-sensor-stale (3 steps) value of freshness."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
 import sys
 import json, hashlib

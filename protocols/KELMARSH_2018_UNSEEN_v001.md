@@ -1,8 +1,8 @@
 # Final test on never-seen data: Kelmarsh 2018 (6x Senvion MM92) — protocol v001
 
-Registered 2026-10-13, before any 2018 model result. Q1 plan step 2. Only a completeness scan was run (all key channels >= 0.97 per month except October 0.69 and November 0.91–0.94; 52560 rows per turbine).
+Registered 2026-10-13, before any 2018 model result. Only a completeness scan was run (all key channels >= 0.97 per month except October 0.69 and November 0.91–0.94; 52560 rows per turbine).
 Data: Kelmarsh_SCADA_2018_3084.zip (Zenodo, Kelmarsh), turbines 1–6. Never used by any model in this project. Read directly from the zip.
-Pipeline frozen exactly as finalised on Kelmarsh 2017 (no change of features, PARAMS, windows, k, memory): code path of tools/run_penmanshiel_replication.py (run(), feats from run_h29_h30_physics / run_extra_heat_paths, local k=20, memory 8640, delay 3, EV0 = 4032, monthly retraining on released rows, first window = rows < 4032).
+Pipeline frozen exactly as finalised on Kelmarsh 2017 (no change of features, PARAMS, windows, k, memory): code path of latetruth/run_penmanshiel_replication.py (run(), feats from run_h29_h30_physics / run_extra_heat_paths, local k=20, memory 8640, delay 3, EV0 = 4032, monthly retraining on released rows, first window = rows < 4032).
 Rules (same as Kelmarsh 2017 / Penmanshiel):
 R1 h30_x+local beats h30+local by >= 3%.
 R2 h30_x+local beats h30_x overall and in >= 8 of 11 months.

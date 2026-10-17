@@ -1,5 +1,6 @@
-"""Protocol 05_Protocols/PENMANSHIEL_REPLICATION_v001.md — reuses the Kelmarsh feature code unchanged."""
+"""Protocol protocols/PENMANSHIEL_REPLICATION_v001.md — reuses the Kelmarsh feature code unchanged."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import require_archive
 import sys
 import io, csv, zipfile, json, hashlib, sys
 import numpy as np, pandas as pd
@@ -14,7 +15,7 @@ TURB = [1, 2] + list(range(4, 16))
 
 def read(t):
     zp = DIR/('Penmanshiel_SCADA_2019_WT01-10_3112.zip' if t <= 10 else 'Penmanshiel_SCADA_2019_WT11-15_3117.zip')
-    with zipfile.ZipFile(zp) as z:
+    with zipfile.ZipFile(require_archive(zp)) as z:
         name = next(n for n in z.namelist() if n.startswith(f'Turbine_Data_Penmanshiel_{t:02d}_'))
         with io.TextIOWrapper(z.open(name), encoding='utf-8-sig') as f:
             for line in f:

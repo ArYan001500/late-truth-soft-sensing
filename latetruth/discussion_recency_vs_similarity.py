@@ -1,4 +1,4 @@
-"""Discussion diagnostic (exploratory, post hoc; registered in 05_Protocols/PUBLISHED_BASELINES_v001.md as Amendment 13 before running).
+"""Discussion diagnostic (exploratory, post hoc; registered in protocols/PUBLISHED_BASELINES_v001.md as Amendment 13 before running).
 Question: does the local correction gain come from choosing released residuals by state similarity, or would the same correction
 with residuals chosen by recency do as well? Same saved fleet predictions (ours_<ds>.npz), same k = 20, shrink k0 = 20, memory 8640,
 delay 3, residuals collected from EV0. Variants:

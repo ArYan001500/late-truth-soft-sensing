@@ -1,4 +1,4 @@
-"""Later held-out years (05_Protocols/LATER_YEARS_v001.md), CPU part, one job at a time; resumable (a step is skipped when
+"""Later held-out years (protocols/LATER_YEARS_v001.md), CPU part, one job at a time; resumable (a step is skipped when
 its output exists). For each dataset given: (1) pre-registered rules R1-R6 (Senvion) with the frozen Kelmarsh code,
 (2) our pipeline + baseline inputs, (3) the CPU baselines with hyper-parameters frozen at their Kelmarsh 2017 choice.
 usage: python run_later_years.py kelmarsh2024 [penmanshiel2022]   (Python; the pandas parts run with the Python)"""

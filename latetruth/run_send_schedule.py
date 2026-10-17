@@ -1,4 +1,4 @@
-"""Protocol 05_Protocols/SEND_SCHEDULE_v001.md."""
+"""Protocol protocols/SEND_SCHEDULE_v001.md."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
 import sys
 import json, hashlib

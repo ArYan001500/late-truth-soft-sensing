@@ -6,11 +6,12 @@ Weekly medians per turbine; for each turbine: week and size of the largest weekl
 January reference to the week before that drop. No maintenance log is available, so drops cannot be matched to filter changes.
 usage: python filter_index.py <HillOfTowie 2019.zip>"""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import require_archive
 import sys
 import zipfile, sys, json, hashlib
 from pathlib import Path
 import numpy as np, pandas as pd
-z = zipfile.ZipFile(sys.argv[1]); K = ['TimeStamp', 'StationId']; F = []
+z = zipfile.ZipFile(require_archive(sys.argv[1])); K = ['TimeStamp', 'StationId']; F = []
 for m in range(1, 13):
     t = pd.read_csv(z.open(f'tblSCTurTemp_2019_{m:02d}.csv'), usecols=K + ['wtc_GeOilTmp_mean'])
     p = pd.read_csv(z.open(f'tblSCTurPress_2019_{m:02d}.csv'), usecols=K + ['wtc_InlPrAft_mean', 'wtc_InlPrBef_mean'])

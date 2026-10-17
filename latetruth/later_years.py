@@ -1,8 +1,9 @@
-"""Readers for the later held-out years (05_Protocols/LATER_YEARS_v001.md): Kelmarsh 2024, Penmanshiel 2022 (Senvion).
+"""Readers for the later held-out years (protocols/LATER_YEARS_v001.md): Kelmarsh 2024, Penmanshiel 2022 (Senvion).
 The newer SCADA exports can repeat a timestamp many times with mostly empty rows; per timestamp and channel the first
 non-empty value is kept and the frame is re-indexed to the full 10-min grid of the year. Nothing else is changed.
 read(ds, t, cols) returns (df, month) with the same column names and row layout as the earlier readers."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import find_archive
 import sys
 import io, csv, zipfile
 import numpy as np, pandas as pd
@@ -14,9 +15,9 @@ LATER = {'kelmarsh2024': ('Kelmarsh', 2024), 'penmanshiel2022': ('Penmanshiel', 
 def zip_and_prefix(ds, t):
     farm, year = LATER[ds]; base = DATA_DIR/farm
     if farm == 'Kelmarsh':
-        return next(base.glob(f'Kelmarsh_SCADA_{year}_*.zip')), f'Turbine_Data_Kelmarsh_{t}_'
+        return find_archive(base, f'Kelmarsh_SCADA_{year}_*.zip'), f'Turbine_Data_Kelmarsh_{t}_'
     group = 'WT01-10' if t <= 10 else 'WT11-15'
-    return next(base.rglob(f'Penmanshiel_SCADA_{year}_{group}_*.zip')), f'Turbine_Data_Penmanshiel_{t:02d}_'
+    return find_archive(base, f'Penmanshiel_SCADA_{year}_{group}_*.zip', recursive=True), f'Turbine_Data_Penmanshiel_{t:02d}_'
 
 
 def read(ds, t, cols):

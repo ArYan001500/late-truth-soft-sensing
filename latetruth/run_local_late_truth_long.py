@@ -1,5 +1,6 @@
-"""Protocol 05_Protocols/LOCAL_LATE_TRUTH_LONG_v001.md (H26 + H27 over Feb-Dec 2017)."""
+"""Protocol protocols/LOCAL_LATE_TRUTH_LONG_v001.md (H26 + H27 over Feb-Dec 2017)."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import find_archive
 import sys
 import sys, io, csv, zipfile, json, hashlib
 from pathlib import Path
@@ -16,7 +17,7 @@ PARAMS = dict(max_iter=400, learning_rate=.1, max_leaf_nodes=63, min_samples_lea
 
 
 def read(t):
-    zp = next((DATA_DIR/'Kelmarsh').glob('*2017*.zip'))
+    zp = find_archive(DATA_DIR/'Kelmarsh', '*2017*.zip')
     with zipfile.ZipFile(zp) as z:
         name = next(n for n in z.namelist() if n.startswith(f'Turbine_Data_Kelmarsh_{t}_'))
         with io.TextIOWrapper(z.open(name), encoding='utf-8-sig') as f:

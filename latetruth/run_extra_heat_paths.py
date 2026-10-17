@@ -1,5 +1,6 @@
-"""Protocol 05_Protocols/EXTRA_HEAT_PATHS_v001.md."""
+"""Protocol protocols/EXTRA_HEAT_PATHS_v001.md."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import find_archive
 import sys
 import io, csv, zipfile, json, hashlib
 import numpy as np, pandas as pd
@@ -10,7 +11,7 @@ EXTRA = ['Front bearing temperature (°C)', 'Rear bearing temperature (°C)', 'R
 
 
 def read(t):
-    zp = next((DATA_DIR/'Kelmarsh').glob('*2017*.zip'))
+    zp = find_archive(DATA_DIR/'Kelmarsh', '*2017*.zip')
     with zipfile.ZipFile(zp) as z:
         name = next(n for n in z.namelist() if n.startswith(f'Turbine_Data_Kelmarsh_{t}_'))
         with io.TextIOWrapper(z.open(name), encoding='utf-8-sig') as f:

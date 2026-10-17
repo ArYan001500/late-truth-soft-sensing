@@ -1,9 +1,10 @@
-"""Protocol 05_Protocols/PUBLISHED_BASELINES_v001.md — shared data, schedule, metric, and saved predictions of our pipeline.
+"""Protocol protocols/PUBLISHED_BASELINES_v001.md — shared data, schedule, metric, and saved predictions of our pipeline.
 
-`python baselines_common.py kelmarsh2017|kelmarsh2018` writes 06_Experiments/published_baselines_2026-10-14_v001/ours_<ds>.npz
+`python baselines_common.py kelmarsh2017|kelmarsh2018` writes results/published_baselines_2026-10-14_v001/ours_<ds>.npz
 with, per turbine: Y, OK, month, P_fleet (h30_x fleet HGB, no local), P_ours (h30_x + local late-truth correction).
 """
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
+from latetruth.data import find_archive, require_archive
 import sys
 import sys, json, hashlib
 import numpy as np
@@ -22,7 +23,7 @@ def load(ds):
     elif ds == 'penmanshiel2019':
         from latetruth import run_penmanshiel_replication as PEN
         D = {t: PEN.read(t) for t in PEN.TURB}
-    elif ds in ('kelmarsh2024', 'penmanshiel2022', 'kelmarsh2020', 'penmanshiel2020'):   # later held-out years, 05_Protocols/LATER_YEARS_v001.md
+    elif ds in ('kelmarsh2024', 'penmanshiel2022', 'kelmarsh2020', 'penmanshiel2020'):   # later held-out years, protocols/LATER_YEARS_v001.md
         from latetruth import later_years as LY; from latetruth import run_h29_h30_physics as B; from latetruth import run_penmanshiel_replication as PEN
         cols = [TARGET, B.VANE] + HELP + X.EXTRA + K18.PRES
         D = {t: LY.read(ds, t, cols) for t in (range(1, 7) if ds.startswith('kelmarsh') else PEN.TURB)}
@@ -84,11 +85,11 @@ def senvion_raw(ds, t, cols):
         from latetruth import later_years as LY
         return LY.read(ds, t, [TARGET] + list(cols))[0]
     if ds.startswith('kelmarsh'):
-        zp = next((DATA_DIR/'Kelmarsh').glob(f'*{ds[-4:]}*.zip')); pre = f'Turbine_Data_Kelmarsh_{t}_'
+        zp = find_archive(DATA_DIR/'Kelmarsh', f'*{ds[-4:]}*.zip'); pre = f'Turbine_Data_Kelmarsh_{t}_'
     else:
         d = DATA_DIR/'Penmanshiel/Version 0.0.2'
         zp = d/('Penmanshiel_SCADA_2019_WT01-10_3112.zip' if t <= 10 else 'Penmanshiel_SCADA_2019_WT11-15_3117.zip'); pre = f'Turbine_Data_Penmanshiel_{t:02d}_'
-    with zipfile.ZipFile(zp) as z:
+    with zipfile.ZipFile(require_archive(zp)) as z:
         name = next(nm for nm in z.namelist() if nm.startswith(pre))
         with io.TextIOWrapper(z.open(name), encoding='utf-8-sig') as f:
             for line in f:

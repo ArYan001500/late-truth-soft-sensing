@@ -106,10 +106,13 @@ def run(tier, data_dir, jobs, offline=False):
             raise RuntimeError('Paper numbers differ from shipped reference')
     else:
         RAW_DIR.mkdir(parents=True, exist_ok=True)
-        from latetruth.data import download, manifest
+        from latetruth.data import download, manifest, require_archive
         datasets = ['kelmarsh2017','kelmarsh2018'] if tier == 'quick' else list(dict.fromkeys(x['dataset'] for x in manifest()))
         if not offline:
             download(data_dir, datasets)
+        for item in manifest():
+            if item['dataset'] in datasets:
+                require_archive(Path(data_dir).resolve()/item['path'])
         from latetruth import baselines_common as B
         B.OUT.mkdir(parents=True, exist_ok=True)
         # Frozen tuning records are inputs; computed outcomes stay in this output directory.
@@ -143,10 +146,16 @@ def run(tier, data_dir, jobs, offline=False):
         if tier == 'quick':
             actual = quick_metrics()
             expected = json.loads((REPO_DIR/'expected/quick.json').read_text())
-            print(json.dumps(actual, indent=2))
+            print(f'{"method":<22} {"value":>20} {"expected":>20} {"|diff|":>9} {"tolerance":>9}', flush=True)
+            failed = []
             for name, value in actual.items():
-                if abs(value - expected['mae'][name]) > 1e-6:
-                    raise RuntimeError(f'MAE mismatch {name}: {value} vs {expected["mae"][name]}')
+                target, tol = expected['mae'][name], expected['tolerance'][name]
+                diff = abs(value - target)
+                print(f'{name:<22} {value:>20.17f} {target:>20.17f} {diff:>9.2e} {tol:>9.0e}', flush=True)
+                if diff > tol:
+                    failed.append(name)
+            if failed:
+                raise RuntimeError('MAE mismatch beyond tolerance: ' + ', '.join(failed))
         if tier == 'full':
             print('Full tier can take days; deep baselines run sequentially.', flush=True)
             for ds in datasets:

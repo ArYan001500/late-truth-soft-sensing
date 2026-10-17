@@ -1,4 +1,4 @@
-"""Protocol 05_Protocols/PUBLISHED_BASELINES_v001.md (Amendment 4) — deep baselines, optional GPU support.
+"""Protocol protocols/PUBLISHED_BASELINES_v001.md (Amendment 4) — deep baselines, optional GPU support.
 B4 Fu 2019 CNN-LSTM, B7 Yan 2023 hybrid-attention BiConvLSTM, B8 Dai 2025 GCN-TCN-LSTM, B9 Grataloup 2025 LSTM fleet NBM (local variant).
 All four are target-free as published (no oil-temperature history), so lag 3 vs 1 does not apply. Per turbine; same monthly starts as ours:
 first window trained from scratch (<= 30 epochs, early stopping patience 3 on the last 10 % of released rows), later windows fine-tuned

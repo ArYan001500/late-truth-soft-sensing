@@ -3,6 +3,7 @@ boxes, colour-blind-checked categorical palette, direct labels). usage: python m
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
 import sys
 import json
+import logging
 from pathlib import Path
 import numpy as np
 import matplotlib
@@ -16,7 +17,8 @@ OUT.mkdir(exist_ok=True)
 BLUE, ORANGE, AQUA, YELLOW, MAGENTA, GREEN, VIOLET, RED = '#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#4a3aa7', '#e34948'
 INK, INK2, MUTED, GRID = '#0b0b0b', '#52514e', '#8a8986', '#e4e3df'
 PANEL = ['#eef4fb', '#fdf1ea', '#eaf7f1', '#f3f0fa']        # pastel panel backgrounds
-plt.rcParams.update({'font.family': 'Arial', 'font.size': 7.5, 'axes.titlesize': 8, 'axes.labelsize': 7.5, 'xtick.labelsize': 7,
+logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)   # fallback fonts are expected off Windows
+plt.rcParams.update({'font.family': ['Arial', 'Liberation Sans', 'DejaVu Sans'], 'font.size': 7.5, 'axes.titlesize': 8, 'axes.labelsize': 7.5, 'xtick.labelsize': 7,
                      'ytick.labelsize': 7, 'legend.fontsize': 6.8, 'axes.edgecolor': INK2, 'axes.linewidth': 0.6, 'xtick.color': INK2,
                      'ytick.color': INK2, 'axes.labelcolor': INK, 'text.color': INK, 'pdf.fonttype': 42, 'axes.spines.top': False,
                      'axes.spines.right': False, 'xtick.major.width': 0.6, 'ytick.major.width': 0.6, 'legend.frameon': False})

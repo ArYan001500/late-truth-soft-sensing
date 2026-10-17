@@ -1,7 +1,14 @@
 {
   "dataset": "kelmarsh2018",
   "mask": "Own valid evaluation rows, per-turbine mean, EV0=4032",
-  "tolerance": 1e-06,
+  "tolerance": {
+    "P_fleet": 1e-06,
+    "P_ours": 1e-06,
+    "rec": 1e-06,
+    "ref_ewma": 1e-06,
+    "ref_mean20": 1e-06,
+    "B10f_wang2022_frozen": 0.0001
+  },
   "mae": {
     "P_fleet": 0.18006003027836917,
     "P_ours": 0.17299620693740644,
@@ -9,5 +16,6 @@
     "ref_ewma": 0.17631575989461054,
     "ref_mean20": 0.17492864616504664,
     "B10f_wang2022_frozen": 0.17908130303718175
-  }
+  },
+  "tolerance_note": "Absolute, in degrees C. 1e-4 for baselines with a neural network fitted by an iterative solver (platform-dependent in the sixth decimal)."
 }

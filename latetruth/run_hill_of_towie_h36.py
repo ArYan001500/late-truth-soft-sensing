@@ -1,4 +1,4 @@
-"""Protocol 05_Protocols/HILL_OF_TOWIE_REPLICATION_v001.md, Amendment 1 (R7/R8)."""
+"""Protocol protocols/HILL_OF_TOWIE_REPLICATION_v001.md, Amendment 1 (R7/R8)."""
 from latetruth.config import DATA_DIR, RAW_DIR as OUT_DIR, REPO_DIR, PAPER_DIR
 import json, hashlib, sys
 import numpy as np, pandas as pd

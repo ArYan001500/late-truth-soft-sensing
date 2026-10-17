@@ -1,4 +1,4 @@
-"""05_Protocols/CONFIRM_TWO_TIMESCALE_v001.md: frozen variants on untouched years (Kelmarsh 2020, Penmanshiel 2020, Hill of Towie 2022).
+"""protocols/CONFIRM_TWO_TIMESCALE_v001.md: frozen variants on untouched years (Kelmarsh 2020, Penmanshiel 2020, Hill of Towie 2022).
 fleet, ours, ref mean20, ref ewma (h 18, c 0.75), ours+rec (h 18, c 0.5), gate (Am. 14, frozen: hold, h 72), ours+rec+gate.
 Common rows = valid target and every variant finite. Primary: ours+rec vs ours and vs ref ewma, turbine-month Wilcoxon (Holm over the two)
 and turbine bootstrap 2000; block bootstrap (7, 28 days) as sensitivity. Writes CONFIRM_TWO_TIMESCALE.json. Pure numpy/scipy."""
