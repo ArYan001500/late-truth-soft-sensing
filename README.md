@@ -6,7 +6,7 @@ correction use only target values that have been released at decision time.
 
 Aryan Ashoori · [ORCID](https://orcid.org/0009-0001-2226-3894) · aryanashoori0@gmail.com
 
-Citation: DOI will be added at release (see `CITATION.cff`).
+Citation: details will be added when the paper is published (see `CITATION.cff`).
 
 ## Quick start
 
