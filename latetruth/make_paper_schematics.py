@@ -107,7 +107,7 @@ def fig_pipeline():
     x = X0 + W + G
     for i in range(4):
         rbox(ax, x + 0.5 + i * 0.18, YB + 2.05 + i * 0.25, 1.35, 0.85, ['#dbe8f7', '#cfe0f3', '#c3d8ef', '#b6cfeb'][i], ec='white', lw=0.5, r=0.08, z=4 + i)
-    ax.text(x + 1.72, YB + 3.25, 'turbines\n$1\\ldots N$', fontsize=5.0, ha='center', va='center', zorder=9)
+    ax.text(x + 1.72, YB + 3.25, 'turbines\n$i \\in \\mathcal{F}$', fontsize=5.0, ha='center', va='center', zorder=9)
     for k in range(3):                                                                               # three small binary trees
         tx, ty = x + 3.05 + k * 0.82, YB + 3.55
         nodes = [(tx, ty), (tx - 0.22, ty - 0.42), (tx + 0.22, ty - 0.42), (tx - 0.33, ty - 0.84), (tx - 0.11, ty - 0.84), (tx + 0.11, ty - 0.84), (tx + 0.33, ty - 0.84)]
@@ -129,9 +129,9 @@ def fig_pipeline():
     ax.scatter([ox + cx_], [oy + cy_], s=26, marker='*', color=FRESH, zorder=7, lw=0)
     ax.text(ox + 3.35, oy + 1.55, 'current\nstate', fontsize=4.9, color=FRESH, va='center')
     ax.text(ox + 3.35, oy + 0.6, '$k$ nearest\nreleased\nstates', fontsize=4.9, color=LATE, va='center')
-    ax.text(x + W / 2, YB + 1.32, '$\\hat{y}^{\\star}_i(t) = \\hat{y}_i(t) + \\frac{k}{k+k_0}\\,\\bar{r}_{N_k}(t)$', fontsize=6.0, ha='center', va='center', zorder=6)
+    ax.text(x + W / 2, YB + 1.32, '$\\hat{y}^{\\star}_i(t) = \\hat{y}_i(t) + \\frac{k}{k+k_0}\\,\\mathrm{mean}_{N_k}\\, r_i$', fontsize=6.0, ha='center', va='center', zorder=6)
     ax.text(x + W / 2, YB + 0.62, '$\\hat{y}^{\\star\\star}_i(t) = \\hat{y}^{\\star}_i(t) + c\\,e_i(t)$', fontsize=6.0, ha='center', va='center', zorder=6)
-    ax.text(x + W / 2, YB + 0.22, 'similar states: slow bias; 3-h average: fast drift', fontsize=4.8, ha='center', va='center', color=INK2, zorder=6)
+    ax.text(x + W / 2, YB + 0.22, 'similar states: slow bias; 3-h half-life average: fast drift', fontsize=4.8, ha='center', va='center', color=INK2, zorder=6)
     # ---------------- released record as a time strip (same visual language as Fig. 1)
     sx0, sw, cells, d = X0, 3 * W + 2 * G, 24, 3; cw = (sw - 4.2) / cells; yb = 0.75
     ax.text(sx0, 2.75, 'released record', fontsize=5.8, color=INK2, va='center')
@@ -142,7 +142,7 @@ def fig_pipeline():
     ax.text(sx0 + 4.2 + (cells - d) * cw - 0.1, yb + 0.55, '$t{-}d$  ', fontsize=5.4, ha='right', va='center', color=INK2)
     ax.text(sx0 + 4.2 + cells * cw + 0.05, yb + 1.22, '$t$', fontsize=5.4, ha='left', va='center', color=INK2)
     ax.text(sx0 + 4.2 + (cells - d / 2) * cw, yb + 0.55, 'in transit', fontsize=5.0, ha='center', va='center', color=LATE)
-    ax.text(sx0 + 0.0, yb + 1.25, 'targets $y_j(s)$ and\nresiduals $r_i(s)$, $s \\leq t-d$', fontsize=5.0, va='center', color=INK2)
+    ax.text(sx0 + 0.0, yb + 1.25, 'targets $y_j(s)$ and\nresiduals $r_i(s)$, $r^{\\star}_i(s)$, $s \\leq t-d$', fontsize=5.0, va='center', color=INK2)
     xf = X0 + W + G + W / 2; xr = X0 + 2 * (W + G) + 1.0
     arr(ax, (xf, yb + 1.55), (xf, YB - 0.05), c=MUTED, lw=0.9, ms=6); ax.text(xf + 0.15, 3.35, 'training rows', fontsize=5.1, color=INK2, va='center')
     arr(ax, (xr, yb + 1.55), (xr, YB - 0.05), c=MUTED, lw=0.9, ms=6); ax.text(xr - 0.15, 3.35, 'residuals', fontsize=5.1, color=INK2, va='center', ha='right')

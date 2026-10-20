@@ -517,7 +517,7 @@ T = ['\\begin{table*}[t]', '\\caption{MAE ($^{\\circ}$C) on the Nine Held-Out Fa
      '\\cmidrule(lr){2-4}\\cmidrule(lr){5-7}\\cmidrule(l){8-10}', f'Method & {hd} \\\\', '\\midrule',
      'Proposed & ' + ' & '.join(fmt(ds, PROP, True) for _, ds in DS9) + ' \\\\',
      'Proposed + standstill gate$^{a}$ & ' + ' & '.join(fmt(ds, 'proposed + standstill gate') for _, ds in DS9) + ' \\\\',
-     'Similarity correction only$^{b}$ & ' + ' & '.join(fmt(ds, SIMK) for _, ds in DS9) + ' \\\\',
+     'Similarity-only estimator$^{b}$ & ' + ' & '.join(fmt(ds, SIMK) for _, ds in DS9) + ' \\\\',
      'Fleet model alone & ' + ' & '.join(fmt(ds, FLEET) for _, ds in DS9) + ' \\\\',
      'Per-turbine models$^{f}$ & ' + ' & '.join(fmt(ds, 'per-turbine model + late-truth correction') for _, ds in DS9) + ' \\\\',
      'Reference: EWMA of residuals$^{c}$ & ' + ' & '.join(fmt(ds, EWMAK) for _, ds in DS9) + ' \\\\',
@@ -542,7 +542,7 @@ T += ['\\midrule', 'Persistence, $y_i(t-d)$ & ' + ' & '.join(fmt(ds, 'B0 last re
 T = ['\\begin{table*}[t]', '\\caption{Paired Tests of the Proposed Estimator Against the Published Methods Run on Each Farm-Year}', '\\label{tab:significance}', '\\centering',
      '\\footnotesize', '\\setlength{\\tabcolsep}{4pt}', '\\begin{tabular*}{\\textwidth}{@{\\extracolsep{\\fill}}llccccc@{}}', '\\toprule',
      ' & & \\multicolumn{3}{c}{Closest published method} & \\multicolumn{2}{c}{All other methods} \\\\', '\\cmidrule(lr){3-5}\\cmidrule(l){6-7}',
-     'Farm-year & Closest & $\\Delta$MAE [turbine CI; 7-day CI], $^{\\circ}$C & Wins & $p_{\\mathrm{Holm}}$ & min $\\Delta$MAE & max $p_{\\mathrm{Holm}}$ \\\\', '\\midrule']
+     'Farm-year & Closest & $\\Delta$MAE [turbine interval; 7-day interval], $^{\\circ}$C & Wins & $p_{\\mathrm{Holm}}$ & min $\\Delta$MAE & max $p_{\\mathrm{Holm}}$ \\\\', '\\midrule']
 for j, (s, ds) in enumerate(DS9):
     rows = [r for r in S9[ds][RECK]['vs'] if r['baseline'] != SIMK and '[v1]' not in r['baseline']]
     c = min(rows, key=lambda r: r['diff']); rest = [r for r in rows if r is not c]

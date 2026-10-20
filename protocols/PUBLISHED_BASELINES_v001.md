@@ -128,7 +128,7 @@ shutdown of that turbine in 2019. Chance of a hit ~ 1 - C(50,5)/C(52,5) ~ 0.18. 
 one-sided binomial p < 0.01; otherwise the result is not used in the paper (Aryan's decision) but kept here.
 Amendment 13 addendum outcome (2026-10-16): hits 7/21 (chance 0.185), one-sided binomial p = 0.077 -> not positive; not used in the paper.
 
-## Amendment 16 (2026-10-16, after an external code review, before any re-run result) — two defects found
+## Amendment 16 (2026-10-16, after a code review, before any re-run result) — two defects found
 (a) latetruth/baselines_common.py ours_sync (used by the S3 delay curves for ours and Wang, and by claim C3): the row mask tested the
 finiteness of the target d steps in the FUTURE (Y[r+d]) instead of the released lagged target (Y[r-d]); it selected training and
 predicted rows on future missingness (not future values). Fixed to Y[r-d]. All ours/Wang delay runs (d = 1, 3, 6, 12, 24) and
@@ -137,8 +137,8 @@ ours_sync_kelmarsh2018 are recomputed; old files kept in _superseded_2026-10-16/
 issues estimates only from tau_1), so it is zero by construction (fast estimate treated as unbiased). No re-run; the text will
 state this. The main comparison (d = 3) does not use ours_sync and is unaffected.
 
-## Amendment 17 (2026-10-17, after the external-agent reviews, before any of these results) — residual references and dependence-aware intervals
-Motivation: five external review reports (2026-10-17) ask that the simple recency correction of Amendment 13 appear in the main
+## Amendment 17 (2026-10-17, after the review reports, before any of these results) — residual references and dependence-aware intervals
+Motivation: five review reports (2026-10-17) ask that the simple recency correction of Amendment 13 appear in the main
 comparison on all six held-out farm-years, with an EWMA reference, and that the turbine bootstrap be complemented by a resampling
 that keeps the dependence between turbines. No success rule; every number is reported whatever its sign.
 (a) Residual references (latetruth/residual_references.py), same saved fleet predictions (ours_<ds>.npz P_fleet), same released-row rule
