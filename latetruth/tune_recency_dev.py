@@ -9,7 +9,7 @@ CS = [0.25, 0.5, 0.75, 1.0]
 
 
 def main():
-    z = np.load(R.O/'ours_kelmarsh2017.npz'); T = sorted(int(k.split('_')[1]) for k in z.files if k.startswith('Y_')); grid = {}
+    z = np.load(R.O/'ours_kelmarsh2017.npz', allow_pickle=False); T = sorted(int(k.split('_')[1]) for k in z.files if k.startswith('Y_')); grid = {}
     base = []
     for t in T:
         Y, OK, PO = z[f'Y_{t}'], z[f'OK_{t}'], z[f'P_ours_{t}']; ev = np.arange(R.EV0, len(Y)); ok = OK[ev] & np.isfinite(PO[ev])

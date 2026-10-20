@@ -51,6 +51,7 @@ def p1(x): return f'{x:.1f}'
 def red(a, b): return 100 * (1 - b / a)    # % reduction from a to b
 def inc(a, b): return 100 * (b / a - 1)    # % increase from a to b
 def ptex(p): m, e = f'{p:.1e}'.split('e'); return f'${m}{{\\times}}10^{{{int(e)}}}$'
+def pfloor(p): return '$<10^{-6}$' if p < 1e-6 else ptex(p)   # dependent turbine-months: smaller values are not meaningful
 def signed(x, nd=1): return f'$-${abs(x):.{nd}f}' if round(x, nd) < 0 else f'+{abs(x):.{nd}f}'
 
 
@@ -339,7 +340,7 @@ put('rr.h', str(RRF['ewma_half_life_rows'] // 6)); put('rr.c', f"{RRF['ewma_c']:
 assert ROS['h'] == 18 and ROS['c'] == 0.5 and RRF['ewma_half_life_rows'] == 18
 k17p = load(PB/'DESIGN_LADDER_L6_kelmarsh2017.json')['L6 = L5 + recency term (two time scales)']
 put('lad.L6', f3(k17p['all'])); put('lad.rec', p1(red(lad['L5']['all'], k17p['all']))); put('lad.total6', p1(red(lad['L1']['all'], k17p['all'])))
-put('lad.rec.tr', p1(red(lad['L5']['transient'], k17p['transient']))); put('lad.rec.calm', p1(red(lad['L5']['calm'], k17p['calm'])))
+put('lad.rec.tr', p1(red(lad['L5']['transient'], k17p['transient']))); put('lad.rec.trinc', p1(-red(lad['L5']['transient'], k17p['transient']))); assert red(lad['L5']['transient'], k17p['transient']) < 0; put('lad.rec.calm', p1(red(lad['L5']['calm'], k17p['calm'])))
 put('lad.L6.tr', f3(k17p['transient'])); put('lad.total6.tr', p1(red(lad['L1']['transient'], k17p['transient'])))
 put('lad.rec.nmonths', str(sum(b < a for a, b in zip(lad['L5']['months'], k17p['months']))))
 nwin, prw, recs, recabs, vsw, tm_tot, CLOSE = 0, [], [], [], [], 0, {}
@@ -380,6 +381,7 @@ put('ptf.min', p1(min(pf[s]['pct'] for s in pf))); put('ptf.max', p1(max(pf[s]['
 put('pt.k17', p1(PTC['kelmarsh2017'][0]['pct']))
 ptw = [s for s, ds in DS9 if not ft(ds, 'per-turbine model + late-truth correction') < min(ft(ds, k) for _, k in PUB if ft(ds, k) is not None and k not in (WANG, 'B10 Wang 2022 (online, as published)'))]
 assert ptw == ['h22'], ptw   # text: per-turbine control beats every independent published method except on Hill of Towie 2022
+assert max(prw) < 1e-6; put('pr.pfloor', '10^{-6}')
 put('pr.nyears', str(nwin)); put('pr.pmax', ptex(max(prw))); put('pr.rec.min', p1(min(recs))); put('pr.rec.max', p1(max(recs)))
 put('pr.recabs.min', f3(min(recabs))); put('pr.recabs.max', f3(max(recabs))); put('pr.vswang.min', p1(min(vsw))); put('pr.vswang.max', p1(max(vsw)))
 put('pr.tm.total', f'{tm_tot:,}'.replace(',', '\\,'))
@@ -480,7 +482,7 @@ assert max(v for n, v in h19f.items() if n in ['power', 'wind speed', 'rotor spe
 held = sum(c.endswith('(held)') for _, _, _, cs in rows for c in cs); failed = sum(c.endswith('(failed)') for _, _, _, cs in rows for c in cs)
 part = sum('partly' in c for _, _, _, cs in rows for c in cs); appl = held + failed + part
 put('rules.appl', str(appl)); put('rules.held', str(held)); put('rules.failed', str(failed)); put('rules.part', str(part))
-T = ['\\begin{table*}[t]', '\\caption{Pre-Registered Rules on the Three Held-Out Farm-Years}', '\\label{tab:rules}', '\\centering', '\\footnotesize',
+T = ['\\begin{table*}[t]', '\\caption{Prespecified Rules on the Three Held-Out Farm-Years}', '\\label{tab:rules}', '\\centering', '\\footnotesize',
      '\\setlength{\\tabcolsep}{4pt}', '\\begin{tabular}{@{}llp{6.4cm}lll@{}}', '\\toprule',
      'Rule & Component & Success rule & Kelmarsh 2018 & Penmanshiel 2019 & Hill of Towie 2019 \\\\', '\\midrule']
 T += [f'{a} & {b} & {c} & ' + ' & '.join(cs) + ' \\\\' for a, b, c, cs in rows]
@@ -511,7 +513,7 @@ cao = {ds: [x for x in CT[ds]['vs'] if x['method'] == 'B12 Cao 2026 [v2]'][0]['m
 hd = ' & '.join(AB[''.join(c for c in ds if c.isalpha())] + ds[-2:] for _, ds in DS9)
 T = ['\\begin{table*}[t]', '\\caption{MAE ($^{\\circ}$C) on the Nine Held-Out Farm-Years With a 30-min Release Delay}', '\\label{tab:comparison}',
      '\\centering', '\\footnotesize', '\\setlength{\\tabcolsep}{3pt}', '\\begin{tabular*}{\\textwidth}{@{\\extracolsep{\\fill}}lccccccccc@{}}', '\\toprule',
-     ' & \\multicolumn{3}{c}{Held-out year and farms} & \\multicolumn{3}{c}{Later years} & \\multicolumn{3}{c}{Confirmation years} \\\\',
+     ' & \\multicolumn{3}{c}{Held-out year and farms$^{g}$} & \\multicolumn{3}{c}{Later years$^{g}$} & \\multicolumn{3}{c}{Confirmation years} \\\\',
      '\\cmidrule(lr){2-4}\\cmidrule(lr){5-7}\\cmidrule(l){8-10}', f'Method & {hd} \\\\', '\\midrule',
      'Proposed & ' + ' & '.join(fmt(ds, PROP, True) for _, ds in DS9) + ' \\\\',
      'Proposed + standstill gate$^{a}$ & ' + ' & '.join(fmt(ds, 'proposed + standstill gate') for _, ds in DS9) + ' \\\\',
@@ -527,11 +529,13 @@ T += ['\\midrule', 'Persistence, $y_i(t-d)$ & ' + ' & '.join(fmt(ds, 'B0 last re
       'Bold: the proposed estimator. Common rows of all receipt-causal methods of each farm-year except the online Kalman filter and Cao et al., which were '
       'scored separately; published methods are sorted by their Kelmarsh 2018 error, with Cao et al. listed last. $^{a}$Exploratory extension '
       '(Section~\\ref{sec:later}). $^{b}$The estimator registered as primary for the first six farm-years, before the recency term was added '
-      '(Section~\\ref{sec:prereg}). $^{c}$Corrections of the fleet model by recent released residuals alone (Section~\\ref{sec:disc-mechanism}). '
+      '(Section~\\ref{sec:prereg}). $^{c}$Corrections of the fleet model by recent released residuals alone, an exponentially weighted moving average (EWMA) '
+      'or a plain mean (Section~\\ref{sec:disc-mechanism}). '
       '$^{d}$Second configuration (learning rate $10^{-3}$); the published one is reported in Section~\\ref{sec:compare}. '
       '$^{e}$Turbines ' + V['cao.p19.turbines'] + ' only, with the proposed estimator at ' + V['cao.p19.prop'] + '~$^{\\circ}$C on the same rows. '
       '$^{f}$The proposed estimator with one model per turbine instead of the fleet model, same inputs and late-truth terms '
-      '(Section~\\ref{sec:disc-drivers}). n.r.: not run, see Sections~\\ref{sec:baselines} and~\\ref{sec:compare}.}', '\\end{table*}']
+      '(Section~\\ref{sec:disc-drivers}). $^{g}$Descriptive for the proposed estimator, whose recency term was designed after these '
+      'results; its confirmatory years are the last three. n.r.: not run, see Sections~\\ref{sec:baselines} and~\\ref{sec:compare}.}', '\\end{table*}']
 (PAPER/'tables/tab_comparison.tex').write_text('\n'.join(T) + '\n', encoding='utf-8')
 
 # ---------------------------------------------------------------- Table: paired tests, proposed vs every baseline, nine farm-years
@@ -543,12 +547,13 @@ for j, (s, ds) in enumerate(DS9):
     rows = [r for r in S9[ds][RECK]['vs'] if r['baseline'] != SIMK and '[v1]' not in r['baseline']]
     c = min(rows, key=lambda r: r['diff']); rest = [r for r in rows if r is not c]
     T += [f"{NAME[ds]} & {SHORT.get(c['baseline'], c['baseline'])} & {c['diff']:.3f} [{c['ci95'][0]:.3f}, {c['ci95'][1]:.3f}; "
-          f"{c['block7d_ci95'][0]:.3f}, {c['block7d_ci95'][1]:.3f}] & {c['wins']}/{c['n_pairs']} & {ptex(c['p_holm'])} & "
-          f"{min(r['diff'] for r in rest):.3f} & {ptex(max(r['p_holm'] for r in rest))} \\\\"]
+          f"{c['block7d_ci95'][0]:.3f}, {c['block7d_ci95'][1]:.3f}] & {c['wins']}/{c['n_pairs']} & {pfloor(c['p_holm'])} & "
+          f"{min(r['diff'] for r in rest):.3f} & {pfloor(max(r['p_holm'] for r in rest))} \\\\"]
     if j in (2, 5): T += ['\\midrule']
 T += ['\\bottomrule', '\\end{tabular*}', '\\par\\smallskip\\parbox{\\textwidth}{\\footnotesize $\\Delta$MAE: method minus proposed, on the common rows, '
       'with the 95\\,\\% intervals of a bootstrap over whole turbines and of a bootstrap over 7-day blocks shared by all turbines. Wins: turbine-months in '
-      'which the proposed estimator has the lower MAE. $p_{\\mathrm{Holm}}$: Wilcoxon signed-rank test on turbine-months, Holm-corrected over the '
+      'which the proposed estimator has the lower MAE. $p_{\\mathrm{Holm}}$: two-sided Wilcoxon signed-rank test on dependent turbine-months (values below $10^{-6}$ '
+      'are shown as such), Holm-corrected over the '
       'methods of a farm-year (the similarity-only estimator included). Every interval of every method, including 28-day blocks, lies above zero.}', '\\end{table*}']
 (PAPER/'tables/tab_significance.tex').write_text('\n'.join(T) + '\n', encoding='utf-8')
 
@@ -578,6 +583,7 @@ def sen_rules(R, three):
 
 
 rk, rp = sen_rules(K24, True), sen_rules(P22, False)
+assert rk['R5'][0] < rk['R5'][1] and rp['R5'][0] < rp['R5'][1], 'text: R5 held on all five Senvion farm-years tested'
 b25 = AH25['base_x']['all']; ch25 = {n: inc(b25, pick(SH25, 'stale:' + p)['all']) for p, n in SIE.items() if any(k.startswith('stale:' + p) for k in SH25)}
 j25 = inc(b25, AH25['stale:all_gearbox_bearings']['all']); top25 = max(ch25, key=ch25.get)
 bear4 = ['HS bearing, generator side', 'HS bearing, rotor side', 'IMS bearing, generator side', 'IMS bearing, rotor side']
@@ -613,7 +619,7 @@ assert sum(1 for r in [RU['R3']['k18'], RU['R3']['p19'], rk['R3'], rp['R3']] if 
 assert all(r['R2'][1] == 11 for r in (rk, rp, rh)), 'text: local correction helped in all 11 windows of every later year'
 put('rL.k24.r6', p1(rk['R6'])); put('rL.h25.r6', p1(rh['R6'])); put('rL.h25.r7', p1(rh['R7'])); put('rL.h25.ims', p1(ch25['IMS bearing, rotor side'])); put('rL.h25.joint', f'{j25:.0f}')
 assert rk['R3'][0] < 3 and rp['R3'][0] < 3 and rk['R4'][2] == rp['R4'][2] == 'partly'
-T = ['\\begin{table}[t]', '\\caption{Pre-Registered Rules on the Later Years}', '\\label{tab:ruleslater}', '\\centering', '\\footnotesize',
+T = ['\\begin{table}[t]', '\\caption{Prespecified Rules on the Later Years}', '\\label{tab:ruleslater}', '\\centering', '\\footnotesize',
      '\\setlength{\\tabcolsep}{2.4pt}', '\\begin{tabular}{@{}llll@{}}', '\\toprule', 'Rule & Kelmarsh 2024 & Penmanshiel 2022 & Hill of Towie 2025 \\\\', '\\midrule']
 T += [f'{a} & ' + ' & '.join(cs) + ' \\\\' for a, cs in rowsL]
 T += ['\\bottomrule', '\\multicolumn{4}{@{}p{\\columnwidth}@{}}{\\footnotesize Rules and notation as in Table~\\ref{tab:rules}. $^{a}$The inlet clause and the '
