@@ -89,6 +89,55 @@ def quick_metrics():
     return actual
 
 
+def revision_steps():
+    """Analyses of protocols/REVISION_CHECKS_v001.md (Parts A to H with their amendments), after the main tier.
+    Each step runs only when its result file is absent from results/raw/revision_checks_2026-11-17_v001."""
+    from latetruth.config import RAW_DIR
+    out = RAW_DIR / 'revision_checks_2026-11-17_v001'
+    out.mkdir(parents=True, exist_ok=True)
+    d9 = ['kelmarsh2018', 'penmanshiel2019', 'hot2019', 'kelmarsh2024', 'penmanshiel2022', 'hot2025',
+          'kelmarsh2020', 'penmanshiel2020', 'hot2022']
+    d3 = d9[:3]
+
+    def once(name, result, *args, ds=None):
+        if (out / result).exists():
+            return
+        print('Revision step', name, *args, flush=True)
+        env = dict(os.environ, HOT_YEAR=ds[3:]) if ds and ds.startswith('hot') else None
+        module(name, *args, env=env)
+
+    for ds in d9:                                                     # Part A: encoding of the turbine index
+        once('revision_turbine_id', f'turbine_id_{ds}.json', 'A', ds, ds=ds)
+    for ds in d3:                                                     # Part B: newly added turbines
+        once('revision_turbine_id', f'new_turbine_{ds}.json', 'B', ds, ds=ds)
+    for ds, turbines in [('kelmarsh2018', [5]), ('penmanshiel2019', [14, 15]), ('hot2019', [3, 16])]:   # Amendment B-a
+        for t in turbines:
+            once('revision_newturbine_diag', f'new_turbine_diag_{ds}_{t}.json', ds, str(t), ds=ds)
+    once('revision_rls', 'rls_reference.json')                       # Part C
+    once('revision_recency_size', 'recency_size.json')               # Part D
+    for ds in ['penmanshiel2019', 'hot2019']:                         # Part E: release delays
+        for d in (1, 3, 6, 12, 24):
+            once('revision_delay', f'delay_{ds}_d{d}.json', ds, str(d), ds=ds)
+    for src, tgt in [('kelmarsh2017', 'penmanshiel2019'), ('penmanshiel2019', 'kelmarsh2018')]:   # Part F
+        once('revision_transfer', f'transfer_{src}_to_{tgt}.json', src, tgt)
+    for ds in d3:                                                     # Part G: controlled comparison
+        for arch in ['hgb', 'xgb', 'ridge', 'mlp']:
+            once('revision_controlled', f'controlled_{ds}_{arch}.json', ds, arch, ds=ds)
+        once('revision_controlled_gru', f'controlled_{ds}_gru.json', ds, ds=ds)
+    once('revision_controlled_summary', 'controlled_summary.json')
+    for ds in d3:                                                     # Amendment G-c: window versus recurrence
+        for variant in ['hgb_win', 'mlp_win', 'gru_w1']:
+            once('revision_controlled_window', f'controlled_window_{ds}_{variant}.json', ds, variant, ds=ds)
+    once('revision_controlled_window_summary', 'controlled_window_summary.json')
+    for ds in d3:                                                     # Part H and Amendments H-a, H-b
+        for k in range(6):
+            once('revision_irregular', f'irregular_{ds}_s{k}.json', ds, str(k), ds=ds)
+        for k in (4, 5):
+            once('revision_irregular_fallback', f'irregular_fallback_{ds}_s{k}.json', ds, str(k), ds=ds)
+            once('revision_irregular_exclude', f'irregular_exclude_{ds}_s{k}.json', ds, str(k), ds=ds)
+    print('Revision results in', out, '(shipped values: results/revision_checks_2026-11-17_v001)', flush=True)
+
+
 def run(tier, data_dir, jobs, offline=False):
     os.environ['DATA_DIR'] = str(Path(data_dir).resolve())
     os.environ['OUT_DIR'] = str(Path(os.environ.get('OUT_DIR', './results')).resolve())
@@ -202,8 +251,10 @@ def run(tier, data_dir, jobs, offline=False):
                 if not (RAW_DIR/folder/'results.json').exists():
                     module(name,archive)
             module('figure_data_oil',archive)
-        if tier in ['main','full']:
+        if tier in ['main','full','revision']:
             for name in ['standstill_gate','residual_references','recency_on_similarity','confirm_two_timescale','baselines_table','significance','block_bootstrap','turbine_level','compare_per_turbine','verify_final_table']:
                 module(name)
             module('rec_vs_baselines','all9')
+        if tier == 'revision':
+            revision_steps()
     print(f'PASS: {tier} ({time.monotonic()-start:.2f} seconds)', flush=True)

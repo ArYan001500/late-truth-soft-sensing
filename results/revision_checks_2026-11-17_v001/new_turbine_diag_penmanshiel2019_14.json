@@ -1,0 +1,20 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Amendment B-a",
+ "ds": "penmanshiel2019",
+ "turbines": {
+  "14": {
+   "first_window_share_exact": 0.6035280678215443,
+   "rows_first_window": 4464,
+   "rows_all": 47947,
+   "proposed_new_cat": 0.19765514371652187,
+   "proposed_new_cat_w1": 0.420016742135784,
+   "proposed_new_mid": 0.1947759451417936,
+   "proposed_new_mid_w1": 0.372809830751829,
+   "swapped_with": 9,
+   "proposed_orig": 0.16173964474855013,
+   "proposed_new_num": 0.19160634924426317,
+   "seconds": 3836.0
+  }
+ },
+ "code_sha256": "a72aa3348c1b4d70f809b56128c5eafdc499631f7c534a2293c51e77970f7b1b"
+}

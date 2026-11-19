@@ -1,0 +1,88 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part G, Amendment G-c summary",
+ "kelmarsh2018": {
+  "mae": {
+   "hgb|full|fleet|none": 0.18006003027836917,
+   "hgb|full|fleet|corr": 0.17120229548901925,
+   "xgb|full|fleet|none": 0.1802568119441856,
+   "xgb|full|fleet|corr": 0.1710861060814125,
+   "ridge|full|fleet|none": 0.30195536771070963,
+   "ridge|full|fleet|corr": 0.2660612573997358,
+   "mlp|full|fleet|none": 0.18226373879135205,
+   "mlp|full|fleet|corr": 0.1665066684312244,
+   "gru|full|fleet|none": 0.16201971369661744,
+   "gru|full|fleet|corr": 0.14929033034614522,
+   "hgb_win|none": 0.17435945022023,
+   "hgb_win|corr": 0.16670439382761112,
+   "mlp_win|none": 0.1644663108128031,
+   "mlp_win|corr": 0.1519156949967366,
+   "gru_w1|none": 0.1857609349851271,
+   "gru_w1|corr": 0.16697163246552707
+  },
+  "gru_wins_against": {
+   "hgb|full|fleet|corr": "60/66",
+   "hgb_win|corr": "57/66",
+   "mlp|full|fleet|corr": "64/66",
+   "mlp_win|corr": "43/66",
+   "gru_w1|corr": "66/66"
+  },
+  "rows_common_share": 0.9613212990438509
+ },
+ "penmanshiel2019": {
+  "mae": {
+   "hgb|full|fleet|none": 0.154272564952092,
+   "hgb|full|fleet|corr": 0.14756602341762587,
+   "xgb|full|fleet|none": 0.15437535198646984,
+   "xgb|full|fleet|corr": 0.14756295560007304,
+   "ridge|full|fleet|none": 0.2995295764938285,
+   "ridge|full|fleet|corr": 0.24935600905733918,
+   "mlp|full|fleet|none": 0.151759163426095,
+   "mlp|full|fleet|corr": 0.13455257970762186,
+   "gru|full|fleet|none": 0.12617214460303164,
+   "gru|full|fleet|corr": 0.11446908330061678,
+   "hgb_win|none": 0.14640764071682139,
+   "hgb_win|corr": 0.14026438256477894,
+   "mlp_win|none": 0.12972868480828745,
+   "mlp_win|corr": 0.11885216329803859,
+   "gru_w1|none": 0.14830439998248954,
+   "gru_w1|corr": 0.13091042236293243
+  },
+  "gru_wins_against": {
+   "hgb|full|fleet|corr": "138/154",
+   "hgb_win|corr": "139/154",
+   "mlp|full|fleet|corr": "153/154",
+   "mlp_win|corr": "116/154",
+   "gru_w1|corr": "151/154"
+  },
+  "rows_common_share": 0.987195904573501
+ },
+ "hot2019": {
+  "mae": {
+   "hgb|full|fleet|none": 0.21722546978635882,
+   "hgb|full|fleet|corr": 0.18660333329877338,
+   "xgb|full|fleet|none": 0.2169364023740379,
+   "xgb|full|fleet|corr": 0.1867583185834734,
+   "ridge|full|fleet|none": 0.5143239689012995,
+   "ridge|full|fleet|corr": 0.4447508647531782,
+   "mlp|full|fleet|none": 0.28911558283199756,
+   "mlp|full|fleet|corr": 0.21578196079621997,
+   "gru|full|fleet|none": 0.20884675240227807,
+   "gru|full|fleet|corr": 0.17855793976807072,
+   "hgb_win|none": 0.21469499566565597,
+   "hgb_win|corr": 0.18452636186309673,
+   "mlp_win|none": 0.28301011100870116,
+   "mlp_win|corr": 0.21426891835561884,
+   "gru_w1|none": 0.2175453415270695,
+   "gru_w1|corr": 0.1844352390512354
+  },
+  "gru_wins_against": {
+   "hgb|full|fleet|corr": "188/231",
+   "hgb_win|corr": "179/231",
+   "mlp|full|fleet|corr": "201/231",
+   "mlp_win|corr": "197/231",
+   "gru_w1|corr": "211/231"
+  },
+  "rows_common_share": 0.9965243433344325
+ },
+ "code_sha256": "56eb57d2b9a70039e31d341e18e881ab23ae4c2f5cc8f92e7c0e5d1a38103496"
+}

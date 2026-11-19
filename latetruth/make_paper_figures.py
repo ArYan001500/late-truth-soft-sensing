@@ -129,7 +129,7 @@ def fig_delay():
     i0, j0 = ks.index(20), Ms.index(8640)
     b.add_patch(Rectangle((j0 - 0.5, i0 - 0.5), 1, 1, fill=False, ec=ORANGE, lw=1.6))
     b.set_xticks(range(4), ['10', '30', '60', '120']); b.set_yticks(range(5), [str(k) for k in ks])
-    b.set_xlabel('Memory $M$ (days)'); b.set_ylabel('Neighbours $k$'); b.spines[:].set_visible(False); b.tick_params(length=0)
+    b.set_xlabel('Memory $M$ (days)'); b.set_ylabel('Neighbors $k$'); b.spines[:].set_visible(False); b.tick_params(length=0)
     fig.tight_layout(w_pad=2.2)
     panel(fig, a, PANEL[0], '(a)'); panel(fig, b, PANEL[3], '(b)'); save(fig, 'fig5_delay')
 

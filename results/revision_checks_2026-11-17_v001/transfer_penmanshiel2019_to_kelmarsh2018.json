@@ -1,0 +1,51 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part F",
+ "src": "penmanshiel2019",
+ "tgt": "kelmarsh2018",
+ "scores": {
+  "a_zero_shot": {
+   "days_1_28": 1.9401782989130563,
+   "from_ev0": 1.337403537258526
+  },
+  "b_source_plus_correction": {
+   "days_1_28": 0.7258124522045067,
+   "from_ev0": 0.5621894399289259
+  },
+  "c_start_day1": {
+   "days_1_28": 0.7258124522045067,
+   "from_ev0": 0.23630654646304391
+  },
+  "noid": {
+   "days_1_28": null,
+   "from_ev0": 0.18340656638038785
+  },
+  "orig": {
+   "days_1_28": null,
+   "from_ev0": 0.17120229548901925
+  },
+  "persistence": {
+   "days_1_28": 1.0986428612649624,
+   "from_ev0": 1.1166178698989684
+  }
+ },
+ "wins": {
+  "b_source_plus_correction_vs_noid": "0/66",
+  "b_source_plus_correction_vs_orig": "0/66",
+  "c_start_day1_vs_noid": "0/66",
+  "c_start_day1_vs_orig": "0/66"
+ },
+ "seconds": 1092.3,
+ "code_sha256": "343df9ec5afbd5ba5e73a71af1eb8d33b18270300dd4c959e8bacd7a6ccf6210",
+ "amendment_Fa": {
+  "mae": 1.337403537258526,
+  "mae_after_removing_turbine_offset": 0.7670003596607903,
+  "offsets": [
+   -1.19,
+   -1.15,
+   -1.27,
+   -1.45,
+   -1.43,
+   -1.29
+  ]
+ }
+}

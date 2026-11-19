@@ -1,0 +1,64 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part H, Amendment H-a",
+ "ds": "penmanshiel2019",
+ "scenario": 4,
+ "scores": {
+  "fleet": {
+   "all": 0.2180142326418246,
+   "inside_blocks": 1.376652460101166,
+   "outside_blocks": 0.15451331016690456,
+   "age_1_3": 0.2180142326418246,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "proposed": {
+   "all": 0.21059013975842686,
+   "inside_blocks": 1.2636622104029835,
+   "outside_blocks": 0.1529036516458758,
+   "age_1_3": 0.21059013975842686,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "persistence": {
+   "all": 1.1533828187828008,
+   "inside_blocks": 1.1405271916256796,
+   "outside_blocks": 1.1540184431607696,
+   "age_1_3": 1.1533828187828008,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "fleet_fallback": {
+   "all": 0.20568606217248303,
+   "inside_blocks": 1.1405271916256796,
+   "outside_blocks": 0.15451331016690456,
+   "age_1_3": 0.20568606217248303,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "proposed_fallback": {
+   "all": 0.20414836914401002,
+   "inside_blocks": 1.1405271916256796,
+   "outside_blocks": 0.1529036516458758,
+   "age_1_3": 0.20414836914401002,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  }
+ },
+ "share": {
+  "rows_in_blocks": 0.051596133013046955,
+  "rows_inputs_missing": 0.051596133013046955,
+  "mean_age_rows": 3.0
+ },
+ "seconds": 747.0,
+ "code_sha256": "daf9811b2ac82e93987ffa4e14ebd9e1dfab1456df549545dc8176b925f71a20"
+}

@@ -1,0 +1,84 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part H, Amendment H-b",
+ "ds": "kelmarsh2018",
+ "scenario": 4,
+ "scores": {
+  "fleet": {
+   "all": 0.25580252886418214,
+   "inside_blocks": 1.6156555960229608,
+   "outside_blocks": 0.18000155174304874,
+   "age_1_3": 0.25580252886418214,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "proposed": {
+   "all": 0.24201216112308108,
+   "inside_blocks": 1.3842220401902658,
+   "outside_blocks": 0.17826832207943757,
+   "age_1_3": 0.24201216112308108,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "persistence": {
+   "all": 1.1166178698989684,
+   "inside_blocks": 1.1014516530070655,
+   "outside_blocks": 1.1174375352626131,
+   "age_1_3": 1.1166178698989684,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "fleet_fallback": {
+   "all": 0.2286808502582763,
+   "inside_blocks": 1.1014516530070655,
+   "outside_blocks": 0.18000155174304874,
+   "age_1_3": 0.2286808502582763,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "proposed_fallback": {
+   "all": 0.22704248429731985,
+   "inside_blocks": 1.1014516530070655,
+   "outside_blocks": 0.17826832207943757,
+   "age_1_3": 0.22704248429731985,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "proposed_excl": {
+   "all": 0.2507439483417963,
+   "inside_blocks": 1.6758309174469328,
+   "outside_blocks": 0.17137323047384037,
+   "age_1_3": 0.2507439483417963,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "proposed_excl_fallback": {
+   "all": 0.22051241984101141,
+   "inside_blocks": 1.1014516530070655,
+   "outside_blocks": 0.17137323047384037,
+   "age_1_3": 0.22051241984101141,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  }
+ },
+ "share": {
+  "rows_in_blocks": 0.052392433234421366,
+  "rows_inputs_missing": 0.052392433234421366,
+  "mean_age_rows": 3.0
+ },
+ "seconds": 458.2,
+ "code_sha256": "71179e5a7cc06ac3e3adc42ac837f1a864c8d79ca387e4b105d96ee6bc447d82"
+}

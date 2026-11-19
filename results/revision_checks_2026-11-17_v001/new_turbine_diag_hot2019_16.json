@@ -1,0 +1,20 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Amendment B-a",
+ "ds": "hot2019",
+ "turbines": {
+  "16": {
+   "first_window_share_exact": 0.5334357151058392,
+   "rows_first_window": 4464,
+   "rows_all": 48450,
+   "proposed_new_cat": 0.20484597996869375,
+   "proposed_new_cat_w1": 0.37243970867986076,
+   "proposed_new_mid": 0.19786962299487426,
+   "proposed_new_mid_w1": 0.2833744140416475,
+   "swapped_with": 11,
+   "proposed_orig": 0.18996196704151613,
+   "proposed_new_num": 0.20046612467324632,
+   "seconds": 4560.1
+  }
+ },
+ "code_sha256": "a72aa3348c1b4d70f809b56128c5eafdc499631f7c534a2293c51e77970f7b1b"
+}

@@ -1,0 +1,11 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part G, Amendment G-c",
+ "ds": "penmanshiel2019",
+ "variant": "hgb_win",
+ "info": {
+  "own_rows_mae_none": 0.14640764071682139,
+  "own_rows_mae_corr": 0.14026438256477894,
+  "seconds": 1159.7
+ },
+ "code_sha256": "8d20c394b2e29d22474fc9cd3f4e29dd4e9abfb08a20c4f0ec8f9d0a79a50c1e"
+}

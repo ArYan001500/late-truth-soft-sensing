@@ -1,0 +1,11 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part G, Amendment G-c",
+ "ds": "hot2019",
+ "variant": "gru_w1",
+ "info": {
+  "own_rows_mae_none": 0.2175453415270695,
+  "own_rows_mae_corr": 0.1844352390512354,
+  "seconds": 635.2
+ },
+ "code_sha256": "8d20c394b2e29d22474fc9cd3f4e29dd4e9abfb08a20c4f0ec8f9d0a79a50c1e"
+}

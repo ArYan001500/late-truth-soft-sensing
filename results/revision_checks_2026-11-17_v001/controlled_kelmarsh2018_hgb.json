@@ -1,0 +1,31 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part G",
+ "ds": "kelmarsh2018",
+ "arch": "hgb",
+ "info": {
+  "full|fleet": {
+   "own_rows_mae_none": 0.18006003027836917,
+   "own_rows_mae_corr": 0.17120229548901925,
+   "seconds": 486.0
+  },
+  "repro_max_abs_fleet": 0.0,
+  "repro_max_abs_proposed": 0.0,
+  "full|pt": {
+   "own_rows_mae_none": 0.22970092937945089,
+   "own_rows_mae_corr": 0.20043848624491137,
+   "seconds": 603.8
+  },
+  "base|fleet": {
+   "own_rows_mae_none": 0.26409306098937146,
+   "own_rows_mae_corr": 0.2522602523285233,
+   "seconds": 261.1
+  },
+  "base|pt": {
+   "own_rows_mae_none": 0.31917128921398413,
+   "own_rows_mae_corr": 0.2872547034651257,
+   "seconds": 560.6
+  }
+ },
+ "seconds": 1922.2,
+ "code_sha256": "74a9983a00565211318570aef326dafc7106bb043f373d8892a3bd49c6a1e75e"
+}

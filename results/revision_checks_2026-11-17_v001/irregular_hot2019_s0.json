@@ -1,0 +1,56 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part H",
+ "ds": "hot2019",
+ "scenario": 0,
+ "scores": {
+  "fleet": {
+   "all": 0.21722546978635882,
+   "inside_blocks": null,
+   "outside_blocks": 0.21722546978635882,
+   "age_1_3": 0.21722546978635882,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "proposed": {
+   "all": 0.18660333329877338,
+   "inside_blocks": null,
+   "outside_blocks": 0.18660333329877338,
+   "age_1_3": 0.18660333329877338,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "ewma_reference": {
+   "all": 0.19074853820993043,
+   "inside_blocks": null,
+   "outside_blocks": 0.19074853820993043,
+   "age_1_3": 0.19074853820993043,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "persistence": {
+   "all": 1.8509542440775897,
+   "inside_blocks": null,
+   "outside_blocks": 1.8509542440775897,
+   "age_1_3": 1.8509542440775897,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  }
+ },
+ "share": {
+  "rows_in_blocks": 0.0,
+  "rows_inputs_missing": 0.0,
+  "mean_age_rows": 3.0
+ },
+ "repro_max_abs_fleet": 0.0,
+ "repro_max_abs_proposed": 0.0,
+ "seconds": 1190.7,
+ "code_sha256": "752f1b99e27d09093d163a40425b04fa63dc2926c1b67b6760043763e9738dd5"
+}

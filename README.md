@@ -23,18 +23,22 @@ python -m latetruth reproduce --tier paper
 | `quick` | Kelmarsh 2017 and 2018: fleet model, both corrections, references, standstill gate, Kalman filter; checks the MAE against `expected/quick.json` | about 15 min | 0.44 GB |
 | `main` | All ten farm-years, references, per-turbine control, CPU baselines, statistics | 1 to 3 days (estimate) | 9.0 GB |
 | `full` | `main` plus the deep baselines, RESCINet, delay study, freshness and oil-circuit analyses | several days (estimate), GPU optional | 9.0 GB |
+| `revision` | `main` plus the analyses added in the revision (`protocols/REVISION_CHECKS_v001.md`): encoding of the turbine index and newly added turbines, recursive least squares, size of the recency gain, delays on two further farms, transfer to an unseen farm, controlled comparison of five architectures, irregular delays and missing data | several days (estimate), GPU optional | 9.0 GB |
 
 ```console
 python -m latetruth reproduce --tier quick --jobs 8
 python -m latetruth reproduce --tier main --data-dir ./data --jobs 8
 python -m pip install -r requirements-gpu.txt
 python -m latetruth reproduce --tier full --jobs 8
+python -m latetruth reproduce --tier revision --jobs 8
 pytest -q
 ```
 
 Each tier ends with a PASS or FAIL summary. Baselines with neural networks can differ across platforms in the sixth
 decimal; their check uses a tolerance of 1e-4 °C. Finished steps are skipped when a run is restarted. `--data-dir` (or `DATA_DIR`)
-sets the data folder, `OUT_DIR` the output folder.
+sets the data folder, `OUT_DIR` the output folder. The `revision` tier needs `requirements-gpu.txt` for its recurrent
+network and writes its results to `results/raw/revision_checks_2026-11-17_v001`; the shipped values are in
+`results/revision_checks_2026-11-17_v001`.
 
 ## Data
 
@@ -50,7 +54,8 @@ dataset creators):
 ## Contents
 
 - `latetruth/`: estimator, baselines, statistics and the tier runner.
-- `results/`: the result files behind the paper's numbers (prediction arrays are not included).
+- `results/`: the result files behind the paper's numbers (prediction arrays are not included), including the
+  analyses added in the revision (`results/revision_checks_2026-11-17_v001`).
 - `protocols/`: the dated protocols of the evaluation (see `protocols/README.md`).
 - `tests/`: tests of the receipt-causal rules on synthetic data: training cutoffs, release of residuals, memory limits,
   recency warm-up, invariance to future targets, and exact reproduction of the paper's numbers.

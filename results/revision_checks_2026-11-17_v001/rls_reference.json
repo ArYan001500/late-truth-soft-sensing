@@ -1,0 +1,107 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part C",
+ "half_life_rows": 18,
+ "c": 0.5,
+ "tuning_grid_kelmarsh2017": {
+  "h6_c0.5": 0.16054798155436462,
+  "h6_c0.75": 0.1647844628762397,
+  "h6_c1.0": 0.17243887639563493,
+  "h18_c0.5": 0.1585638189257533,
+  "h18_c0.75": 0.15909233305700923,
+  "h18_c1.0": 0.16184891221182054,
+  "h36_c0.5": 0.15882492143998903,
+  "h36_c0.75": 0.15860554849089256,
+  "h36_c1.0": 0.1602051785684535,
+  "h72_c0.5": 0.15935560462403703,
+  "h72_c0.75": 0.15888292259560274,
+  "h72_c1.0": 0.15975397855994458,
+  "h144_c0.5": 0.15994282446795402,
+  "h144_c0.75": 0.15935925811464396,
+  "h144_c1.0": 0.15979440260004416,
+  "h288_c0.5": 0.16048116284887295,
+  "h288_c0.75": 0.15992262103337868,
+  "h288_c1.0": 0.16011757241787694,
+  "h576_c0.5": 0.16093883330535455,
+  "h576_c0.75": 0.16053535750637518,
+  "h576_c1.0": 0.16066909703345186,
+  "h1152_c0.5": 0.16131648480332156,
+  "h1152_c0.75": 0.16109346548671913,
+  "h1152_c1.0": 0.161299716608672,
+  "h2304_c0.5": 0.16155735521192738,
+  "h2304_c0.75": 0.16144497085660006,
+  "h2304_c1.0": 0.16166892619773898
+ },
+ "kelmarsh2018": {
+  "our fleet model (no late truth)": 0.17831008289817088,
+  "proposed (similarity + recency)": 0.16980306833381453,
+  "reference: EWMA of residuals": 0.17479794372861482,
+  "B10f Wang 2022 (frozen NN)": 0.17734459129869976,
+  "reference: recursive least squares": 0.17172044664685862,
+  "proposed_wins_turbine_month": "52/66"
+ },
+ "penmanshiel2019": {
+  "our fleet model (no late truth)": 0.1541476741549165,
+  "proposed (similarity + recency)": 0.14743804221234136,
+  "reference: EWMA of residuals": 0.150544204445986,
+  "B10f Wang 2022 (frozen NN)": 0.15440732925926753,
+  "reference: recursive least squares": 0.15029053807172582,
+  "proposed_wins_turbine_month": "145/154"
+ },
+ "hot2019": {
+  "our fleet model (no late truth)": 0.2171967533233061,
+  "proposed (similarity + recency)": 0.1865734748896269,
+  "reference: EWMA of residuals": 0.19071839821748715,
+  "B10f Wang 2022 (frozen NN)": 0.2178774599082451,
+  "reference: recursive least squares": 0.19517080473849133,
+  "proposed_wins_turbine_month": "197/231"
+ },
+ "kelmarsh2020": {
+  "our fleet model (no late truth)": 0.19876472983278315,
+  "proposed (similarity + recency)": 0.18032575059863118,
+  "reference: EWMA of residuals": 0.18655488207375523,
+  "B10f Wang 2022 (frozen NN)": 0.19776241006327835,
+  "reference: recursive least squares": 0.18608568099327258,
+  "proposed_wins_turbine_month": "49/66"
+ },
+ "penmanshiel2020": {
+  "our fleet model (no late truth)": 0.17676752739450904,
+  "proposed (similarity + recency)": 0.16057491161375523,
+  "reference: EWMA of residuals": 0.1635813768167443,
+  "B10f Wang 2022 (frozen NN)": 0.17667910347899193,
+  "reference: recursive least squares": 0.16542040301355226,
+  "proposed_wins_turbine_month": "143/154"
+ },
+ "hot2022": {
+  "our fleet model (no late truth)": 0.19987357565242303,
+  "proposed (similarity + recency)": 0.18533299671267167,
+  "reference: EWMA of residuals": 0.18904068873292953,
+  "B10f Wang 2022 (frozen NN)": 0.20148943833119257,
+  "reference: recursive least squares": 0.18881187268233945,
+  "proposed_wins_turbine_month": "191/230"
+ },
+ "kelmarsh2024": {
+  "our fleet model (no late truth)": 0.31638382334448545,
+  "proposed (similarity + recency)": 0.2202661179405875,
+  "reference: EWMA of residuals": 0.2259296666436731,
+  "B10f Wang 2022 (frozen NN)": 0.3152706977843556,
+  "reference: recursive least squares": 0.2513169039793069,
+  "proposed_wins_turbine_month": "56/66"
+ },
+ "penmanshiel2022": {
+  "our fleet model (no late truth)": 0.1793282732471424,
+  "proposed (similarity + recency)": 0.16683192314281725,
+  "reference: EWMA of residuals": 0.1720210169647145,
+  "B10f Wang 2022 (frozen NN)": 0.17949794680281567,
+  "reference: recursive least squares": 0.1706949136407219,
+  "proposed_wins_turbine_month": "143/154"
+ },
+ "hot2025": {
+  "our fleet model (no late truth)": 0.20038066727505494,
+  "proposed (similarity + recency)": 0.18086251774112133,
+  "reference: EWMA of residuals": 0.18529625667496755,
+  "B10f Wang 2022 (frozen NN)": 0.20180320910570698,
+  "reference: recursive least squares": 0.185808141734698,
+  "proposed_wins_turbine_month": "199/231"
+ },
+ "code_sha256": "64e76056eba0bb61c1b7b8e6abd801bbc1ea4026c33b6556cc1cd36df058b4ea"
+}

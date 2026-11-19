@@ -229,7 +229,7 @@ for n, R in [('press', AH['stale:all_gearbox_bearings+pressure']), ('r7', HH['st
     put(f'oil.h19.{n}.calm', f3(R['calm'])); put(f'oil.h19.{n}.tr', f3(R['transient']))
 PH = load(E/'physics_oil_circuit_2026-10-15_v001/results.json'); bins = PH['hs_stage_bins']
 put('phy.a', f"{PH['per_turbine_resistance']['a_flow']:.2f}"); put('phy.b', f"{PH['per_turbine_resistance']['b_viscosity']:.2f}")
-put('phy.r2', f"{PH['per_turbine_resistance']['r2']:.2f}"); put('phy.r2.pooled', f"{PH['pooled']['r2']:.2f}"); put('phy.n', f"{PH['n_rows']:,}".replace(',', '\\,'))
+put('phy.r2', f"{PH['per_turbine_resistance']['r2']:.2f}"); put('phy.r2.pooled', f"{PH['pooled']['r2']:.2f}"); put('phy.n', f"{PH['n_rows']:,}")
 put('phy.dp.cold', f"{bins['30-35']['median_dP_bar']:.2f}"); put('phy.dp.warm', f"{bins['45-50']['median_dP_bar']:.2f}")
 put('phy.dp.ratio', f"{bins['30-35']['median_dP_bar'] / bins['45-50']['median_dP_bar']:.2f}")
 put('phy.nu.ratio', f"{bins['30-35']['walther_nu_cSt'] / bins['45-50']['walther_nu_cSt']:.2f}")
@@ -384,7 +384,7 @@ assert ptw == ['h22'], ptw   # text: per-turbine control beats every independent
 assert max(prw) < 1e-6; put('pr.pfloor', '10^{-6}')
 put('pr.nyears', str(nwin)); put('pr.pmax', ptex(max(prw))); put('pr.rec.min', p1(min(recs))); put('pr.rec.max', p1(max(recs)))
 put('pr.recabs.min', f3(min(recabs))); put('pr.recabs.max', f3(max(recabs))); put('pr.vswang.min', p1(min(vsw))); put('pr.vswang.max', p1(max(vsw)))
-put('pr.tm.total', f'{tm_tot:,}'.replace(',', '\\,'))
+put('pr.tm.total', f'{tm_tot:,}')
 tl_all = [s for s, ds in DS9 if all(r['turbines_lower'] == r['n_turbines'] for r in S9[ds][RECK]['vs'])]
 put('pr.tl.alln', str(len(tl_all)))
 tl_ex = {s: [(SHORT.get(r['baseline'], r['baseline']), r['turbines_lower'], r['n_turbines']) for r in S9[ds][RECK]['vs'] if r['turbines_lower'] < r['n_turbines']] for s, ds in DS9}
@@ -407,7 +407,7 @@ for s, ds in DS + DSL:
 for s, ds in DSC:
     c = CF[ds]['rec_vs']['ewma']; pe.append((c['diff'], c['ci95'][0], c['wins'], c['n_pairs']))
 put('pe.diff.min', f4(min(x[0] for x in pe))); put('pe.diff.max', f4(max(x[0] for x in pe))); assert all(x[1] > 0 for x in pe)
-put('pe.wins', f"{sum(x[2] for x in pe)}/{sum(x[3] for x in pe)}")
+put('pe.wins', f"{sum(x[2] for x in pe):,}/{sum(x[3] for x in pe):,}")
 # confirmation test (CONFIRM_TWO_TIMESCALE_v001): primary hypothesis on three untouched farm-years
 assert CF['n_confirmed'] == 3 and CF['datasets'] == [ds for _, ds in DSC]
 for s, ds in DSC:
@@ -455,25 +455,25 @@ def cell(txt, ok): return f'{txt} ({ok})' if txt else ok
 
 k18f, p19f, h19f = fresh['k18'][1], fresh['p19'][1], fresh['h19'][1]
 rows = [
-    ('R1', 'Bearing channels', 'adding them lowers the MAE by at least 3\\,\\%',
-     [cell(f"{RU['R1'][s]:.1f}\\,\\%", 'held') for s in ['k18', 'p19', 'h19']]),
+    ('R1', 'Bearing channels', 'adding them lowers the MAE by at least 3\\%',
+     [cell(f"{RU['R1'][s]:.1f}\\%", 'held') for s in ['k18', 'p19', 'h19']]),
     ('R2', 'Similarity term', 'it lowers the MAE overall and in at least 8 of the 11 windows',
-     [cell(f"{RU['R2'][s][0]:.1f}\\,\\%, {RU['R2'][s][1]}/11", 'held' if RU['R2'][s][0] > 0 and RU['R2'][s][1] >= 8 else 'failed') for s in ['k18', 'p19', 'h19']]),
-    ('R3', 'Cooler term (\\ref{eq:cooler})', 'adding it lowers the transient MAE by at least 3\\,\\% without raising the calm MAE by more than 1\\,\\%',
-     [cell(f"{RU['R3'][s][0]:.1f}\\,\\%", 'held' if RU['R3'][s][0] >= 3 and RU['R3'][s][1] <= 1 else 'failed') for s in ['k18', 'p19']] + ['n.a.']),
-    ('R4', 'Fresh carriers$^{a}$', 'each named carrier raises the MAE by more than 10\\,\\% when late, every other channel by less than 3\\,\\%, '
+     [cell(f"{RU['R2'][s][0]:.1f}\\%, {RU['R2'][s][1]}/11", 'held' if RU['R2'][s][0] > 0 and RU['R2'][s][1] >= 8 else 'failed') for s in ['k18', 'p19', 'h19']]),
+    ('R3', 'Cooler term (\\ref{eq:cooler})', 'adding it lowers the transient MAE by at least 3\\% without raising the calm MAE by more than 1\\%',
+     [cell(f"{RU['R3'][s][0]:.1f}\\%", 'held' if RU['R3'][s][0] >= 3 and RU['R3'][s][1] <= 1 else 'failed') for s in ['k18', 'p19']] + ['n.a.']),
+    ('R4', 'Fresh carriers$^{a}$', 'each named carrier raises the MAE by more than 10\\% when late, every other channel by less than 3\\%, '
      'and all carriers late together by more than the sum of their single increases',
-     [cell(f"{k18f['oil inlet']:.1f} / {k18f['rear axle bearing']:.1f}\\,\\%", 'held'),
-      cell(f"{p19f['oil inlet']:.1f} / {p19f['rear axle bearing']:.1f}\\,\\%", 'partly$^{b}$'),
-      cell(f"{h19f['IMS bearing, rotor side']:.1f}\\,\\%", 'held')]),
+     [cell(f"{k18f['oil inlet']:.1f}\\% / {k18f['rear axle bearing']:.1f}\\%", 'held'),
+      cell(f"{p19f['oil inlet']:.1f}\\% / {p19f['rear axle bearing']:.1f}\\%", 'partly$^{b}$'),
+      cell(f"{h19f['IMS bearing, rotor side']:.1f}\\%", 'held')]),
     ('R5', 'Send policy', 'sending the bearing message without delay gives a lower MAE than sending the inlet message',
      [cell(f"{D18['policy:always_bearing']['all']:.3f} vs {D18['policy:always_inlet']['all']:.3f}", 'held'),
       cell(f"{R19['policy:always_bearing']['all']:.3f} vs {R19['policy:always_inlet']['all']:.3f}", 'held'), 'n.a.']),
-    ('R6', 'Oil pressures', 'with all carriers late, adding the oil pressures lowers the MAE by at least 2\\,\\%',
-     [cell(f"{red(D18['stale:inlet+bearings']['all'], D18['stale:inlet+bearings+pressure']['all']):.1f}\\,\\%", 'held'), 'not registered',
-      cell(f"{red(st, pr):.1f}\\,\\%", 'held')]),
-    ('R7', 'Pump stage, filter', 'adding the pump stage and the filter pressures to the R6 inputs lowers the MAE by at least 2\\,\\%',
-     ['n.a.', 'n.a.', cell(f"{red(pr, r7):.1f}\\,\\%", 'held')]),
+    ('R6', 'Oil pressures', 'with all carriers late, adding the oil pressures lowers the MAE by at least 2\\%',
+     [cell(f"{red(D18['stale:inlet+bearings']['all'], D18['stale:inlet+bearings+pressure']['all']):.1f}\\%", 'held'), 'not registered',
+      cell(f"{red(st, pr):.1f}\\%", 'held')]),
+    ('R7', 'Pump stage, filter', 'adding the pump stage and the filter pressures to the R6 inputs lowers the MAE by at least 2\\%',
+     ['n.a.', 'n.a.', cell(f"{red(pr, r7):.1f}\\%", 'held')]),
 ]
 assert RU['R3']['k18'][0] < 3 and RU['R3']['p19'][0] >= 3 and RU['R3']['p19'][1] <= 1
 assert p19f['rear axle bearing'] < 10 and p19f['front axle bearing'] > 3 and fresh['p19'][2] > sum(p19f[n] for n in CARRIERS['p19'])
@@ -481,8 +481,9 @@ assert max(fresh['h19'][1], key=fresh['h19'][1].get) == 'IMS bearing, rotor side
 assert max(v for n, v in h19f.items() if n in ['power', 'wind speed', 'rotor speed', 'generator speed', 'grid current']) < 3
 held = sum(c.endswith('(held)') for _, _, _, cs in rows for c in cs); failed = sum(c.endswith('(failed)') for _, _, _, cs in rows for c in cs)
 part = sum('partly' in c for _, _, _, cs in rows for c in cs); appl = held + failed + part
-put('rules.appl', str(appl)); put('rules.held', str(held)); put('rules.failed', str(failed)); put('rules.part', str(part))
-T = ['\\begin{table*}[t]', '\\caption{Prespecified Rules on the Three Held-Out Farm-Years}', '\\label{tab:rules}', '\\centering', '\\footnotesize',
+nw = lambda n: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'][n] if 0 <= n <= 9 else str(n)   # style guide III.A.1
+put('rules.appl', nw(appl)); put('rules.held', nw(held)); put('rules.failed', nw(failed)); put('rules.part', nw(part))
+T = ['\\begin{table*}[t]', '\\caption{Prespecified rules on the three held-out farm-years.}', '\\label{tab:rules}', '\\centering', '\\footnotesize',
      '\\setlength{\\tabcolsep}{4pt}', '\\begin{tabular}{@{}llp{6.4cm}lll@{}}', '\\toprule',
      'Rule & Component & Success rule & Kelmarsh 2018 & Penmanshiel 2019 & Hill of Towie 2019 \\\\', '\\midrule']
 T += [f'{a} & {b} & {c} & ' + ' & '.join(cs) + ' \\\\' for a, b, c, cs in rows]
@@ -491,7 +492,7 @@ T += ['\\bottomrule',
       'caused by delaying a carrier by $d$ steps. On Hill of Towie, which records no inlet temperature, R1 and R2 use the drivers and the delayed state '
       'as the base feature set, and the evaluation starts on 1 February, as registered. $^{a}$Carriers: oil inlet and rear axle bearing (Senvion); a gear-oil-adjacent temperature, tested with the four gearbox '
       'bearings (Siemens). $^{b}$The inlet clause and the joint clause held; the rear bearing lost ' + f"{p19f['rear axle bearing']:.1f}" +
-      '\\,\\% and the front bearing ' + f"{p19f['front axle bearing']:.1f}" + '\\,\\%. n.a.: channel not recorded on that fleet; '
+      '\\% and the front bearing ' + f"{p19f['front axle bearing']:.1f}" + '\\%. n.a.: channel not recorded on that fleet; '
       'not registered: rule not part of that protocol.}', '\\end{tabular}', '\\end{table*}']
 (PAPER/'tables').mkdir(exist_ok=True); (PAPER/'tables/tab_rules.tex').write_text('\n'.join(T) + '\n', encoding='utf-8')
 
@@ -508,10 +509,149 @@ def fmt(ds, key, bold=False):
     return f'\\textbf{{{v:.3f}}}' if bold else f'{v:.3f}'
 
 
+# Revision check Part C (protocols/REVISION_CHECKS_v001.md): recursive least-squares reference on the same common rows
+RLSK = 'reference: recursive least squares'
+RLS = load(E/'revision_checks_2026-11-17_v001/rls_reference.json')
+_g = [100 * (1 - RLS[ds][PROP] / RLS[ds][RLSK]) for _, ds in DS9]
+put('rls.vsprop.min', f'{min(_g):.1f}'); put('rls.vsprop.max', f'{max(_g):.1f}')
+put('rls.wins', f"{sum(int(RLS[ds]['proposed_wins_turbine_month'].split('/')[0]) for _, ds in DS9):,}/{sum(int(RLS[ds]['proposed_wins_turbine_month'].split('/')[1]) for _, ds in DS9):,}")
+put('rls.h', str(RLS['half_life_rows'] // 6)); put('rls.c', f"{RLS['c']:.1f}")
+# Revision checks Part D (+ Amendment D-b, conservative selection) and Part E: practical size of the recency gain, delays
+RV = E/'revision_checks_2026-11-17_v001'; RSZ = load(RV/'recency_size.json'); D9 = [ds for _, ds in DS9]
+sg = lambda x: ('$-$' if x < 0 else '+') + f'{abs(x):.1f}'
+_t = [-RSZ['amendment_Db'][ds]['by_proposed']['top5_change_pct'] for ds in D9]; _r = [-RSZ['amendment_Db'][ds]['by_proposed']['rest_change_pct'] for ds in D9]
+_s = [100 * RSZ['amendment_Db'][ds]['by_proposed']['top5_share_of_gain'] for ds in D9]
+put('rz.top.min', f'{min(_t):.1f}'); put('rz.top.max', f'{max(_t):.1f}'); put('rz.rest.min', f'{min(_r):.1f}'); put('rz.rest.max', f'{max(_r):.1f}')
+put('rz.share.min', f'{min(_s):.0f}'); put('rz.share.max', f'{max(_s):.0f}')
+put('rz.loss.max', f"{max(RSZ[ds]['turbine_months']['largest_loss'] for ds in D9):.3f}")
+put('rz.p99.k24.sim', f"{RSZ['kelmarsh2024']['tail']['similarity']['p99']:.2f}"); put('rz.p99.k24.prop', f"{RSZ['kelmarsh2024']['tail']['proposed']['p99']:.2f}")
+assert all(RSZ[ds]['tail']['proposed']['p99'] < RSZ[ds]['tail']['similarity']['p99'] for ds in D9)
+_c = [-RSZ[ds]['calm']['recency_change_pct'] for ds in D9]; _tr = [RSZ[ds]['transient']['recency_change_pct'] for ds in D9]
+put('rz.calm.min', f'{min(_c):.1f}'); put('rz.calm.max', f'{max(_c):.1f}'); put('rz.tr.min', sg(min(_tr))); put('rz.tr.max', sg(max(_tr)))
+for ds, ab in [('penmanshiel2019', 'p19'), ('hot2019', 'h19')]:
+    _e = [load(RV/f'delay_{ds}_d{d}.json') for d in (1, 3, 6, 12, 24)]
+    assert _e[1]['repro_max_abs_fleet'] <= 1e-9 and _e[1]['repro_max_abs_proposed'] <= 1e-9
+    _si = [-e['similarity_change_pct'] for e in _e]; _re = [-e['recency_change_pct'] for e in _e]; assert min(_si) > 0 and min(_re) > 0
+    put(f'dz.{ab}.sim.min', f'{min(_si):.1f}'); put(f'dz.{ab}.sim.max', f'{max(_si):.1f}'); put(f'dz.{ab}.rec.min', f'{min(_re):.1f}'); put(f'dz.{ab}.rec.max', f'{max(_re):.1f}')
+# Revision checks Parts A and B (+ Amendment B-a): turbine index encoding and newly added turbines
+_P, _C, _N = [], [], []
+for ds in D9:
+    _v = load(RV/f'turbine_id_{ds}.json')['variants']; _o = _v['orig']['proposed']
+    assert _v['orig']['repro_max_abs_fleet'] <= 1e-9 and _v['orig']['repro_max_abs_proposed'] <= 1e-9
+    _P += [100 * (_v[f'perm{i}']['proposed'] / _o - 1) for i in range(1, 6)]; _C.append(100 * (_v['cat']['proposed'] / _o - 1)); _N.append(100 * (_v['noid']['proposed'] / _o - 1))
+put('tid.perm.min', sg(min(_P))); put('tid.perm.max', sg(max(_P))); put('tid.cat.min', f'{-max(_C):.1f}'); put('tid.cat.max', f'{-min(_C):.1f}')
+put('tid.noid.min', f'{min(_N):.1f}'); put('tid.noid.max', f'{max(_N):.1f}')
+_ch, _fw, _pw, _sh = [], [], [], []
+for ds in ['kelmarsh2018', 'penmanshiel2019', 'hot2019']:
+    _d = load(RV/f'new_turbine_{ds}.json')
+    for _t, _x in _d['turbines'].items():
+        _ch.append(100 * (_x['proposed_new'] / _x['proposed_orig'] - 1)); _fw.append(100 * (_x['fleet_new_w1'] / _x['fleet_orig_w1'] - 1))
+        _pw.append(100 * (_x['proposed_new_w1'] / _x['proposed_orig_w1'] - 1)); _sh.append(100 * _d['first_window_share_exact'][_t])
+med = lambda a: sorted(a)[len(a) // 2] if len(a) % 2 else (sorted(a)[len(a) // 2 - 1] + sorted(a)[len(a) // 2]) / 2
+put('nt.n', str(len(_ch))); put('nt.n5', str(sum(c <= 5 for c in _ch))); put('nt.mean', f'{sum(_ch) / len(_ch):.1f}')
+put('nt.w1.fleet', f'{med(_fw):.0f}'); put('nt.w1.prop', f'{med(_pw):.0f}'); put('nt.share.med', f'{med(_sh):.0f}'); put('nt.share.min', f'{min(_sh):.0f}')
+_b14 = load(RV/'new_turbine_diag_penmanshiel2019_14.json')['turbines']['14']; _b15 = load(RV/'new_turbine_diag_penmanshiel2019_15.json')['turbines']['15']
+put('nt.p14', f"{100 * (_b14['proposed_new_num'] / _b14['proposed_orig'] - 1):.1f}"); put('nt.p15', f"{100 * (_b15['proposed_new_num'] / _b15['proposed_orig'] - 1):.1f}")
+put('nt.p14.mid', f"{100 * (_b14['proposed_new_mid'] / _b14['proposed_orig'] - 1):.1f}"); put('nt.p15.mid', f"{100 * (_b15['proposed_new_mid'] / _b15['proposed_orig'] - 1):.1f}")
+assert sorted(_ch)[-2:] == sorted([100 * (_b14['proposed_new_num'] / _b14['proposed_orig'] - 1), 100 * (_b15['proposed_new_num'] / _b15['proposed_orig'] - 1)])
+# Revision check Part G (+ Amendments G-a, G-b, G-c): controlled comparison of inputs, pooling, and correction
+CS = load(RV/'controlled_summary.json'); CW = load(RV/'controlled_window_summary.json'); D3 = ['kelmarsh2018', 'penmanshiel2019', 'hot2019']
+CA = ['hgb', 'xgb', 'ridge', 'mlp', 'gru']; CL = {'hgb': 'Gradient boosting (article)', 'xgb': 'XGBoost', 'ridge': 'Ridge regression',
+                                                 'mlp': 'Multilayer perceptron', 'gru': 'GRU, 1-h window'}
+_dec = {(ds, a): CS[ds]['decomposition'][a] for ds in D3 for a in CA}
+_inp = [v['inputs_pct'] for v in _dec.values()]; _cor = [v['correction_pct'] for v in _dec.values()]
+_cw = [int(v['correction_wins'].split('/')[0]) / int(v['correction_wins'].split('/')[1]) for v in _dec.values()]
+_pt = [v['pooling_pct'] for (ds, a), v in _dec.items() if a in ('hgb', 'xgb')]; _pn = [v['pooling_pct'] for (ds, a), v in _dec.items() if a in ('mlp', 'gru')]
+_pr = [-v['pooling_pct'] for (ds, a), v in _dec.items() if a == 'ridge']
+assert min(_inp) > 0 and min(_cor) > 0 and min(_pt) > 0 and min(_pn) > 0 and min(_pr) > 0
+for (ds, a), v in _dec.items():   # largest effect: inputs except the networks on the Senvion farms (pooling); same for the main effects
+    big = 'pooling' if (a in ('mlp', 'gru') and not ds.startswith('hot')) else 'inputs'
+    assert max(['inputs', 'pooling', 'correction'], key=lambda k: v[f'{k}_pct']) == big, (ds, a)
+    assert max(['inputs', 'pooling', 'correction'], key=lambda k: v[f'{k}_main_effect_pct']) == big, (ds, a)
+put('ct.inp.min', f'{min(_inp):.0f}'); put('ct.inp.max', f'{max(_inp):.0f}'); put('ct.cor.min', f'{min(_cor):.1f}'); put('ct.cor.max', f'{max(_cor):.0f}')
+put('ct.corwin.min', f'{int(100 * min(_cw))}'); put('ct.pt.min', f'{min(_pt):.1f}'); put('ct.pt.max', f'{max(_pt):.0f}')
+put('ct.pn.min', f'{min(_pn):.0f}'); put('ct.pn.max', f'{max(_pn):.0f}'); put('ct.pr.min', f'{min(_pr):.1f}'); put('ct.pr.max', f'{max(_pr):.0f}')
+for ds, ab in zip(D3, ['k18', 'p19', 'h19']):
+    m = CW[ds]['mae']; g, h, w1 = m['gru|full|fleet|corr'], m['hgb|full|fleet|corr'], m['gru_w1|corr']
+    assert g == min(CS[ds]['mae'][a][c] for a in CA for c in CS[ds]['mae'][a]) and abs(g - CS[ds]['mae']['gru']['full|fleet|corr']) < 1e-12
+    put(f'ct.gru.{ab}', f'{g:.3f}'); put(f'ct.hgb.{ab}', f'{h:.3f}'); put(f'ct.gruw1.{ab}', f'{w1:.3f}')
+    share_win = (w1 - g) / (h - g)
+    assert (share_win > 0.5) if ab != 'p19' else (0.4 < share_win < 0.6), (ab, share_win)
+_mw = [100 * (CW[ds]['mae']['mlp_win|corr'] / CW[ds]['mae']['gru|full|fleet|corr'] - 1) for ds in D3[:2]]
+put('ct.mlpwin.min', f'{min(_mw):.0f}'); put('ct.mlpwin.max', f'{max(_mw):.0f}')
+_hw = [100 * (1 - CW[ds]['mae']['hgb_win|corr'] / CW[ds]['mae']['hgb|full|fleet|corr']) for ds in D3]
+assert all(CW[ds]['mae']['hgb_win|corr'] > CW[ds]['mae']['gru|full|fleet|corr'] for ds in D3)   # text: stayed above the GRU
+put('ct.hgbwin.min', f'{min(_hw):.0f}'); put('ct.hgbwin.max', f'{max(_hw):.0f}')
+T = ['\\begin{table*}[t]', '\\caption{Controlled comparison of inputs, pooling, and correction on the stage-2 farm-years.}', '\\label{tab:controlled}',
+     '\\centering', '\\footnotesize', '\\setlength{\\tabcolsep}{3pt}', '\\begin{tabular*}{\\textwidth}{@{\\extracolsep{\\fill}}lcccccccccccc@{}}', '\\toprule',
+     ' & \\multicolumn{4}{c}{Kelmarsh 2018} & \\multicolumn{4}{c}{Penmanshiel 2019} & \\multicolumn{4}{c}{Hill of Towie 2019} \\\\',
+     '\\cmidrule(lr){2-5}\\cmidrule(lr){6-9}\\cmidrule(l){10-13}',
+     'Architecture & ' + ' & '.join(['MAE', 'Inputs', 'Pooling', 'Corr.'] * 3) + ' \\\\', '\\midrule']
+for a in CA:
+    cells = []
+    for ds in D3:
+        v = _dec[(ds, a)]; cells += [f"{CS[ds]['mae'][a]['full|fleet|corr']:.3f}"] + [sg(v[k]) for k in ('inputs_pct', 'pooling_pct', 'correction_pct')]
+    T.append(f'{CL[a]} & ' + ' & '.join(cells) + ' \\\\')
+T += ['\\bottomrule', '\\end{tabular*}', '\\par\\smallskip\\parbox{\\textwidth}{\\footnotesize MAE ($^{\\circ}$C) of each architecture with the full inputs, '
+      'fleet pooling, and the late-truth correction, on the rows where all 40 estimators of a farm-year return an estimate. The other columns give the '
+      'change in MAE (\\%) when one factor is changed: base inputs instead of the full inputs (Inputs), one model per turbine instead of the fleet model '
+      '(Pooling), or no correction (Corr.). All architectures are refitted at the window starts on released rows only; their settings were fixed '
+      'before the runs (Section~\\ref{sec:compare}).}', '\\end{table*}']
+(PAPER/'tables/tab_controlled.tex').write_text('\n'.join(T) + '\n', encoding='utf-8')
+# Revision check Part H (+ Amendments H-a, H-b): irregular delays, outages, missing inputs
+IR = {(ds, k): load(RV/f'irregular_{ds}_s{k}.json') for ds in D3 for k in range(6)}
+IX = {(ds, k): load(RV/f'irregular_exclude_{ds}_s{k}.json') for ds in D3 for k in (4, 5)}
+_rise = []
+for ds in D3:
+    assert IR[(ds, 0)]['repro_max_abs_fleet'] <= 1e-9 and IR[(ds, 0)]['repro_max_abs_proposed'] <= 1e-9
+    p0 = IR[(ds, 0)]['scores']['proposed']['all']
+    for k in (1, 2, 3):
+        s = IR[(ds, k)]['scores']; assert all(s['proposed']['all'] < s[m]['all'] for m in ('fleet', 'ewma_reference', 'persistence'))
+        _rise.append(100 * (s['proposed']['all'] / p0 - 1))
+    s4 = IR[(ds, 4)]['scores']; assert s4['proposed']['all'] < s4['fleet']['all'] and s4['proposed']['inside_blocks'] > s4['persistence']['inside_blocks']
+    x4 = IX[(ds, 4)]['scores']; best = x4['proposed_excl_fallback']['all']
+    assert best == min(v['all'] for v in x4.values()) and best < s4['ewma_reference']['all']
+    x5 = IX[(ds, 5)]['scores']; assert x5['proposed_excl']['all'] < x5['fleet']['all']
+    for k in (4, 5): assert IX[(ds, k)]['scores']['proposed_excl']['outside_blocks'] < IX[(ds, k)]['scores']['fleet']['outside_blocks']
+    assert (x5['proposed_excl_fallback']['all'] > x5['proposed_excl']['all']) == (not ds.startswith('hot'))
+    ab = {'kelmarsh2018': 'k18', 'penmanshiel2019': 'p19', 'hot2019': 'h19'}[ds]
+    put(f'ir.in.prop.{ab}', f"{s4['proposed']['inside_blocks']:.2f}"); put(f'ir.in.pers.{ab}', f"{s4['persistence']['inside_blocks']:.2f}")
+    put(f'ir.rules.{ab}', f'{best:.3f}')
+put('ir.rise.min', f'{min(_rise):.0f}'); put('ir.rise.max', f'{max(_rise):.0f}')
+_in5 = [IX[(ds, 5)]['scores'][m]['inside_blocks'] for ds in D3 for m in ('fleet', 'proposed', 'persistence', 'proposed_excl', 'proposed_excl_fallback')]
+put('ir.out.min', f'{min(_in5):.1f}'); put('ir.out.max', f'{max(_in5):.1f}')
+_rows = [('Nominal, 30~min', lambda ds: IR[(ds, 0)]['scores'], 'fleet', 'proposed'),
+         ('Varying delay, 10--60~min', lambda ds: IR[(ds, 1)]['scores'], 'fleet', 'proposed'),
+         ('Batches every 4~h', lambda ds: IR[(ds, 2)]['scores'], 'fleet', 'proposed'),
+         ('Target outages', lambda ds: IR[(ds, 3)]['scores'], 'fleet', 'proposed'),
+         ('Input gaps', lambda ds: IR[(ds, 4)]['scores'], 'fleet', 'proposed'),
+         ('Input gaps, both rules$^{a}$', lambda ds: IX[(ds, 4)]['scores'], 'fleet_fallback', 'proposed_excl_fallback'),
+         ('Whole-record outages', lambda ds: IR[(ds, 5)]['scores'], 'fleet', 'proposed'),
+         ('Whole-record outages, first rule$^{a}$', lambda ds: IX[(ds, 5)]['scores'], 'fleet', 'proposed_excl')]
+T = ['\\begin{table}[t]', '\\caption{MAE ($^{\\circ}$C) under irregular delays, outages, and missing inputs.}', '\\label{tab:irregular}', '\\centering',
+     '\\footnotesize', '\\setlength{\\tabcolsep}{2pt}', '\\begin{tabular}{@{}lcccccc@{}}', '\\toprule',
+     ' & \\multicolumn{2}{c}{K18} & \\multicolumn{2}{c}{P19} & \\multicolumn{2}{c}{H19} \\\\', '\\cmidrule(lr){2-3}\\cmidrule(lr){4-5}\\cmidrule(l){6-7}',
+     'Scenario & Fleet & Prop. & Fleet & Prop. & Fleet & Prop. \\\\', '\\midrule']
+for lab, f, a, b in _rows:
+    T.append(lab + ' & ' + ' & '.join(f"{f(ds)[a]['all']:.3f} & {f(ds)[b]['all']:.3f}" for ds in D3) + ' \\\\')
+T += ['\\bottomrule', '\\end{tabular}', '\\par\\smallskip\\parbox{\\columnwidth}{\\footnotesize Fleet: the fleet model alone; Prop.: the proposed estimator. '
+      'Valid rows from the start of the first window, own rows of each run; one random draw per scenario (Section~\\ref{sec:delay}). '
+      '$^{a}$Exploratory, chosen after the results: the first rule leaves the residuals of rows without inputs out of the correction; '
+      'the second returns the newest released value while the inputs are missing (applied to both columns).}', '\\end{table}']
+(PAPER/'tables/tab_irregular.tex').write_text('\n'.join(T) + '\n', encoding='utf-8')
+# Revision check Part F (+ Amendment F-a): transfer to an unseen farm
+for src, tgt, ab in [('kelmarsh2017', 'penmanshiel2019', 'kp'), ('penmanshiel2019', 'kelmarsh2018', 'pk')]:
+    _f = load(RV/f'transfer_{src}_to_{tgt}.json'); sc = _f['scores']; fa = _f['amendment_Fa']
+    assert all(o > 0 for o in fa['offsets']) or all(o < 0 for o in fa['offsets'])
+    put(f'tf.{ab}.a', f"{sc['a_zero_shot']['from_ev0']:.2f}"); put(f'tf.{ab}.pers', f"{sc['persistence']['from_ev0']:.2f}")
+    put(f'tf.{ab}.off', f"{abs(sum(fa['offsets']) / len(fa['offsets'])):.1f}"); put(f'tf.{ab}.dm', f"{fa['mae_after_removing_turbine_offset']:.2f}")
+    put(f'tf.{ab}.b', f"{sc['b_source_plus_correction']['from_ev0']:.2f}"); put(f'tf.{ab}.c28', f"{sc['c_start_day1']['days_1_28']:.2f}")
+    put(f'tf.{ab}.pers28', f"{sc['persistence']['days_1_28']:.2f}"); put(f'tf.{ab}.c', f"{sc['c_start_day1']['from_ev0']:.2f}")
+    put(f'tf.{ab}.cinc', f"{100 * (sc['c_start_day1']['from_ev0'] / sc['noid']['from_ev0'] - 1):.0f}")
 pub = sorted([(lab, k) for lab, k in PUB if ft('kelmarsh2018', k) is not None], key=lambda r: ft('kelmarsh2018', r[1]))
 cao = {ds: [x for x in CT[ds]['vs'] if x['method'] == 'B12 Cao 2026 [v2]'][0]['mae_common'] for ds in CT}
 hd = ' & '.join(AB[''.join(c for c in ds if c.isalpha())] + ds[-2:] for _, ds in DS9)
-T = ['\\begin{table*}[t]', '\\caption{MAE ($^{\\circ}$C) on the Nine Held-Out Farm-Years With a 30-min Release Delay}', '\\label{tab:comparison}',
+T = ['\\begin{table*}[t]', '\\caption{MAE ($^{\\circ}$C) on the nine held-out farm-years with a 30-min release delay.}', '\\label{tab:comparison}',
      '\\centering', '\\footnotesize', '\\setlength{\\tabcolsep}{3pt}', '\\begin{tabular*}{\\textwidth}{@{\\extracolsep{\\fill}}lccccccccc@{}}', '\\toprule',
      ' & \\multicolumn{3}{c}{Held-out year and farms$^{g}$} & \\multicolumn{3}{c}{Later years$^{g}$} & \\multicolumn{3}{c}{Confirmation years} \\\\',
      '\\cmidrule(lr){2-4}\\cmidrule(lr){5-7}\\cmidrule(l){8-10}', f'Method & {hd} \\\\', '\\midrule',
@@ -521,7 +661,8 @@ T = ['\\begin{table*}[t]', '\\caption{MAE ($^{\\circ}$C) on the Nine Held-Out Fa
      'Fleet model alone & ' + ' & '.join(fmt(ds, FLEET) for _, ds in DS9) + ' \\\\',
      'Per-turbine models$^{f}$ & ' + ' & '.join(fmt(ds, 'per-turbine model + late-truth correction') for _, ds in DS9) + ' \\\\',
      'Reference: EWMA of residuals$^{c}$ & ' + ' & '.join(fmt(ds, EWMAK) for _, ds in DS9) + ' \\\\',
-     'Reference: mean of 20 residuals$^{c}$ & ' + ' & '.join(fmt(ds, M20K) for _, ds in DS9) + ' \\\\', '\\midrule']
+     'Reference: mean of 20 residuals$^{c}$ & ' + ' & '.join(fmt(ds, M20K) for _, ds in DS9) + ' \\\\',
+     'Reference: recursive least squares$^{c}$ & ' + ' & '.join(f"{RLS[ds][RLSK]:.3f}" for _, ds in DS9) + ' \\\\', '\\midrule']
 T += [f'{lab} & ' + ' & '.join(fmt(ds, k) for _, ds in DS9) + ' \\\\' for lab, k in pub]
 T += [f"Cao et al.~\\cite{{Cao2026}}$^{{d}}$ & {cao['kelmarsh2018']:.3f} & {cao['penmanshiel2019']:.3f}$^{{e}}$ & " + ' & '.join(['n.r.'] * 7) + ' \\\\']
 T += ['\\midrule', 'Persistence, $y_i(t-d)$ & ' + ' & '.join(fmt(ds, 'B0 last released value [lag 3]') for _, ds in DS9) + ' \\\\', '\\bottomrule',
@@ -529,17 +670,17 @@ T += ['\\midrule', 'Persistence, $y_i(t-d)$ & ' + ' & '.join(fmt(ds, 'B0 last re
       'Bold: the proposed estimator. Common rows of all receipt-causal methods of each farm-year except the online Kalman filter and Cao et al., which were '
       'scored separately; published methods are sorted by their Kelmarsh 2018 error, with Cao et al. listed last. $^{a}$Exploratory extension '
       '(Section~\\ref{sec:later}). $^{b}$The estimator registered as primary for the first six farm-years, before the recency term was added '
-      '(Section~\\ref{sec:prereg}). $^{c}$Corrections of the fleet model by recent released residuals alone, an exponentially weighted moving average (EWMA) '
-      'or a plain mean (Section~\\ref{sec:disc-mechanism}). '
+      '(Section~\\ref{sec:prereg}). $^{c}$Corrections of the fleet model by recent released residuals alone, an exponentially weighted moving average (EWMA), '
+      'a plain mean, or a recursive least-squares update of a bias and a gain (Sections~\\ref{sec:disc-mechanism} and~\\ref{sec:compare}). '
       '$^{d}$Second configuration (learning rate $10^{-3}$); the published one is reported in Section~\\ref{sec:compare}. '
-      '$^{e}$Turbines ' + V['cao.p19.turbines'] + ' only, with the proposed estimator at ' + V['cao.p19.prop'] + '~$^{\\circ}$C on the same rows. '
+      '$^{e}$Turbines ' + V['cao.p19.turbines'] + ' only, with the proposed estimator at ' + V['cao.p19.prop'] + '$^{\\circ}$C on the same rows. '
       '$^{f}$The proposed estimator with one model per turbine instead of the fleet model, same inputs and late-truth terms '
       '(Section~\\ref{sec:disc-drivers}). $^{g}$Descriptive for the proposed estimator, whose recency term was designed after these '
       'results; its confirmatory years are the last three. n.r.: not run, see Sections~\\ref{sec:baselines} and~\\ref{sec:compare}.}', '\\end{table*}']
 (PAPER/'tables/tab_comparison.tex').write_text('\n'.join(T) + '\n', encoding='utf-8')
 
 # ---------------------------------------------------------------- Table: paired tests, proposed vs every baseline, nine farm-years
-T = ['\\begin{table*}[t]', '\\caption{Paired Tests of the Proposed Estimator Against the Published Methods Run on Each Farm-Year}', '\\label{tab:significance}', '\\centering',
+T = ['\\begin{table*}[t]', '\\caption{Paired tests of the proposed estimator against the published methods run on each farm-year.}', '\\label{tab:significance}', '\\centering',
      '\\footnotesize', '\\setlength{\\tabcolsep}{4pt}', '\\begin{tabular*}{\\textwidth}{@{\\extracolsep{\\fill}}llccccc@{}}', '\\toprule',
      ' & & \\multicolumn{3}{c}{Closest published method} & \\multicolumn{2}{c}{All other methods} \\\\', '\\cmidrule(lr){3-5}\\cmidrule(l){6-7}',
      'Farm-year & Closest & $\\Delta$MAE [turbine interval; 7-day interval], $^{\\circ}$C & Wins & $p_{\\mathrm{Holm}}$ & min $\\Delta$MAE & max $p_{\\mathrm{Holm}}$ \\\\', '\\midrule']
@@ -551,7 +692,7 @@ for j, (s, ds) in enumerate(DS9):
           f"{min(r['diff'] for r in rest):.3f} & {pfloor(max(r['p_holm'] for r in rest))} \\\\"]
     if j in (2, 5): T += ['\\midrule']
 T += ['\\bottomrule', '\\end{tabular*}', '\\par\\smallskip\\parbox{\\textwidth}{\\footnotesize $\\Delta$MAE: method minus proposed, on the common rows, '
-      'with the 95\\,\\% intervals of a bootstrap over whole turbines and of a bootstrap over 7-day blocks shared by all turbines. Wins: turbine-months in '
+      'with the 95\\% intervals of a bootstrap over whole turbines and of a bootstrap over 7-day blocks shared by all turbines. Wins: turbine-months in '
       'which the proposed estimator has the lower MAE. $p_{\\mathrm{Holm}}$: two-sided Wilcoxon signed-rank test on dependent turbine-months (values below $10^{-6}$ '
       'are shown as such), Holm-corrected over the '
       'methods of a farm-year (the similarity-only estimator included). Every interval of every method, including 28-day blocks, lies above zero.}', '\\end{table*}']
@@ -592,19 +733,19 @@ st25, pr25, r725 = AH25['stale:all_gearbox_bearings']['all'], AH25['stale:all_ge
 rh = {'R1': red(AH25['base+local']['all'], AH25['base_x+local']['all']), 'R2': (red(AH25['base_x']['all'], AH25['base_x+local']['all']), months_better(AH25['base_x'], AH25['base_x+local'])),
       'R6': red(st25, pr25), 'R7': red(pr25, r725)}
 ok = lambda c: 'held' if c else 'failed'
-rowsL = [('R1', [cell(f"{rk['R1']:.1f}\\,\\%", ok(rk['R1'] >= 3)), cell(f"{rp['R1']:.1f}\\,\\%", ok(rp['R1'] >= 3)), cell(f"{rh['R1']:.1f}\\,\\%", ok(rh['R1'] >= 3))]),
-         ('R2', [cell(f"{r['R2'][0]:.1f}\\,\\%, {r['R2'][1]}/11", ok(r['R2'][0] > 0 and r['R2'][1] >= 8)) for r in (rk, rp, rh)]),
-         ('R3', [cell(f"{r['R3'][0]:.1f}\\,\\%", ok(r['R3'][0] >= 3 and r['R3'][1] <= 1)) for r in (rk, rp)] + ['n.a.']),
-         ('R4', [cell(f"{rk['R4'][0]['Gear oil inlet']:.1f} / {rk['R4'][0]['Rear bearing']:.1f}\\,\\%", rk['R4'][2] + ('$^{a}$' if rk['R4'][2] == 'partly' else '')),
-                 cell(f"{rp['R4'][0]['Gear oil inlet']:.1f} / {rp['R4'][0]['Rear bearing']:.1f}\\,\\%", rp['R4'][2] + ('$^{a}$' if rp['R4'][2] == 'partly' else '')),
-                 cell(f"{ch25['IMS bearing, rotor side']:.1f}\\,\\%", ok(r4h))]),
+rowsL = [('R1', [cell(f"{rk['R1']:.1f}\\%", ok(rk['R1'] >= 3)), cell(f"{rp['R1']:.1f}\\%", ok(rp['R1'] >= 3)), cell(f"{rh['R1']:.1f}\\%", ok(rh['R1'] >= 3))]),
+         ('R2', [cell(f"{r['R2'][0]:.1f}\\%, {r['R2'][1]}/11", ok(r['R2'][0] > 0 and r['R2'][1] >= 8)) for r in (rk, rp, rh)]),
+         ('R3', [cell(f"{r['R3'][0]:.1f}\\%", ok(r['R3'][0] >= 3 and r['R3'][1] <= 1)) for r in (rk, rp)] + ['n.a.']),
+         ('R4', [cell(f"{rk['R4'][0]['Gear oil inlet']:.1f}\\% / {rk['R4'][0]['Rear bearing']:.1f}\\%", rk['R4'][2] + ('$^{a}$' if rk['R4'][2] == 'partly' else '')),
+                 cell(f"{rp['R4'][0]['Gear oil inlet']:.1f}\\% / {rp['R4'][0]['Rear bearing']:.1f}\\%", rp['R4'][2] + ('$^{a}$' if rp['R4'][2] == 'partly' else '')),
+                 cell(f"{ch25['IMS bearing, rotor side']:.1f}\\%", ok(r4h))]),
          ('R5', [cell(f"{r['R5'][0]:.3f} vs {r['R5'][1]:.3f}", ok(r['R5'][0] < r['R5'][1])) for r in (rk, rp)] + ['n.a.']),
-         ('R6', [cell(f"{rk['R6']:.1f}\\,\\%", ok(rk['R6'] >= 2)), 'not registered', cell(f"{rh['R6']:.1f}\\,\\%", ok(rh['R6'] >= 2))]),
-         ('R7', ['n.a.', 'n.a.', cell(f"{rh['R7']:.1f}\\,\\%", ok(rh['R7'] >= 2))])]
+         ('R6', [cell(f"{rk['R6']:.1f}\\%", ok(rk['R6'] >= 2)), 'not registered', cell(f"{rh['R6']:.1f}\\%", ok(rh['R6'] >= 2))]),
+         ('R7', ['n.a.', 'n.a.', cell(f"{rh['R7']:.1f}\\%", ok(rh['R7'] >= 2))])]
 assert top25 == 'IMS bearing, rotor side'
 cl = [c for _, cs in rowsL for c in cs]
 hL, fL, pL = sum(c.endswith('(held)') for c in cl), sum(c.endswith('(failed)') for c in cl), sum('partly' in c for c in cl)
-put('rulesL.appl', str(hL + fL + pL)); put('rulesL.held', str(hL)); put('rulesL.failed', str(fL)); put('rulesL.part', str(pL))
+put('rulesL.appl', nw(hL + fL + pL)); put('rulesL.held', nw(hL)); put('rulesL.failed', nw(fL)); put('rulesL.part', nw(pL))
 for s_, r in [('k24', rk), ('p22', rp), ('h25', rh)]:
     put(f'rL.{s_}.r1', p1(r['R1'])); put(f'rL.{s_}.r2', p1(r['R2'][0])); put(f'rL.{s_}.r2.m', str(r['R2'][1]))
 for s_, r in [('k24', rk), ('p22', rp)]:
@@ -619,20 +760,20 @@ assert sum(1 for r in [RU['R3']['k18'], RU['R3']['p19'], rk['R3'], rp['R3']] if 
 assert all(r['R2'][1] == 11 for r in (rk, rp, rh)), 'text: local correction helped in all 11 windows of every later year'
 put('rL.k24.r6', p1(rk['R6'])); put('rL.h25.r6', p1(rh['R6'])); put('rL.h25.r7', p1(rh['R7'])); put('rL.h25.ims', p1(ch25['IMS bearing, rotor side'])); put('rL.h25.joint', f'{j25:.0f}')
 assert rk['R3'][0] < 3 and rp['R3'][0] < 3 and rk['R4'][2] == rp['R4'][2] == 'partly'
-T = ['\\begin{table}[t]', '\\caption{Prespecified Rules on the Later Years}', '\\label{tab:ruleslater}', '\\centering', '\\footnotesize',
+T = ['\\begin{table}[t]', '\\caption{Prespecified rules on the later years.}', '\\label{tab:ruleslater}', '\\centering', '\\footnotesize',
      '\\setlength{\\tabcolsep}{2.4pt}', '\\begin{tabular}{@{}llll@{}}', '\\toprule', 'Rule & Kelmarsh 2024 & Penmanshiel 2022 & Hill of Towie 2025 \\\\', '\\midrule']
 T += [f'{a} & ' + ' & '.join(cs) + ' \\\\' for a, cs in rowsL]
 T += ['\\bottomrule', '\\multicolumn{4}{@{}p{\\columnwidth}@{}}{\\footnotesize Rules and notation as in Table~\\ref{tab:rules}. $^{a}$The inlet clause and the '
-      f"joint clause held; the rear bearing fell short of 10\\,\\%.}}", '\\end{tabular}', '\\end{table}']
+      f"joint clause held; the rear bearing fell short of 10\\%.}}", '\\end{tabular}', '\\end{table}']
 (PAPER/'tables/tab_rules_later.tex').write_text('\n'.join(T) + '\n', encoding='utf-8')
 
-# ---------------------------------------------------------------- Table: farm-years used (from DATASET_STATS.json)
+# ---------------------------------------------------------------- Table: farm-years used (generated from DATASET_STATS.json)
 COLS = [('kelmarsh2017', 'Kelmarsh 2017', 'development', 'Senvion MM92'), ('kelmarsh2018', 'Kelmarsh 2018', 'held-out year', 'Senvion MM92'),
         ('penmanshiel2019', 'Penmanshiel 2019', 'second farm', 'Senvion MM82'), ('hot2019', 'Hill of Towie 2019', 'third farm', 'Siemens SWT-2.3'),
         ('kelmarsh2024', 'Kelmarsh 2024', 'later year', 'Senvion MM92'), ('penmanshiel2022', 'Penmanshiel 2022', 'later year', 'Senvion MM82'),
         ('hot2025', 'Hill of Towie 2025', 'later year', 'Siemens SWT-2.3'), ('kelmarsh2020', 'Kelmarsh 2020', 'confirmation', 'Senvion MM92'),
         ('penmanshiel2020', 'Penmanshiel 2020', 'confirmation', 'Senvion MM82'), ('hot2022', 'Hill of Towie 2022', 'confirmation', 'Siemens SWT-2.3')]
-T = ['\\begin{table*}[t]', '\\caption{Farm-Years Used in This Study}', '\\label{tab:datasets}', '\\centering', '\\footnotesize', '\\setlength{\\tabcolsep}{5pt}',
+T = ['\\begin{table*}[t]', '\\caption{Farm-years used in this study.}', '\\label{tab:datasets}', '\\centering', '\\footnotesize', '\\setlength{\\tabcolsep}{5pt}',
      '\\begin{tabular*}{\\textwidth}{@{\\extracolsep{\\fill}}lllcccc@{}}', '\\toprule',
      'Farm-year & Role & Turbine & Turbines & Usable rows (\\%) & Oil mean (sd), $^{\\circ}$C & 30-min change, $^{\\circ}$C \\\\', '\\midrule']
 for i, c in enumerate(COLS):
@@ -640,13 +781,13 @@ for i, c in enumerate(COLS):
     T += [f"{c[1]} & {c[2]} & {c[3]} & {d['turbines']} & {d['usable_pct']:.1f} & {d['oil_mean']:.1f} ({d['oil_sd']:.1f}) & {d['d30_median']:.2f} / {d['d30_p90']:.2f} \\\\"]
     if i in (0, 3, 6): T += ['\\midrule']
 T += ['\\bottomrule', '\\end{tabular*}', '\\par\\smallskip\\parbox{\\textwidth}{\\footnotesize Usable rows: evaluation rows with valid current and lagged target. '
-      '30-min change: median / 90th percentile of $\\Delta_i(t)$. 2020 and 2024 are leap years (52\\,704 rows per turbine).}', '\\end{table*}']
+      '30-min change: median / 90th percentile of $\\Delta_i(t)$. 2020 and 2024 are leap years (52,704 rows per turbine).}', '\\end{table*}']
 assert abs(DST['kelmarsh2017']['usable_pct'] - 99.3) < 0.05 and abs(DST['hot2019']['oil_mean'] - 37.6) < 0.05
 (PAPER/'tables/tab_datasets.tex').write_text('\n'.join(T) + '\n', encoding='utf-8')
 
 
 # ---------------------------------------------------------------- numbers.tex
-H = ['% Written by latetruth/make_paper_numbers.py on 2026-10-18 00:21. Do not edit by hand.',
+H = ['% Written by latetruth/make_paper_numbers.py on 2026-11-19. Do not edit by hand.',
      '% Sources: ' + '; '.join(sorted(set(SRC))), '\\makeatletter',
      '\\newcommand{\\val}[1]{\\ifcsname val@#1\\endcsname\\csname val@#1\\endcsname\\else\\@latex@warning{Undefined value #1}\\textbf{??#1??}\\fi}',
      '\\makeatother']

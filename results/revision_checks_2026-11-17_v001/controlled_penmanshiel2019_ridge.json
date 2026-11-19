@@ -1,0 +1,29 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part G",
+ "ds": "penmanshiel2019",
+ "arch": "ridge",
+ "info": {
+  "full|fleet": {
+   "own_rows_mae_none": 0.2995295764938285,
+   "own_rows_mae_corr": 0.24935600905733918,
+   "seconds": 381.6
+  },
+  "full|pt": {
+   "own_rows_mae_none": 0.21865639170911597,
+   "own_rows_mae_corr": 0.1958834732969895,
+   "seconds": 356.9
+  },
+  "base|fleet": {
+   "own_rows_mae_none": 0.5434676140544885,
+   "own_rows_mae_corr": 0.44349307123875886,
+   "seconds": 338.2
+  },
+  "base|pt": {
+   "own_rows_mae_none": 0.42112175329199136,
+   "own_rows_mae_corr": 0.3595937355304125,
+   "seconds": 326.8
+  }
+ },
+ "seconds": 1431.4,
+ "code_sha256": "74a9983a00565211318570aef326dafc7106bb043f373d8892a3bd49c6a1e75e"
+}

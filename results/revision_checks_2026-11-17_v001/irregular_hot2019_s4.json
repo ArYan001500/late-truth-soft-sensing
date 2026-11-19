@@ -1,0 +1,54 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part H",
+ "ds": "hot2019",
+ "scenario": 4,
+ "scores": {
+  "fleet": {
+   "all": 0.45079241185862945,
+   "inside_blocks": 4.786541335538536,
+   "outside_blocks": 0.21791040837802025,
+   "age_1_3": 0.45079241185862945,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "proposed": {
+   "all": 0.40170689011616567,
+   "inside_blocks": 3.589953013271496,
+   "outside_blocks": 0.2303987898079701,
+   "age_1_3": 0.40170689011616567,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "ewma_reference": {
+   "all": 0.4727976676798578,
+   "inside_blocks": 3.919135801085748,
+   "outside_blocks": 0.28772924925825827,
+   "age_1_3": 0.4727976676798578,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  },
+  "persistence": {
+   "all": 1.8509542440775897,
+   "inside_blocks": 1.8591023245523874,
+   "outside_blocks": 1.8505885951363008,
+   "age_1_3": 1.8509542440775897,
+   "age_4_6": null,
+   "age_7_12": null,
+   "age_13_24": null,
+   "age_25_1000000": null
+  }
+ },
+ "share": {
+  "rows_in_blocks": 0.05102895922628861,
+  "rows_inputs_missing": 0.05102895922628861,
+  "mean_age_rows": 3.0
+ },
+ "seconds": 767.6,
+ "code_sha256": "752f1b99e27d09093d163a40425b04fa63dc2926c1b67b6760043763e9738dd5"
+}

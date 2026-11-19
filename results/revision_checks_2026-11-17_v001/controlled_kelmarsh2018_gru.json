@@ -1,0 +1,29 @@
+{
+ "protocol": "REVISION_CHECKS_v001 Part G, Amendment G-b",
+ "ds": "kelmarsh2018",
+ "arch": "gru",
+ "info": {
+  "full|fleet": {
+   "own_rows_mae_none": 0.16201971369661744,
+   "own_rows_mae_corr": 0.14929033034614522,
+   "seconds": 167.7
+  },
+  "full|pt": {
+   "own_rows_mae_none": 0.3058065193581613,
+   "own_rows_mae_corr": 0.25159061070412664,
+   "seconds": 214.9
+  },
+  "base|fleet": {
+   "own_rows_mae_none": 0.24967689912086555,
+   "own_rows_mae_corr": 0.23167678884837273,
+   "seconds": 262.3
+  },
+  "base|pt": {
+   "own_rows_mae_none": 0.406257511989601,
+   "own_rows_mae_corr": 0.3409084101236803,
+   "seconds": 249.2
+  }
+ },
+ "seconds": 901.7,
+ "code_sha256": "5ff6672d182be87cdf08e0715ac374b3d0907e4ee6b8e750345e43aefdf447f2"
+}
