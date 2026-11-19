@@ -48,6 +48,7 @@ def put(k, v):
 def f3(x): return f'{x:.3f}'
 def f4(x): return f'{x:.4f}'
 def p1(x): return f'{x:.1f}'
+def mns(s): return '$-$' + s[1:] if s.startswith('-') else s    # minus sign, not a hyphen, for a negative interval bound
 def red(a, b): return 100 * (1 - b / a)    # % reduction from a to b
 def inc(a, b): return 100 * (b / a - 1)    # % increase from a to b
 def ptex(p): m, e = f'{p:.1e}'.split('e'); return f'${m}{{\\times}}10^{{{int(e)}}}$'
@@ -96,7 +97,7 @@ for s, ds in DS:
         key = {WANG: 'wang', FLEET: 'fleet', KIM: 'kim', YAN: 'yan'}.get(r['baseline'])
         if key:
             put(f'sig.{s}.{key}.wins', f"{r['wins_turbine_month']}/{r['n_pairs']}"); put(f'sig.{s}.{key}.p', ptex(r['p_holm']))
-            put(f'sig.{s}.{key}.lo', f3(r['ci95'][0])); put(f'sig.{s}.{key}.hi', f3(r['ci95'][1])); put(f'sig.{s}.{key}.diff', f3(r['mae_diff']))
+            put(f'sig.{s}.{key}.lo', mns(f3(r['ci95'][0]))); put(f'sig.{s}.{key}.hi', f3(r['ci95'][1])); put(f'sig.{s}.{key}.diff', f3(r['mae_diff']))
     put(f'sig.{s}.n', str(SG[ds][0]['n_pairs'])); put(f'sig.{s}.pmax', ptex(max(r['p_holm'] for r in SG[ds])))
     put(f'sig.{s}.nbase', str(len(SG[ds]))); assert all(r['ours_better'] for r in SG[ds]), ds
     put(f'sig.{s}.minwins', f"{min(r['wins_turbine_month'] for r in SG[ds])}/{SG[ds][0]['n_pairs']}")
@@ -269,7 +270,7 @@ for s, ds in DSL:
         key = {WANG: 'wang', FLEET: 'fleet', KIM: 'kim', YAN: 'yan'}.get(r['baseline'])
         if key:
             put(f'sig.{s}.{key}.wins', f"{r['wins_turbine_month']}/{r['n_pairs']}"); put(f'sig.{s}.{key}.p', ptex(r['p_holm']))
-            put(f'sig.{s}.{key}.lo', f3(r['ci95'][0])); put(f'sig.{s}.{key}.hi', f3(r['ci95'][1])); put(f'sig.{s}.{key}.diff', f3(r['mae_diff']))
+            put(f'sig.{s}.{key}.lo', mns(f3(r['ci95'][0]))); put(f'sig.{s}.{key}.hi', f3(r['ci95'][1])); put(f'sig.{s}.{key}.diff', f3(r['mae_diff']))
 assert [r['baseline'] for r in SG['kelmarsh2024'] if not r['ours_better']] == [KIM], 'text: only Kim et al. not shown on Kelmarsh 2024'
 assert all(r['ours_better'] for ds in ['penmanshiel2022', 'hot2025'] for r in SG[ds])
 XTRA = ('proposed (similarity + recency)', 'proposed + standstill gate', 'reference: mean of 20 newest residuals', 'reference: EWMA of residuals')
@@ -280,7 +281,9 @@ for s, ds in DS + DSL:
     w = min(TL[ds].values(), key=lambda v: v['wins']); put(f'tl.{s}.minwins', f"{w['wins']}/{w['n']}"); put(f'tl.{s}.p', ptex(max(v['p_sign'] for v in TL[ds].values())))
 assert [ds for _, ds in DS + DSL if min(v['wins'] for v in TL[ds].values()) == TL[ds][KIM]['n']] == ['kelmarsh2018', 'penmanshiel2019', 'penmanshiel2022', 'hot2025']
 assert min(TL['hot2019'].values(), key=lambda v: v['wins']) is TL['hot2019'][KIM] and min(TL['kelmarsh2024'].values(), key=lambda v: v['wins']) is TL['kelmarsh2024'][KIM]
-DST = load(PB/'DATASET_STATS.json'); VF = load(PB/'VERIFY_FINAL_TABLE.json'); assert VF['pass']; put('verify.n', str(VF['entries']))
+DST = load(PB/'DATASET_STATS.json'); VF = load(PB/'VERIFY_FINAL_TABLE.json'); assert VF['pass']
+VR = load(E/'revision_checks_2026-11-17_v001'/'VERIFY_RLS_REFERENCE.json'); assert VR['pass'] and VR['entries'] == 9
+put('verify.n', str(VF['entries'] + VR['entries']))    # comparison table plus the recursive least-squares row (verify_rls_reference.py)
 cm_old = min(DST[d]['common_min_turbine_pct'] for d in ['kelmarsh2017', 'kelmarsh2018', 'penmanshiel2019', 'hot2019'])
 cm_new = min(DST[d]['common_min_turbine_pct'] for _, d in DSL)
 assert cm_old >= 99.5; put('common.old.min', f'{math.floor(10 * cm_old) / 10:.1f}'); put('common.new.min', f'{math.floor(10 * cm_new) / 10:.1f}')
@@ -376,7 +379,7 @@ pc = {s: PTC[ds][0] for s, ds in DS9}; pf = {s: PTC[ds][1] for s, ds in DS9}
 assert [s for s in pc if not (pc[s]['pooled_better'] and pc[s]['block7d_ci95'][0] > 0)] == ['p19'], 'text: pooling shown on all but Penmanshiel 2019'
 assert [s for s in pf if not pf[s]['pooled_better']] == ['p19']
 okp = [pc[s]['pct'] for s in pc if s != 'p19']; put('pt.min', p1(min(okp))); put('pt.max', p1(max(okp)))
-put('pt.p19', p1(pc['p19']['pct'])); put('pt.p19.lo', f4(pc['p19']['ci95'][0])); put('pt.p19.hi', f4(pc['p19']['ci95'][1])); put('pt.p19.wins', f"{pc['p19']['wins']}/{pc['p19']['n_pairs']}")
+put('pt.p19', p1(pc['p19']['pct'])); put('pt.p19.lo', mns(f4(pc['p19']['ci95'][0]))); put('pt.p19.hi', f4(pc['p19']['ci95'][1])); put('pt.p19.wins', f"{pc['p19']['wins']}/{pc['p19']['n_pairs']}")
 put('ptf.min', p1(min(pf[s]['pct'] for s in pf))); put('ptf.max', p1(max(pf[s]['pct'] for s in pf)))
 put('pt.k17', p1(PTC['kelmarsh2017'][0]['pct']))
 ptw = [s for s, ds in DS9 if not ft(ds, 'per-turbine model + late-truth correction') < min(ft(ds, k) for _, k in PUB if ft(ds, k) is not None and k not in (WANG, 'B10 Wang 2022 (online, as published)'))]

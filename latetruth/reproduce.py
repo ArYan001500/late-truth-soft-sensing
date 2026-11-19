@@ -114,6 +114,7 @@ def revision_steps():
         for t in turbines:
             once('revision_newturbine_diag', f'new_turbine_diag_{ds}_{t}.json', ds, str(t), ds=ds)
     once('revision_rls', 'rls_reference.json')                       # Part C
+    once('verify_rls_reference', 'VERIFY_RLS_REFERENCE.json')        # Part C: independent recomputation of its table row
     once('revision_recency_size', 'recency_size.json')               # Part D
     for ds in ['penmanshiel2019', 'hot2019']:                         # Part E: release delays
         for d in (1, 3, 6, 12, 24):
